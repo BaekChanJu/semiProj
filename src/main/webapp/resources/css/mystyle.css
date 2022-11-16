@@ -1,0 +1,12 @@
+@charset "UTF-8";
+ #ins {
+  font-family: "Playfair Display", serif;
+  color: #black; }
+ #ins { style : "boarder"; width: 600px; height: 60px }
+ #mb-4 {
+  font-family: "Playfair Display", serif;
+  color: #black; }
+ #logo menu-absolute m-0{
+ font : 60px; 
+ }
+ 
