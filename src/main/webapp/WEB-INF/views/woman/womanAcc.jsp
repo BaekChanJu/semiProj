@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<!-- eventSale2 는 다가올 신년 이벤트입니다!!!! -->
  <% String pjName = "/SemiProject"; %>
 
 <head>
@@ -75,9 +74,7 @@
 
 					<!--  메인 헤더 중앙 카테고리  -->
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
-					
-						<!-- Vintagure 카테고리  -->
-							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
+						<!-- Vintagure 카테고리 -->
 						<li class="has-children">
 							<a href="mainOuter.do">Vintagere</a>
 							<ul class="dropdown">
@@ -88,38 +85,34 @@
 								<li><a href="mainAcc.do">ACC</a></li>
 							</ul>
 						</li>
-						
 						<!-- PAGES 카테고리 -->
 						<li class="has-children">
-							<a href="qnA.do">PAGES</a>
+							<a href="#">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="qnA.do">Q & A</a></li>
-								<li><a href="styleReview.do">STYLE REVIEW</a></li>
-								<li><a href="free.do">자유 게시판</a></li>
+								<li><a href="#">Q & A</a></li>
+								<li><a href="#">STYLE REVIEW</a></li>
+								<li><a href="#">자유 게시판</a></li>
 							</ul>
 						</li>
-						
-						<!-- MEN 카테고리 -->
+						<!-- Pages 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MAN</a>
+							<a href="menOuter.do">MEN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="menOuter.do">OUTER</a></li>
+								<li><a href="menTop.do">TOP</a></li>
+								<li><a href="menBottom.do">BOTTOM</a></li>
+								<li><a href="menShoes.do">SHOES</a></li>
+								<li><a href="menAcc.do">ACC</a></li>
 							</ul>
 						</li>
-						
-						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMAN</a>
+							<a href="womenOuter.do">WOMEN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="womenOuter.do">OUTER</a></li>
+								<li><a href="womenTop.do">TOP</a></li>
+								<li><a href="womenBottom.do">BOTTOM</a></li>
+								<li><a href="womenShoes.do">SHOES</a></li>
+								<li><a href="womenAcc.do">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
@@ -129,14 +122,14 @@
 					<!--  홈 메인상단 우측 아이콘 3개 -->
 					<div class="menu-icons">
 						<!--  검색 버튼 -->
-						<a href="select.do" class="btn-custom-search" id="btn-search">
+						<a href="#" class="btn-custom-search" id="btn-search">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
 								<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
 							</svg>
 						</a>
 						<!--  유저 버튼 -->
-						<a href="login.do" class="user-profile">
+						<a href="#" class="user-profile">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 							</svg>
@@ -150,8 +143,6 @@
 						</a>
 
 					</div>
-					
-					
 
 					<a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>
@@ -167,8 +158,8 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <h1>Happy NewYear</h1>  
-          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>Shop</strong></p>        
+          <h1>VINTAGERE</h1>  
+          <p class="mb-4">Woman / <strong>Acc</strong></p>        
         </div>
       </div>
     </div>
@@ -187,11 +178,9 @@
             <strong class="mr-3">Sort by:</strong>
             <form action="#">
               <select class="" required>
-                <option value="">Newest Items</option>
-                <option value="1">Best Selling</option>
-                <option value="2">Price: Ascending</option>
-                <option value="2">Price: Descending</option>
-                <option value="3">Rating(High to Low)</option>
+                <option value=""></option>
+                <option value="1">낮은 가격순</option>
+				<option value="1">높은 가격순</option>
               </select>
             </form>
           </div>
@@ -202,20 +191,19 @@
 
         <div class="col-md-3">
           <ul class="list-unstyled categories">
-            <li><a href="#">New <span>2,919</span></a></li>
-            <li><a href="#">Men <span>5,381</span></a></li>
-            <li><a href="#">Women <span>7,119</span></a></li>
-            <li><a href="#">Jewelries <span>1,012</span></a></li>
-            <li><a href="#">Accessories <span>919</span></a></li>
-            <li><a href="#">Shoes <span>4,344</span></a></li>
-            <li><a href="#">Clothing <span>7,919</span></a></li>
+            <li><a href="mainOuter.do">OUTER <span>2,919</span></a></li>
+            <li><a href="mainTop.do">TOP <span>5,381</span></a></li>
+            <li><a href="mainBottm.do">BOTTM <span>7,119</span></a></li>
+            <li><a href="mainShoes.do">SHOES <span>1,012</span></a></li>
+            <li><a href="mainAcc.do">ACC <span>919</span></a></li>
+
           </ul>
         </div>
         <div class="col-md-9">
           <div class="row">
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
+                <a href="shop-single.do" class="product-img">
 
                   <div class="label new top-right">
                     <div class='content'>New</div>
@@ -233,7 +221,7 @@
 
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
+                <a href="shop-single.do" class="product-img">
                   <div class="label new top-right">
                     <div class='content'>New</div>
                   </div>
@@ -252,7 +240,7 @@
 
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">  <!-- shop-single.jsp 상세페이지 이동 이름변경 가능  -->
+                <a href="shop-single.do" class="product-img">  <!-- shop-single.jsp 상세페이지 이동 이름변경 가능  -->
                   <img src="resources/images/products/shoe-1-min.jpg" alt="Image" class="img-fluid">
                 </a>
                 <h3 class="title"><a href="#">Brown Shoe</a></h3>
@@ -264,7 +252,7 @@
 
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
+                <a href="shop-single.do" class="product-img">
                   <img src="resources/images/products/sock-1-min.jpg" alt="Image" class="img-fluid">
                 </a>
                 <h3 class="title"><a href="#">The Modern Sock</a></h3>
@@ -276,7 +264,7 @@
 
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
+                <a href="shop-single.do" class="product-img">
                   <div class="label sale top-right">
                     <div class='content'>Sale</div>
                   </div>
@@ -291,7 +279,7 @@
 
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
+                <a href="shop-single.do" class="product-img">
                   <div class="label sale top-right">
                     <div class='content'>Sale</div>
                   </div>
@@ -366,7 +354,7 @@
         <div class="owl-3-slider owl-carousel">
           <div class="item">
             <div class="product-item">
-              <a href="shop-single.jsp" class="product-img">
+              <a href="shop-single.do" class="product-img">
                 <div class="label sale top-right">
                   <div class='content'>Sale</div>
                 </div>
@@ -382,7 +370,7 @@
 
           <div class="item">
             <div class="product-item">
-              <a href="shop-single.jsp" class="product-img">
+              <a href="shop-single.do" class="product-img">
 
                 <div class="label new top-right">
                   <div class='content'>New</div>
@@ -401,7 +389,7 @@
 
           <div class="item">
             <div class="product-item">
-              <a href="shop-single.jsp" class="product-img">
+              <a href="shop-single.do" class="product-img">
                 <div class="label new top-right">
                   <div class='content'>New</div>
                 </div>
@@ -420,7 +408,7 @@
 
           <div class="item">
             <div class="product-item">
-              <a href="shop-single.jsp" class="product-img">
+              <a href="shop-single.do" class="product-img">
                 <img src="resources/images/products/sock-1-min.jpg" alt="Image" class="img-fluid">
               </a>
               <h3 class="title"><a href="#">The Modern Sock</a></h3>
@@ -479,83 +467,39 @@
       </div>
     </div> <!-- /.untree_co-section -->
 
-    <div class="site-footer">
+  	<div class="site-footer">
 
 
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-5">
-            <div class="widget mb-4">
-              <h3 class="mb-2">About UntreeStore</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate modi cumque rem recusandae quaerat at asperiores beatae saepe repudiandae quam rerum aspernatur dolores et ipsa obcaecati voluptates libero</p>
-            </div>
-            <div class="widget">
-              <h3>Join our mailing list and receive exclusives</h3>
-              <form action="#" class="subscribe">
-                <div class="d-flex">
-                  <input type="email" class="form-control" placeholder="Email address">
-                  <input type="submit" class="btn btn-black" value="Subscribe">
-                </div>
-              </form>
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="widget mb-4">
+						<h3 class="mb-2">Vintagure</h3>
+						<p>우리회사 소개 정보 등등등!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+						!!!!!!!!!!!!!!!!!!! 고객센터 시간, 번호, 회사주소, 회사연락처 등등등!!!!!!!!!!!!!!!!!</p>
+					</div>
+
+				</div>
+				
+				
 
 
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="widget">
-              <h3>Help</h3> 
-              <ul class="list-unstyled">
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Shipping</a></li>
-                <li><a href="#">Returns</a></li>
-                <li><a href="#">FAQ</a></li>   
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="widget">
-              <h3>About</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">FAQ</a></li>   
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="widget">
-              <h3>Shop</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">Store</a></li>
-                <li><a href="#">Gift Cards</a></li>
-                <li><a href="#">Student Discount</a></li>
-              </ul>
-            </div>
-          </div>
 
-        </div>
+			<div class="row mt-5">
+				<div class="col-12 text-center">
+					<ul class="list-unstyled social">
+						<li><a href="#"><span class="icon-facebook"></span></a></li>
+						<li><a href="#"><span class="icon-instagram"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-12 text-center copyright">
+					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+					</p>
 
-
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-facebook"></span></a></li>
-              <li><a href="#"><span class="icon-instagram"></span></a></li>
-              <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-12 text-center copyright">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-            </p>
-
-          </div>
-        </div>
-      </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.site-footer -->
 
     <div id="overlayer"></div>
     <div class="loader">

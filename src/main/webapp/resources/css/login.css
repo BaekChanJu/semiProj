@@ -47,7 +47,7 @@
                 border-bottom: solid 1px #8aa1a1;
                 outline:none;
             } 
-            input[type=submit]{
+            input[type=submit],  input[type=button]{
                 background-color: #8aa1a1;
                 border:none;
                 color:white;

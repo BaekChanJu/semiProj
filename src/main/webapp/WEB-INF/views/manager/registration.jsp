@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<!-- eventSale2 는 다가올 신년 이벤트입니다!!!! -->
  <% String pjName = "/SemiProject"; %>
 
 <head>
@@ -167,7 +166,7 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <h1>Happy NewYear</h1>  
+          <h1>Shop</h1>  
           <p class="mb-4"><a href="index.jsp">Home</a> / <strong>Shop</strong></p>        
         </div>
       </div>
@@ -202,107 +201,16 @@
 
         <div class="col-md-3">
           <ul class="list-unstyled categories">
-            <li><a href="#">New <span>2,919</span></a></li>
-            <li><a href="#">Men <span>5,381</span></a></li>
-            <li><a href="#">Women <span>7,119</span></a></li>
-            <li><a href="#">Jewelries <span>1,012</span></a></li>
-            <li><a href="#">Accessories <span>919</span></a></li>
-            <li><a href="#">Shoes <span>4,344</span></a></li>
-            <li><a href="#">Clothing <span>7,919</span></a></li>
+            <li><a href="#">상품 등록</a></li>
+            <li><a href="#">상품 목록</a></li>
+            <li><a href="#">카테고리별 매출</a></li>
+            <li><a href="#">월별 매출</a></li>
+            <li><a href="#">Q&A 게시판 관리</a></li>
+            <li><a href="#">주문 관리</a></li>
           </ul>
         </div>
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-              <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
-
-                  <div class="label new top-right">
-                    <div class='content'>New</div>
-                  </div>
-
-
-                  <img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-                </a>
-                <h3 class="title"><a href="#">Dark Jacket</a></h3>
-                <div class="price">
-                  <span>£69.00</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-              <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
-                  <div class="label new top-right">
-                    <div class='content'>New</div>
-                  </div>
-
-                  <div class="label sale top-right second">
-                    <div class='content'>Sale</div>
-                  </div>
-                  <img src="resources/images/products/bottoms-1-min.jpg" alt="Image" class="img-fluid">
-                </a>
-                <h3 class="title"><a href="#">Chino Bottoms</a></h3>
-                <div class="price">
-                  <del>£99.00</del> &mdash; <span>£69.00</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-              <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">  <!-- shop-single.jsp 상세페이지 이동 이름변경 가능  -->
-                  <img src="resources/images/products/shoe-1-min.jpg" alt="Image" class="img-fluid">
-                </a>
-                <h3 class="title"><a href="#">Brown Shoe</a></h3>
-                <div class="price">
-                  <span>£29.00</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-              <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
-                  <img src="resources/images/products/sock-1-min.jpg" alt="Image" class="img-fluid">
-                </a>
-                <h3 class="title"><a href="#">The Modern Sock</a></h3>
-                <div class="price">
-                  <span>£29.00</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-              <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
-                  <div class="label sale top-right">
-                    <div class='content'>Sale</div>
-                  </div>
-                  <img src="resources/images/products/sweater-2-min.jpg" alt="Image" class="img-fluid">
-                </a>
-                <h3 class="title"><a href="#">Double Knit Sweater</a></h3>
-                <div class="price">
-                  <del>£99.00</del> &mdash; <span>£69.00</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-              <div class="product-item">
-                <a href="shop-single.jsp" class="product-img">
-                  <div class="label sale top-right">
-                    <div class='content'>Sale</div>
-                  </div>
-                  <img src="resources/images/products/watch-1-min.jpg" alt="Image" class="img-fluid">
-                </a>
-                <h3 class="title"><a href="#">The Murray</a></h3>
-                <div class="price">
-                  <del>£99.00</del> &mdash; <span>£69.00</span>
-                </div>
-              </div>
-            </div>
+       
+             
           </div>
 
           <div class="row mt-5 pb-5">
@@ -482,61 +390,7 @@
     <div class="site-footer">
 
 
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-5">
-            <div class="widget mb-4">
-              <h3 class="mb-2">About UntreeStore</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate modi cumque rem recusandae quaerat at asperiores beatae saepe repudiandae quam rerum aspernatur dolores et ipsa obcaecati voluptates libero</p>
-            </div>
-            <div class="widget">
-              <h3>Join our mailing list and receive exclusives</h3>
-              <form action="#" class="subscribe">
-                <div class="d-flex">
-                  <input type="email" class="form-control" placeholder="Email address">
-                  <input type="submit" class="btn btn-black" value="Subscribe">
-                </div>
-              </form>
-
-
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="widget">
-              <h3>Help</h3> 
-              <ul class="list-unstyled">
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Shipping</a></li>
-                <li><a href="#">Returns</a></li>
-                <li><a href="#">FAQ</a></li>   
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="widget">
-              <h3>About</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">FAQ</a></li>   
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="widget">
-              <h3>Shop</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">Store</a></li>
-                <li><a href="#">Gift Cards</a></li>
-                <li><a href="#">Student Discount</a></li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
+     
 
 
         <div class="row mt-5">
@@ -544,8 +398,6 @@
             <ul class="list-unstyled social">
               <li><a href="#"><span class="icon-facebook"></span></a></li>
               <li><a href="#"><span class="icon-instagram"></span></a></li>
-              <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
             </ul>
           </div>
           <div class="col-12 text-center copyright">

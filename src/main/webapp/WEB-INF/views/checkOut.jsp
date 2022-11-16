@@ -1,5 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+function sample6_execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+
+            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+
+            // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+            if(data.userSelectedType === 'R'){
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+                // 조합된 참고항목을 해당 필드에 넣는다.
+                document.getElementById("sample6_extraAddress").value = extraAddr;
+            
+            } else {
+                document.getElementById("sample6_extraAddress").value = '';
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('sample6_postcode').value = data.zonecode;
+            document.getElementById("sample6_address").value = addr;
+            // 커서를 상세주소 필드로 이동한다.
+            document.getElementById("sample6_detailAddress").focus();
+        }
+    }).open();
+}
+</script>    
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +115,7 @@
 
 
 
- <!--  상단 헤더 -->
+  <!--  상단 헤더 -->
 	<nav class="site-nav mb-5">
 		<div class="sticky-nav js-sticky-header">
 
@@ -74,75 +126,80 @@
 
 					<!--  메인 헤더 중앙 카테고리  -->
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
-					
-						<!-- Vintagure 카테고리  -->
-							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
+						<!-- Vintagure 카테고리 -->
 						<li class="has-children">
-							<a href="mainOuter.do">Vintagere</a>
+							<a href="shop.jsp">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="mainOuter.do">OUTER</a></li>
-								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottm.do">BOTTOM</a></li>
-								<li><a href="mainShoes.do">SHOES</a></li>
-								<li><a href="mainAcc.do">ACC</a></li>
+								<li><a href="#">OUTER</a></li>
+								<li><a href="#">TOP</a></li>
+								<li><a href="#">BOTTOM</a></li>
+								<li><a href="#">SHOES</a></li>
+								<li><a href="#">ACC</a></li>
 							</ul>
 						</li>
-						
 						<!-- PAGES 카테고리 -->
 						<li class="has-children">
-							<a href="qnA.do">PAGES</a>
+							<a href="shop.jsp">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="qnA.do">Q & A</a></li>
-								<li><a href="styleReview.do">STYLE REVIEW</a></li>
-								<li><a href="free.do">자유 게시판</a></li>
+								<li><a href="#">Q & A</a></li>
+								<li><a href="#">STYLE REVIEW</a></li>
+								<li><a href="#">자유 게시판</a></li>
 							</ul>
 						</li>
-						
-						<!-- MEN 카테고리 -->
+						<!-- Pages 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MEN</a>
+							<a href="#">MEN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="#">OUTER</a></li>
+								<li><a href="#">TOP</a></li>
+								<li><a href="#">BOTTOM</a></li>
+								<li><a href="#">SHOES</a></li>
+								<li><a href="#">ACC</a></li>
+								<!-- Pages 카테고리 안 Menu Two 세부카테고리 -->
+								<li class="has-children">
+									<a href="#">Menu Two</a>
+									<ul class="dropdown">
+										<li><a href="#">T-Shirt</a></li>
+										<li><a href="#">Underware</a></li>
+										<li><a href="#">Clothing</a></li>
+										<li><a href="#">Watches</a></li>
+										<li><a href="#">Shoes</a></li>
+
+									</ul>
+								</li>
 							</ul>
 						</li>
-						
-						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMEN</a>
+							<a href="shop.jsp">WOMEN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="#">OUTER</a></li>
+								<li><a href="#">TOP</a></li>
+								<li><a href="#">BOTTOM</a></li>
+								<li><a href="#">SHOES</a></li>
+								<li><a href="#">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
 
 
 
-
 					<!--  홈 메인상단 우측 아이콘 3개 -->
 					<div class="menu-icons">
 						<!--  검색 버튼 -->
-						<a href="#" class="btn-custom-search" id="btn-search">
+						<a href="select.co" class="btn-custom-search" id="btn-search">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
 								<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
 							</svg>
 						</a>
 						<!--  유저 버튼 -->
-						<a href="#" class="user-profile">
+						<a href="login.do" class="user-profile">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 							</svg>
 						</a>
 						<!--  장바구니 버튼 -->
-						<a href="cart.jsp" class="cart">
+						<a href="cart.do" class="cart">
 							<span class="item-in-cart">2</span>
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -166,7 +223,7 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
           <h1>Checkout</h1>  
-          <p class="mb-4"><a href="index.html">Home</a> / <strong>Checkout</strong></p>        
+          <p class="mb-4"><a href="index.do">Home</a> / <strong>Checkout</strong></p>        
         </div>
       </div>
     </div>
@@ -187,187 +244,112 @@
         <div class="col-md-6 mb-5 mb-md-0">
           <h2 class="h3 mb-3 text-black">Billing Details</h2>
           <div class="p-3 p-lg-5 border">
-            <div class="form-group">
-              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
-              <select id="c_country" class="form-control">
-                <option value="1">Select a country</option>    
-                <option value="2">bangladesh</option>    
-                <option value="3">Algeria</option>    
-                <option value="4">Afghanistan</option>    
-                <option value="5">Ghana</option>    
-                <option value="6">Albania</option>    
-                <option value="7">Bahrain</option>    
-                <option value="8">Colombia</option>    
-                <option value="9">Dominican Republic</option>    
-              </select>
-            </div>
             <div class="form-group row">
-              <div class="col-md-6">
-                <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname">
+              <div class="col-md-12">
+                <label for="c_fname" class="text-black">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="c_fname" name="c_fname" placeholder="Name">
               </div>
-              <div class="col-md-6">
-                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_lname" name="c_lname">
+
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_email" class="text-black">E - Mail </label>
+                <input type="email" class="form-control" id="c_email" name="c_email" placeholder="E - Mail">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="c_companyname" class="text-black">Company Name </label>
-                <input type="text" class="form-control" id="c_companyname" name="c_companyname">
+                <label for="c_address" class="text-black">Phone Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="c_tel" name="c_tel" placeholder="Phone Number">
               </div>
             </div>
+          
 
-            <div class="form-group row">
-              <div class="col-md-12">
-                <label for="c_address" class="text-black">Address <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-            </div>
 
             <div class="form-group row">
               <div class="col-md-6">
-                <label for="c_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_state_country" name="c_state_country">
+                <label for="sample6_postcode" class="text-black" > <span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="sample6_postcode" name="sample6_postcode" placeholder="우편번호">
               </div>
-              <div class="col-md-6">
-                <label for="c_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
-              </div>
+              
+            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>  
             </div>
-
+            
+			
             <div class="form-group row mb-5">
-              <div class="col-md-6">
-                <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_email_address" name="c_email_address">
+              <div class="col-md-12">
+                <label for="sample6_address" class="text-black"><span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="sample6_address" name="sample6_address" placeholder="주소" >
               </div>
-              <div class="col-md-6">
-                <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Phone Number">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="c_create_account" class="text-black" data-toggle="collapse" href="#create_an_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="checkbox" value="1" id="c_create_account"> Create an account?</label>
-              <div class="collapse" id="create_an_account">
-                <div class="py-2">
-                  <p class="mb-3">Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
-                  <div class="form-group">
-                    <label for="c_account_password" class="text-black">Account Password</label>
-                    <input type="email" class="form-control" id="c_account_password" name="c_account_password" placeholder="">
-                  </div>
-                </div>
+              <div class="col-md-12">
+                <label for="sample6_detailAddress" class="text-black"><span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소">
               </div>
             </div>
 
 
             <div class="form-group">
-              <label for="c_ship_different_address" class="text-black" data-toggle="collapse" href="#ship_different_address" role="button" aria-expanded="false" aria-controls="ship_different_address"><input type="checkbox" value="1" id="c_ship_different_address"> Ship To A Different Address?</label>
+              <label for="c_ship_different_address" class="text-black" data-toggle="collapse" href="#ship_different_address" role="button" aria-expanded="false" aria-controls="ship_different_address"><input type="checkbox" value="1" id="c_ship_different_address"> 다른 배송지로 </label>
               <div class="collapse" id="ship_different_address">
                 <div class="py-2">
 
-                  <div class="form-group">
-                    <label for="c_diff_country" class="text-black">Country <span class="text-danger">*</span></label>
-                    <select id="c_diff_country" class="form-control">
-                      <option value="1">Select a country</option>    
-                      <option value="2">bangladesh</option>    
-                      <option value="3">Algeria</option>    
-                      <option value="4">Afghanistan</option>    
-                      <option value="5">Ghana</option>    
-                      <option value="6">Albania</option>    
-                      <option value="7">Bahrain</option>    
-                      <option value="8">Colombia</option>    
-                      <option value="9">Dominican Republic</option>    
-                    </select>
-                  </div>
+ 			<div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_fname" class="text-black">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="c_fname" name="c_fname" placeholder="Name">
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_email" class="text-black">E - Mail </label>
+                <input type="email" class="form-control" id="c_email" name="c_email" placeholder="E - Mail">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_address" class="text-black">Phone Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="c_tel" name="c_tel" placeholder="Phone Number">
+              </div>
+            </div>
+          
 
 
-                  <div class="form-group row">
-                    <div class="col-md-6">
-                      <label for="c_diff_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_fname" name="c_diff_fname">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="c_diff_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_lname" name="c_diff_lname">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="c_diff_companyname" class="text-black">Company Name </label>
-                      <input type="text" class="form-control" id="c_diff_companyname" name="c_diff_companyname">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="c_diff_address" class="text-black">Address <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_address" name="c_diff_address" placeholder="Street address">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-6">
-                      <label for="c_diff_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_state_country" name="c_diff_state_country">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="c_diff_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_postal_zip" name="c_diff_postal_zip">
-                    </div>
-                  </div>
-
-                  <div class="form-group row mb-5">
-                    <div class="col-md-6">
-                      <label for="c_diff_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_email_address" name="c_diff_email_address">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="c_diff_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_diff_phone" name="c_diff_phone" placeholder="Phone Number">
-                    </div>
-                  </div>
-
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="sample6_postcode" class="text-black" > <span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="sample6_postcode" name="sample6_postcode" placeholder="우편번호">
+              </div>
+              
+            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>  
+            </div>
+            
+			
+            <div class="form-group row mb-5">
+              <div class="col-md-12">
+                <label for="sample6_address" class="text-black"><span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="sample6_address" name="sample6_address" placeholder="주소" >
+              </div>
+              <div class="col-md-12">
+                <label for="sample6_detailAddress" class="text-black"><span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소">
+              </div>
+            </div>
                 </div>
 
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="c_order_notes" class="text-black">Order Notes</label>
-              <textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
-            </div>
 
           </div>
         </div>
         <div class="col-md-6">
 
-          <div class="row mb-5">
-            <div class="col-md-12">
-              <h2 class="h3 mb-3 text-black">Coupon Code</h2>
-              <div class="p-3 p-lg-5 border">
 
-                <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
-                <div class="input-group w-75">
-                  <input type="text" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-black btn-sm" type="button" id="button-addon2">Apply</button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
 
           <div class="row mb-5">
             <div class="col-md-12">
@@ -380,56 +362,39 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Top Up T-Shirt <strong class="mx-2">x</strong> 1</td>
-                      <td>$250.00</td>
+                      <td>상품이름 <strong class="mx-2">x</strong> 수량</td>
+                      <td>상품가격</td>
                     </tr>
-                    <tr>
-                      <td>Polo Shirt <strong class="mx-2">x</strong>   1</td>
-                      <td>$100.00</td>
-                    </tr>
+                  
                     <tr>
                       <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-                      <td class="text-black">$350.00</td>
+                      <td class="text-black">$총금액</td>
                     </tr>
                     <tr>
                       <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-                      <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+                      <td class="text-black font-weight-bold"><strong>$결제금액</strong></td>
                     </tr>
                   </tbody>
                 </table>
 
                 <div class="border p-3 mb-3">
-                  <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
-
-                  <div class="collapse" id="collapsebank">
-                    <div class="py-2">
-                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                    </div>
-                  </div>
+                  <h3 class="h6 mb-0"><a href="thankyou.do" class="d-block" role="button" aria-expanded="false" aria-controls="collapsebank">카드결제</a></h3>
                 </div>
 
                 <div class="border p-3 mb-3">
-                  <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
-
-                  <div class="collapse" id="collapsecheque">
-                    <div class="py-2">
-                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                    </div>
-                  </div>
+                <a href="thankyou.do">
+                  <h3 class="h6 mb-0"><a href="thankyou.do"class="d-block" role="button" aria-expanded="false" aria-controls="collapsecheque">계좌이체</a></h3>
+                </a>
                 </div>
 
                 <div class="border p-3 mb-5">
-                  <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
-
-                  <div class="collapse" id="collapsepaypal">
-                    <div class="py-2">
-                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                    </div>
-                  </div>
+                  <h3 class="h6 mb-0"><a href="thankyou.do" class="d-block"  role="button" aria-expanded="false" aria-controls="collapsepaypal">휴대폰결제</a></h3>
                 </div>
 
                 <div class="form-group">
-                  <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='thankyou.html'">Place Order</button>
+                <a href="thankyou.do">
+                  <button class="btn btn-black btn-lg py-3 btn-block"">결제 하기</button>
+                </a>
                 </div>
 
               </div>

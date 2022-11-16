@@ -74,51 +74,57 @@
 
 					<!--  메인 헤더 중앙 카테고리  -->
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
-					
-						<!-- Vintagure 카테고리  -->
-							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
+						<!-- Vintagure 카테고리 -->
 						<li class="has-children">
-							<a href="mainOuter.do">Vintagere</a>
+							<a href="shop.jsp">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="mainOuter.do">OUTER</a></li>
-								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottm.do">BOTTOM</a></li>
-								<li><a href="mainShoes.do">SHOES</a></li>
-								<li><a href="mainAcc.do">ACC</a></li>
+								<li><a href="#">OUTER</a></li>
+								<li><a href="#">TOP</a></li>
+								<li><a href="#">BOTTOM</a></li>
+								<li><a href="#">SHOES</a></li>
+								<li><a href="#">ACC</a></li>
 							</ul>
 						</li>
-						
 						<!-- PAGES 카테고리 -->
 						<li class="has-children">
-							<a href="qnA.do">PAGES</a>
+							<a href="shop.jsp">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="qnA.do">Q & A</a></li>
-								<li><a href="styleReview.do">STYLE REVIEW</a></li>
-								<li><a href="free.do">자유 게시판</a></li>
+								<li><a href="#">Q & A</a></li>
+								<li><a href="#">STYLE REVIEW</a></li>
+								<li><a href="#">자유 게시판</a></li>
 							</ul>
 						</li>
-						
-						<!-- MEN 카테고리 -->
+						<!-- Pages 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MEN</a>
+							<a href="#">MEN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="#">OUTER</a></li>
+								<li><a href="#">TOP</a></li>
+								<li><a href="#">BOTTOM</a></li>
+								<li><a href="#">SHOES</a></li>
+								<li><a href="#">ACC</a></li>
+								<!-- Pages 카테고리 안 Menu Two 세부카테고리 -->
+								<li class="has-children">
+									<a href="#">Menu Two</a>
+									<ul class="dropdown">
+										<li><a href="#">T-Shirt</a></li>
+										<li><a href="#">Underware</a></li>
+										<li><a href="#">Clothing</a></li>
+										<li><a href="#">Watches</a></li>
+										<li><a href="#">Shoes</a></li>
+
+									</ul>
+								</li>
 							</ul>
 						</li>
-						
-						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMEN</a>
+							<a href="shop.jsp">WOMEN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="#">OUTER</a></li>
+								<li><a href="#">TOP</a></li>
+								<li><a href="#">BOTTOM</a></li>
+								<li><a href="#">SHOES</a></li>
+								<li><a href="#">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
@@ -254,7 +260,7 @@
         <div class="col-md-6">
           <div class="row mb-5">
             <div class="col-md-6 mb-3 mb-md-0">
-              <button class="btn btn-black btn-sm btn-block">장바구니 전체 삭제</button>
+              <button class="btn btn-outline-black btn-sm btn-block">장바구니 전체 삭제</button>
             </div>
             <div class="col-md-6">
               <button class="btn btn-outline-black btn-sm btn-block">쇼핑 계속하기</button>
@@ -306,7 +312,7 @@
                   <span class="text-black">Subtotal</span>
                 </div>
                 <div class="col-md-6 text-right">
-                  <strong class="text-black">$230.00</strong>
+                  <strong class="text-black">나중에 금액</strong>
                 </div>
               </div>
               <div class="row mb-5">
@@ -314,13 +320,15 @@
                   <span class="text-black">Total</span>
                 </div>
                 <div class="col-md-6 text-right">
-                  <strong class="text-black">$230.00</strong>
+                  <strong class="text-black">나중에 총 금액</strong>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12">
-                  <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.jsp'">Proceed To Checkout</button>
+                <a href="checkOut.do" class="cart">
+                  <button class="btn btn-outline-black btn-sm btn-block" ">결제하기</button>
+                  </a>
                 </div>
               </div>
             </div>

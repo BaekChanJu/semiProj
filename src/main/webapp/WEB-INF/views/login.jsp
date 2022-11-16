@@ -13,7 +13,7 @@
             <h2>Login</h2>
         </header>
 
-        <form action="" method="POST">
+        <form action="index.jsp" method="POST">
 
             <div class="input-box">
                 <input id="username" type="text" name="username" placeholder="아이디">
@@ -26,7 +26,10 @@
             </div>
             
             <input type="submit" value="로그인">
-            <input type="submit" value="회원가입">
+            
+            <a href = "join.do">
+            <input type="button" value="회원가입" >
+            </a>
 
         </form>
 

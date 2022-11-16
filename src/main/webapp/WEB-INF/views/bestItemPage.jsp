@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <% String pjName = "/SemiProject"; %>
+<% String pjName = "/SemiProject"; %>
 
 <head>
   <meta charset="utf-8">

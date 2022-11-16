@@ -84,7 +84,7 @@
 							<ul class="dropdown">
 								<li><a href="mainOuter.do">OUTER</a></li>
 								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottm.do">BOTTOM</a></li>
+								<li><a href="mainBottom.do">BOTTOM</a></li>
 								<li><a href="mainShoes.do">SHOES</a></li>
 								<li><a href="mainAcc.do">ACC</a></li>
 							</ul>
@@ -102,7 +102,7 @@
 						
 						<!-- MEN 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MEN</a>
+							<a href="manOuter.do">MAN</a>
 							<ul class="dropdown">
 								<li><a href="manOuter.do">OUTER</a></li>
 								<li><a href="manTop.do">TOP</a></li>
@@ -114,7 +114,7 @@
 						
 						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMEN</a>
+							<a href="womanOuter.do">WOMAN</a>
 							<ul class="dropdown">
 								<li><a href="womanOuter.do">OUTER</a></li>
 								<li><a href="womanTop.do">TOP</a></li>
@@ -182,7 +182,7 @@
 					</div>
 				</div>
 			</div> <!-- /.untree_co-hero -->
-		</div> 
+		</div>
 
 	<!--  이달의 이벤트 슬라이더 사진2  -->
 		<div class="item">
@@ -508,56 +508,11 @@
 						<p>우리회사 소개 정보 등등등!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 						!!!!!!!!!!!!!!!!!!! 고객센터 시간, 번호, 회사주소, 회사연락처 등등등!!!!!!!!!!!!!!!!!</p>
 					</div>
-					<!-- <div class="widget">
-						<h3>Join our mailing list and receive exclusives</h3>
-						<form action="#" class="subscribe">
-							<div class="d-flex">
-								<input type="email" class="form-control" placeholder="Email address">
-								<input type="submit" class="btn btn-black" value="Subscribe">
-							</div>
-						</form>
 
-						
-					</div> -->
 				</div>
 				
 				
-<!-- 				<div class="col-lg-2">
-					<div class="widget">
-						<h3>Help</h3> 
-						<ul class="list-unstyled">
-							<li><a href="#">Contact us</a></li>
-							<li><a href="#">Account</a></li>
-							<li><a href="#">Shipping</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="#">FAQ</a></li>   
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2">
-					<div class="widget">
-						<h3>About</h3>
-						<ul class="list-unstyled">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Press</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Team</a></li>
-							<li><a href="#">FAQ</a></li>   
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2">
-					<div class="widget">
-						<h3>Shop</h3>
-						<ul class="list-unstyled">
-							<li><a href="#">Store</a></li>
-							<li><a href="#">Gift Cards</a></li>
-							<li><a href="#">Student Discount</a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div> -->
+
 
 
 			<div class="row mt-5">
