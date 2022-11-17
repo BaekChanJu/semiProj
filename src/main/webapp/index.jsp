@@ -167,7 +167,7 @@
 	<!--  이달의 이벤트 슬라이더 사진1  -->
 	<div class="owl-carousel owl-single home-slider">
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('resources/images/hero-slider-1-min.jpg');">
+			<div class="untree_co-hero" style="background-image: url('resources/images/이달의이벤트1.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
@@ -186,7 +186,7 @@
 
 	<!--  이달의 이벤트 슬라이더 사진2  -->
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('resources/images/hero-slider-2-min.jpg');">
+			<div class="untree_co-hero" style="background-image: url('resources/images/이달의이벤트2.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
@@ -213,7 +213,7 @@
 		<div class="container">
 
 
-			<div class="deal-hero overlay" style="background-image: url('resources/images/hero-slider-4-min.jpg')"> 
+			<div class="deal-hero overlay" style="background-image: url('resources/images/MD겨울추천.gif')"> 
 				<div class="deal-contents">
 					<span class="subtitle">MD추천상품이야</span>
 					<h2 class="title mb-4"><a href="#">겨울 추천!</a></h2>
@@ -363,7 +363,7 @@
 	<div class="container">
 
 
-		<div class="deal-hero overlay" style="background-image: url('resources/images/hero-slider-3-min.jpg')"> 
+		<div class="deal-hero overlay" style="background-image: url('resources/images/스타일게시판.gif')"> 
 			<div class="deal-contents">
 				<span class="subtitle">빈티지의류 착샷을 올려주세요</span>
 				<h2 class="title mb-4"><a href="#">스타일샷 게시판</a></h2>

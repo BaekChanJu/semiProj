@@ -89,9 +89,9 @@
 						<li class="has-children">
 							<a href="shop.jsp">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="#">Q & A</a></li>
-								<li><a href="#">STYLE REVIEW</a></li>
-								<li><a href="#">자유 게시판</a></li>
+								<li><a href="qnA.do">Q & A</a></li>
+								<li><a href="styleReview.do">STYLE REVIEW</a></li>
+								<li><a href="free.do">자유 게시판</a></li>
 							</ul>
 						</li>
 						<!-- Pages 카테고리 -->
@@ -197,7 +197,7 @@
               <div class="product-item">
 
 			<!-- 게시판 틀 -->
-			
+			<form action="">
 			<table id = "ins">
 			<tr>
 				<th bgcolor="white" width="300">번호</th>
@@ -207,17 +207,18 @@
 				<th bgcolor="white" width="300">조회수</th>
 				<th><a href='write.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
 			</tr>
-			<c:forEach items="${boardList}" var="board">
+			<!-- qna 게시판 목록보기 -->
+			<c:forEach items="${qnA}" var="qna">
 				<tr>
-					<td>${board.seq}</td>
-					<td align="left"><a href="getBoard.do?seq=${board.seq}">
-							${board.title}</a></td>
-					<td>${board.writer}</td>
-					<td><fmt:formatDate value="${board.regDate}" pattern="yyyy-MM-dd"/></td>
-					<td>${board.cnt}</td>
+					<td>${qna.q_id}</td><!-- qna 게시판 번호 -->
+					<td align="left">${qna.q_title}</td><!-- qna 게시판 제목 -->
+					<td>${qna.m_id}</td><!-- qna 게시판 회원 아이디 -->
+					<td>"${qna.q_date}</td><!-- qna 게시판 작성 날짜 -->
+					<td>${qna.q_cnt}</td><!-- qna 게시판 조회수 -->
 				</tr>
 			</c:forEach>
 		</table>
+		</form>
 	
 
     <div id="overlayer"></div>

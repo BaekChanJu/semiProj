@@ -89,9 +89,9 @@
 						<li class="has-children">
 							<a href="shop.jsp">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="#">Q & A</a></li>
-								<li><a href="#">STYLE REVIEW</a></li>
-								<li><a href="#">자유 게시판</a></li>
+								<li><a href="qnA.do">Q & A</a></li>
+								<li><a href="styleReview.do">STYLE REVIEW</a></li>
+								<li><a href="free.do">자유 게시판</a></li>
 							</ul>
 						</li>
 						<!-- Pages 카테고리 -->
@@ -218,7 +218,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-
+	
 
     <div id="overlayer"></div>
     <div class="loader">

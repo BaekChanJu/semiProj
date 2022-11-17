@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+
+<!-- 1117 id 이름 joinInput I 대문자입니다!! --> <!-- MemberVO 쓰겠다 ! 별칭설정 완료! -->
+<insert id="joinInput" parameterType="MemberVO">
+      INSERT INTO MEMBER (m_id, m_pass, m_email, m_name, 
+      					 m_tell, m_num, m_addr, m_subaddr) 
+      VALUES (#{m_Id} , #{m_Pass}, #{m_Email}, #{m_Name}, 
+      		#{m_Tell}, #{m_Num}, #{m_Addr}, #{m_SubAddr})
+      
+</insert>
+
+
+<!-- idCheck 동일함수 2개라 동적쿼리로 ㄱ ㄱ -->
+<select id="idCheck"  parameterType="MemberVO" resultType="MemberVO">
+
+
+select *
+from MEMBER
+where m_id = #{m_Id}
+	<if test="m_Pass != null">
+	 AND m_pass=#{m_Pass}
+	 </if>
+
+</select>
+
+
+
+<select id="selectCheck"  parameterType="MemberVO" resultType="MemberVO">
+
+
+select *
+from MEMBER
+where m_id = #{m_Id}
+	
+
+</select>
+
+
+
+
+</mapper>
+
+
