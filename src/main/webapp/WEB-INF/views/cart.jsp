@@ -3,7 +3,7 @@
 <link href="/" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
- <% String pjName = "/SemiProject"; %>
+<% String pjName = "/semiProject"; %>
 
 <head>
   <meta charset="utf-8">
@@ -268,26 +268,7 @@
           </div>
           <!--  클릭시 전체삭제,쇼핑더하기 종료 -->
           
-    <!--       쿠폰이라서 주석 
-    주석처리하니 결제란이 밀림 처리방안 확인
-    쿠폰DB를 만들어 번호, 이벤트내용, 할인내용을 미리 만들어놓고
-    그번호 입력후 클릭시 select로 검색해 쿠폰 번호를 확인해 할인코드반영..?
-    이미지 넣어보고 안될경우 쿠폰 사용
-    
-    	<div class="row">
-            <div class="col-md-12">
-              <label class="text-black h4" for="coupon">Coupon</label>
-              <p>Enter your coupon code if you have one.</p>
-            </div>
-            <div class="col-md-8 mb-3 mb-md-0">
-              <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
-            </div>
-            <div class="col-md-4">
-              <button class="btn btn-black">Apply Coupon</button>
-            </div>
-          </div>
-        </div>
-        -->
+
         <div class="row">
             <div class="col-md-12">
         <img src="<%=pjName%>/resources/images/products/tt.png" alt="Image" class="img-fluid">

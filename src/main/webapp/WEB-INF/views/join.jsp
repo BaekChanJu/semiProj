@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <!-- 1117일 추가 --> 
+ <% String pjName = "/semiProject"; %>   
+    
 <!DOCTYPE html>
 <html>
 
@@ -9,12 +12,11 @@
     <meta charset="UTF-8">
     <title>VINTEGER 회원가입</title>
     
-   <!-- 1117일 추가 --> 
- <% String pjName = "/semiProject"; %>   
-    
-    <link rel="stylesheet" href="style.css">
+ 
+    <link rel="stylesheet" href="<%=pjName %>/resources/css/style.css">
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script  src="<%=pjName %>/resources/js/joinInput.js"></script>
-    <script src="login.js"></script>
+    
 
 </head>
 
@@ -25,7 +27,7 @@
         <header>
             <!--빈티저 LOGO 사진 과 누르면 메인화면으로 돌아가요!-->
             <div class="logo">
-                <a href="http://localhost:8080/SemiProject/index.jsp" target="_blank" title="빈티져 홈페이지"><img src="/semiProject/resources/images/products/join.jpg"
+                <a href="http://localhost:8080/semiProject/index.jsp" target="_blank" title="빈티져 홈페이지"><img src="/semiProject/resources/images/회원가입배너.jpg"
                         class="image"></a>
             </div>
         </header>
@@ -39,19 +41,19 @@
 
                 <h3>아이디</h3>
                 <span class="signup-input">
-                    <input id="signup-id" name='m_Id' type="text"></input>
-                    <span id="idCheckResult" class="signup-at">중복된 아이디</span>
+                    <input id="signup-id" name='m_Id' type="text" required></input>
+                    <span id="idCheckResult" class="signup-at" ></span>
                 </span>
 
                 <h3>비밀번호</h3>
                 <span class="signup-input">
-                    <input id="signup-pw" name='m_Pass' type="text"></input>
+                    <input id="signup-pw" name='m_Pass' type="text" required></input>
                     <span class="pw-lock"></span>
                 </span>
 
                 <h3>이메일</h3>
                 <span class="signup-input">
-                    <input id="signup-pww" name='m_Email' name="signup-pww" type="text" placeholder="ex)abc@naver.com" required></input>
+                    <input id="signup-pww" name='m_Email'  type="text" placeholder="ex)abc@naver.com" required></input>
                 </span>
 
             </div>
@@ -60,29 +62,29 @@
                 <!--이름,생년월일,성별,이메일-->
                 <h3>이름</h3>
                 <span class="signup-input">
-                    <input id="signup-name" name='m_Name' type="text"></input>
+                    <input id="signup-name" name='m_Name' type="text" required></input>
                 </span>
 
                 <h3>핸드폰</h3>
                 <span class="signup-input">
-                    <input id="signup-tel" name='m_Tell' type="text"></input>
+                    <input id="signup-tel" name='m_Tell' type="text" required></input>
                 </span>
 
                 <h3>주소입력</h3>
            	  <p>빈티저주소찾기</p>
  				 <h3>우편번호</h3> <!-- 1117일추가 -->
                 <span class="signup-input">
-                  <input class="signup-input" id="member_post" name='m_Num'  type="text" placeholder="우편번호" readonly onclick="findAddr()">
+                  <input class="signup-input" id="member_post" name='m_Num'  type="text" placeholder="우편번호" readonly onclick="findAddr()" required>
                 </span>
                 
                  <h3>주소</h3> <!-- 1117일추가 -->
                 <span class="signup-input">
-                   <input class="signup-input" id="member_addr"  name='m_Addr' type="text" placeholder="주소" ><br>
+                   <input class="signup-input" id="member_addr"  name='m_Addr' type="text" placeholder="주소" required><br>
                 </span>
  				 
                  <h3>상세주소</h3> <!-- 1117일추가 -->
                 <span class="signup-input">
-                    <input class="signup-input" id="member_subaddr" name='m_SubAddr' type="text"></input>
+                    <input class="signup-input" id="member_subaddr" name='m_SubAddr' type="text" required></input>
                 </span>
 
             </div>

@@ -49,7 +49,7 @@ public class MemberController {
 		}else {
 			//로그인 성공경우 세션에 저장 중요!!!!
 			session.setAttribute("login", memberVO.getM_Id());
-			return "login";
+			return "index";
 		
 		}
 	}
@@ -66,9 +66,9 @@ public class MemberController {
 		@ResponseBody
 		public String checkId(MemberVO memberVO) {
 			
-			//System.out.println("idCheck.od 요청" + memberVO.getUserId());
+			//System.out.println("idCheck.od 요청" + memberVO);
 			
-			MemberVO result = memberService.idCheck_Login(memberVO);
+			MemberVO result = memberService.userSelectCheck(memberVO);
 			String message = "사용가능아이디입니다";
 			if(result != null) message = "중복된 아이디가 있습니당";
 			

@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
- <% String pjName = "/SemiProject"; %>
+<% String pjName = "/semiProject"; %>
 
 <head>
   <meta charset="utf-8">

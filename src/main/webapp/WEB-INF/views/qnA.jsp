@@ -205,13 +205,13 @@
 				<th bgcolor="white" width="600">작성자</th>
 				<th bgcolor="white" width="600">등록일</th>
 				<th bgcolor="white" width="300">조회수</th>
-				<th><a href='write.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
+				<th><a href='qnawrite.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
 			</tr>
 			<!-- qna 게시판 목록보기 -->
 			<c:forEach items="${qnA}" var="qna">
 				<tr>
 					<td>${qna.q_id}</td><!-- qna 게시판 번호 -->
-					<td align="left">${qna.q_title}</td><!-- qna 게시판 제목 -->
+					<td align="left"><a href="qnalist.do">${qna.q_title}</a></td><!-- qna 게시판 제목 -->
 					<td>${qna.m_id}</td><!-- qna 게시판 회원 아이디 -->
 					<td>"${qna.q_date}</td><!-- qna 게시판 작성 날짜 -->
 					<td>${qna.q_cnt}</td><!-- qna 게시판 조회수 -->

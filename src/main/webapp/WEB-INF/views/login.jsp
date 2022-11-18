@@ -29,8 +29,10 @@
                 <label for="password">비밀번호</label>
             </div>
             
+         
             <input type="submit" value="로그인">
-            
+             
+             
             <a href = "join.do">
             <input type="button" value="회원가입" >
             </a>

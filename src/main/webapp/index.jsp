@@ -163,7 +163,6 @@
 		</div>
 	</nav>
 
-
 	<!--  이달의 이벤트 슬라이더 사진1  -->
 	<div class="owl-carousel owl-single home-slider">
 		<div class="item">
@@ -172,11 +171,11 @@
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">무슨이벤트인가 <a href="https://untree.co">색포인트</a></h1>
+							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Vintagere 겨울맞이<br><a href="https://untree.co">할인이벤트</a></h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
-							<!-- eventSale1.do -->
-							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="eventSale1.do" class="btn btn-outline-black">눌러!</a></p>
+							<!-- eventSale1.do --> <!-- 크리스마스 상품으로 넘어가는게 아닌 이벤트 배너 만들어서 거기로 넘어가게 하기 -->
+							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="eventSale1.do" class="btn btn-outline-black">click!</a></p>
 
 						</div>
 					</div>
@@ -215,10 +214,10 @@
 
 			<div class="deal-hero overlay" style="background-image: url('resources/images/MD겨울추천.gif')"> 
 				<div class="deal-contents">
-					<span class="subtitle">MD추천상품이야</span>
-					<h2 class="title mb-4"><a href="#">겨울 추천!</a></h2>
-					<p class="mb-5">간단한 이번달 추천상품 이유설명.</p>
-					<a href="mdRecommend.do" class="btn btn-black">눌러!</a>
+					<span class="subtitle">MD의추천상품</span>
+					<h2 class="title mb-4"><a href="#">겨울상품추천</a></h2>
+					<p class="mb-5">차가운 겨울 따듯한 Vintagere에서 </p>
+					<a href="mdRecommend.do" class="btn btn-black">click!</a>
 				</div>
 			</div> <!-- /.deal-hero -->
 

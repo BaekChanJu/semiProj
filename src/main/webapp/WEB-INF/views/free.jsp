@@ -205,7 +205,7 @@
 				<th bgcolor="white" width="600">작성자</th>
 				<th bgcolor="white" width="600">등록일</th>
 				<th bgcolor="white" width="300">조회수</th>
-				<th><a href='write.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
+				<th><a href='freewrite.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
 			</tr>
 			<!-- FREE 게시판 목록  -->
 			<c:forEach items="${free}" var="free">

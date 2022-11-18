@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+div.input-group-text{
+	float: right;
+ 
+}
+
+div#mdcssimg{
+	float: left;
+	 padding: 10px 30px 10px 30px;
+}
+
+
+div#mdcssimg_2{
+	float: bottom;
+
+	 padding: 100px 30px 10px 200px;
+}
+
+div#event1{
+	 padding: 100px 100px 10px 200px;
+}
+
+
+div#event2{
+	 padding: 100px 100px 10px 200px;
+}

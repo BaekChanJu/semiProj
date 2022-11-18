@@ -3,17 +3,43 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
 
-<!-- qna 게시판 목록 보기 -->
-<select id="qnaList" resultType="QnaVO" >
-SELECT *
-FROM qna
-</select>
+	<!-- qna 게시판 목록 보기 -->
+	<select id="qnaList" resultType="QnaVO">
+		SELECT *
+		FROM qna
+		order by q_id desc
+	</select>
 
-<!-- free 게시판 목록 보기 -->
-<select id="freeList" resultType="FreeVO" >
-SELECT *
-FROM free
-</select>
+	<!-- free 게시판 목록 보기 -->
+	<select id="freeList" resultType="FreeVO">
+		SELECT *
+		FROM free
+		order by f_id desc
+	</select>
+
+	<!-- qna 게시판 등록 -->
+	<insert id="qnainsert" parameterType="QnaVO">
+		INSERT INTO qna (q_id,g_cid,m_id,q_title,q_message,q_date,q_pass,q_cnt)
+		VALUES(seq_q_id.nextval,1,1,#{q_title},#{q_message},sysdate,#{q_pass},1)
+	</insert>
+
+
+
+	<!-- free 게시판 등록 -->
+	<insert id="freeinsert" parameterType="FreeVO">
+		INSERT INTO free (f_id,g_cid,m_id,f_title,f_message,f_date,f_pass,f_cnt)
+		VALUES(seq_f_id.nextval,1,1,#{f_title},#{f_message},sysdate,#{f_pass},1)
+	</insert>
+
+
+
+
+
+
+
+
+
+
 
 </mapper>
 

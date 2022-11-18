@@ -2,11 +2,78 @@
  #ins {
   font-family: "Playfair Display", serif;
   color: #black; }
+  
  #ins { style : "boarder"; width: 600px; height: 60px }
+ 
  #mb-4 {
   font-family: "Playfair Display", serif;
   color: #black; }
+  
  #logo menu-absolute m-0{
  font : 60px; 
  }
+ 
+ #m_id{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+ #q_message{
+ border-radius:10px
+ 
+ }
+ 
+  
+ #f_message{
+ border-radius:10px
+ 
+ }
+ 
+ #q_title{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+  #f_title{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+ 
+ #q_pass{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+  
+ #f_pass{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+#button {
+   
+   background-color:sky;
+      transition: 0.7s;  
+    border-radius:10px;
+}
+
+#delete {
+   
+   background-color:sky;
+      transition: 0.7s;  
+    border-radius:10px;
+}
+
+#modi {
+   
+   background-color:sky;
+      transition: 0.7s;  
+    border-radius:10px;
+} 
+
+ 
+ 
+ 
+ 
  

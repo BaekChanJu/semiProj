@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% String pjName = "/semiProject"; %>
+
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,15 +20,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-  <link rel="stylesheet" href="resources/css/animate.min.css">
-  <link rel="stylesheet" href="resources/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="resources/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="resources/css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="resources/fonts/icomoon/style.css">
-  <link rel="stylesheet" href="resources/fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="resources/css/aos.css">
-  <link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/animate.min.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
 
   <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
