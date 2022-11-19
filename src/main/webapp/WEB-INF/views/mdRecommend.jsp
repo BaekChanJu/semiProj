@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <!-- 1119일 토요일 추가 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -217,12 +218,15 @@
             <li><a href="mainAcc.do">ACC <span>919</span></a></li>
           </ul>
         </div>
+        	
+  
         <div class="col-md-9">
           <div class="row">
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
+              <!-- 11.19일 사진 가져오는거 도저히 못하겠음ㅋㅋ -->
                 <a href="mdRecommend상세.do" class="product-img">
-                  <a href="mdRecommend상세.do"><img src="<%=pjName%>/resources/images/베스트메인2.png" alt="Image" class="img-fluid"></a>
+                  <a href="mdRecommend상세.do"><img src="<%=pjName %>/resources/images/upload/${goods.gl_Img1}" width='100' height='50'>${goods.g_Img1}
                 </a>
                 <h3 class="title"><a href="mdRecommend상세.do">Dark Jacket</a></h3>
                 <div class="price">
@@ -230,6 +234,7 @@
                 </div>
               </div>
             </div>
+          
 
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">

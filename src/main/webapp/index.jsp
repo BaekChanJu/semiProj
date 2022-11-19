@@ -166,12 +166,13 @@
 	<!--  이달의 이벤트 슬라이더 사진1  -->
 	<div class="owl-carousel owl-single home-slider">
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('resources/images/이달의이벤트1.gif');">
+			<div class="untree_co-hero" style="background-image: url('resources/images/MD겨울추천.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Vintagere 겨울맞이<br><a href="https://untree.co">할인이벤트</a></h1>
+							<h1  style ="color:#FDFDFD" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Vintagere 겨울맞이<br></h1>
+								<h1  style ="color:#FDFDFD; text-decoration:underline" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Sale Event<br></h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
 							<!-- eventSale1.do --> <!-- 크리스마스 상품으로 넘어가는게 아닌 이벤트 배너 만들어서 거기로 넘어가게 하기 -->
@@ -185,12 +186,13 @@
 
 	<!--  이달의 이벤트 슬라이더 사진2  -->
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('resources/images/이달의이벤트2.gif');">
+			<div class="untree_co-hero" style="background-image: url('resources/images/바다항해.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">무슨이벤트인가 <a href="https://untree.co">색포인트</a></h1>
+							<h1  style ="color:#FDFDFD" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Vintagere 다가온 신년<br></h1>
+								<h1  style ="color:#FDFDFD; text-decoration:underline" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Sale Event<br></h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
 									<!-- eventSale2.do -->
@@ -212,7 +214,7 @@
 		<div class="container">
 
 
-			<div class="deal-hero overlay" style="background-image: url('resources/images/MD겨울추천.gif')"> 
+			<div class="deal-hero overlay" style="background-image: url('resources/images/눈오는시계탑.gif')"> 
 				<div class="deal-contents">
 					<span class="subtitle">MD의추천상품</span>
 					<h2 class="title mb-4"><a href="#">겨울상품추천</a></h2>
@@ -504,8 +506,11 @@
 				<div class="col-lg-5">
 					<div class="widget mb-4">
 						<h3 class="mb-2">Vintagure</h3>
-						<p>우리회사 소개 정보 등등등!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						!!!!!!!!!!!!!!!!!!! 고객센터 시간, 번호, 회사주소, 회사연락처 등등등!!!!!!!!!!!!!!!!!</p>
+						<p>COMPANY: Vintagure 　OWNER: 세즈카　BUSINESS LICENSE: 258-42-00220　ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인]
+CS CENTER: 070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time 1:00pm~2:00pm (Weekends, Public holiday off)
+ADDRESS: 04355 서울특별시 금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙　PERSON IN CHARGE: 세즈카　E - MAIL: Vintagure@naver.com
+BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
+</p>
 					</div>
 
 				</div>
@@ -517,8 +522,8 @@
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<ul class="list-unstyled social">
-						<li><a href="#"><span class="icon-facebook"></span></a></li>
-						<li><a href="#"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.instagram.com/vintagure1234/"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.facebook.com/vintagure"><span class="icon-facebook"></span></a></li>
 					</ul>
 				</div>
 				<div class="col-12 text-center copyright">
