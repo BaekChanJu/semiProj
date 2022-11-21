@@ -6,8 +6,8 @@ div.input-group-text{
 }
 
 div#mdcssimg{
-	float: left;
-	 padding: 10px 30px 10px 30px;
+	float: center;
+	 padding: 10px 30px 10px 200px;
 }
 
 
@@ -25,3 +25,8 @@ div#event1{
 div#event2{
 	 padding: 100px 100px 10px 200px;
 }
+
+div.inputArea{
+	 padding: 0px 0px 0px 190px;
+}
+
