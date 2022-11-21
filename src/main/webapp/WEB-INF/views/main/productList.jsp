@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 
- <link rel="stylesheet" href="<%=pjName%>/resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/bootstrap.min.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/animate.min.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/owl.carousel.min.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/owl.theme.default.min.css">
@@ -29,10 +31,6 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
-  
-  <link rel="stylesheet" href="<%=pjName%>/resources/css/mdRecommend상세.css">
-  
-  
 
   <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
@@ -63,36 +61,33 @@
         <span class="icofont-close js-menu-toggle"></span>
       </div>
     </div>
-    <div class="site-mobile-menu-body" ></div>
+    <div class="site-mobile-menu-body"></div>
   </div>
 
 
 
   <!--  상단 헤더 -->
+	<nav class="site-nav mb-5">
+		<div class="sticky-nav js-sticky-header">
 
-	<nav class="site-nav mb-5"  >
-		<div class="sticky-nav js-sticky-header" >
-		
 			<!--  메인 헤더 우측 상표 홈버튼 -->
-			
-			<div class="container position-relative" >
-			
+			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.jsp" class="logo menu-absolute m-0" >Vintagere<span class="text-primary">.</span></a>
+					<a href="index.jsp" class="logo menu-absolute m-0">Vintagere<span class="text-primary">.</span></a>
 
 					<!--  메인 헤더 중앙 카테고리  -->
-					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu"  style="background-image: url('<%=pjName%>/resources/images/MD추천맨윗단.gif')" >> >
+					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
 					
 						<!-- Vintagure 카테고리  -->
 							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
 						<li class="has-children">
 							<a href="mainOuter.do">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="mainOuter.do">OUTER</a></li>
-								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottom.do">BOTTOM</a></li>
-								<li><a href="mainShoes.do">SHOES</a></li>
-								<li><a href="mainAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -110,11 +105,11 @@
 						<li class="has-children">
 							<a href="manOuter.do">MAN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=20">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=20">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -122,11 +117,11 @@
 						<li class="has-children">
 							<a href="womanOuter.do">WOMAN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=30">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=30">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=30">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
@@ -174,9 +169,8 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <!-- 이름대신 배너 넣음 -->
-           <img src="<%=pjName%>/resources/images/MD추천배너1.jpg" alt="Image" class="md_img">
-          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>이달의 이벤트 MD추천 특별기획</strong></p>        
+          <h1>VINTAGERE</h1>  
+          <p class="mb-4">Shop / <strong>${sc_Name}</strong></p>        
         </div>
       </div>
     </div>
@@ -192,102 +186,141 @@
         <div class="col-lg-4">
 
           <div class="d-flex sort align-items-center justify-content-lg-end">
+            <strong class="mr-3">Sort by:</strong>
+            <form action="priceNum.do" method="post">
+              <select class='required' name='priceNum'>
+                <option>정렬</option>
+                <option value="1">낮은 가격순</option>
+				<option value="2">높은 가격순</option>
+              </select>
+              <input type="submit" id='priceNum' value="검색">
+            </form>
           </div>
         </div>
       </div>
-      
 
       <div class="row">
 
         <div class="col-md-3">
           <ul class="list-unstyled categories">
-          <!-- 1118링크 수정과 이름까지 수정 ! -->
-            <li><a href="mainOuter.do">OUTER <span>2,919</span></a></li>
-            <li><a href="mainTop.do">TOP <span>5,381</span></a></li>
-            <li><a href="mainBottm.do">BOTTM <span>7,119</span></a></li>
-            <li><a href="mainShoes.do">SHOES <span>1,012</span></a></li>
-            <li><a href="mainAcc.do">ACC <span>919</span></a></li>
+            <li><a href="mainOuter.do">OUTER <span>${goodsList.size()}</span></a></li>
+            <li><a href="mainTop.do">TOP <span>${goodsList.size()}</span></a></li>
+            <li><a href="mainBottom.do">BOTTOM <span>${goodsList.size()}</span></a></li>
+            <li><a href="mainShoes.do">SHOES <span>${goodsList.size()}</span></a></li>
+            <li><a href="mainAcc.do">ACC <span>${goodsList.size()}</span></a></li>
+
           </ul>
         </div>
-        
-        <!-- 사진예시용 하나넣어둠 -->
-        <div class="eximg" id = "mdcssimg">
-       <img src="<%=pjName%>/resources/images/베스트메인2.png" alt="Image" class="md_ex_img">
-       </div>
-       
-       <!-- 상품명 -->
-        <div class="orderInfo" id = "mdcss">
-        
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="mdcss">상품명</span>
-          </div>
-          <input type="text" class="form-control" aria-label="default" aria-describedby="inputGroup-sizing-default">
-        </div>
-        
-        <!-- 가격 -->
-         <div class="input-group mb-3" id = "mdcss">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">가격</span>
-          </div>
-          <input type="text" class="form-control" aria-label="default" aria-describedby="inputGroup-sizing-default">
-        </div>
-        
-        
-        <!-- 재고 -->
-        <div class="input-group mb-3" id = "mdcss">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">재고</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>수량을 선택하세요</option>
-            <option value="1">1개</option>
-            <option value="2">2개</option>
-            <option value="3">3개</option>
-          </select>
-        </div>
-        
-                  
-        <!-- 수량 -->
-        <div class="input-group mb-3" id = "mdcss">
-          <div class="input-group-prepend">
-         
-            <span class="input-group-text" id="basic-addon4">수량</span>
-          </div>
-           <button type ="button" >+</button>
-          <input type="text" class="form-control" aria-label="default" aria-describedby="inputGroup-sizing-default">
-            <button type="button">-</button>
-        
-        </div>
-        
-                  <!-- 장바구니,바로주문버튼 -->
-      <div class="cart__mainbtns" id = "carts">
-            <button class="btn btn-outline-black btn-sm btn-block">장바구니</button>
-            <button class="btn btn-outline-black btn-sm btn-block">바로주문</button>
-        </div> 
-        
-  
-    </div>
-    
 
-  
-    
+            
+            
+          <div class="col-md-9">
+          <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
+          <c:set var="count" value="1" />
+        	<table>
+        	<tr>
+           <div class="product-item">
+           <c:forEach items="${goodsList}" var="goods">
 
-<!-- 사진예시용 하나넣어둠 -->
-        <div class="eximg" id = "mdcssimg_2">
-       <img src="<%=pjName%>/resources/images/베스트상세2_1.png" alt="Image" class="md_ex_img2">
-       </div>
-       
-       <!-- 사진예시용 하나넣어둠 -->
-        <div class="eximg" id = "mdcssimg_2">
-       <img src="<%=pjName%>/resources/images/베스트상세2_1.png" alt="Image" class="md_ex_img3">
-       </div>
-       
+                <td><a href="<%=pjName%>/goodsPage.do?g_Id=${goods.g_Id}" class="product-img">
+                  <img src="<%=pjName%>/resources/images/upload/${goods.gl_Img1} " width="280" height="350">
+                </a><br/>
+                <h3 class="title"><a href="#">${goods.g_Name}</a></h3><br/>
+                  <span>${goods.g_Price}</span>
+                </td>
+                <c:if test="${count %3 ==0}">
+                </tr><tr>
+                
+                </c:if>                
+                 <c:set var="count" value='${count+1}'/>
+                </c:forEach>   
+               
+              
+			</div>
+			</tr>
 
-                 
+			</table>
+
+
+
+           
+
+
+          <div class="row mt-5 pb-5">
+            <div class="col-lg-12">
+              <div class="custom-pagination">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                      </svg>                      
+                    </a>
+                  </li>
+                  <li class="active"><span>1</span></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+</div></div>
+        </div>
+      </div>
+    </div> <!-- /.untree_co-section -->
 
    
 
+
+	<div class="site-footer">
+
+
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="widget mb-4">
+						<h3 class="mb-2">Vintagure</h3>
+						<p>COMPANY: Vintagure 　OWNER: 세즈카　BUSINESS LICENSE: 258-42-00220　ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인]
+CS CENTER: 070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time 1:00pm~2:00pm (Weekends, Public holiday off)
+ADDRESS: 04355 서울특별시 금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙　PERSON IN CHARGE: 세즈카　E - MAIL: Vintagure@naver.com
+BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
+</p>
+					</div>
+
+				</div>
+				
+				
+
+
+
+			<div class="row mt-5">
+				<div class="col-12 text-center">
+					<ul class="list-unstyled social">
+						<li><a href="https://www.instagram.com/vintagure1234/"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.facebook.com/vintagure"><span class="icon-facebook"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-12 text-center copyright">
+					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+					</p>
+
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.site-footer -->
 
     <div id="overlayer"></div>
     <div class="loader">

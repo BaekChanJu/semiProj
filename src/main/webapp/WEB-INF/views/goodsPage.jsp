@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <!-- 1119일 토요일 추가 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +30,7 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
   
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/mdRecommend상세.css">
   
   
 
@@ -40,7 +40,7 @@
 <body>
 
   <div class="search-form" id="search-form">
-    <form action=".do">
+    <form action="">
       <input type="search" class="form-control" placeholder="Enter keyword to search...">
       <button class="button">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -70,29 +70,27 @@
 
   <!--  상단 헤더 -->
 
-	<nav class="site-nav mb-5"  >
-		<div class="sticky-nav js-sticky-header" >
-		
+	<nav class="site-nav mb-5">
+		<div class="sticky-nav js-sticky-header">
+
 			<!--  메인 헤더 우측 상표 홈버튼 -->
-			
-			<div class="container position-relative" >
-			
+			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.do" class="logo menu-absolute m-0" >Vintagere<span class="text-primary">.</span></a>
+					<a href="index.jsp" class="logo menu-absolute m-0">Vintagere<span class="text-primary">.</span></a>
 
 					<!--  메인 헤더 중앙 카테고리  -->
-					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu"  style="background-image: url('<%=pjName%>/resources/images/MD추천맨윗단.gif')" >> >
+					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
 					
 						<!-- Vintagure 카테고리  -->
 							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
 						<li class="has-children">
 							<a href="mainOuter.do">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="mainOuter.do">OUTER</a></li>
-								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottom.do">BOTTOM</a></li>
-								<li><a href="mainShoes.do">SHOES</a></li>
-								<li><a href="mainAcc.do">ACC</a></li>
+								<li><a href="<%=pjName%>/main/mainOuter.do">OUTER</a></li>
+								<li><a href="<%=pjName%>/main/mainTop.do">TOP</a></li>
+								<li><a href="<%=pjName%>/main/mainBottom.do">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/main/mainShoes.do">SHOES</a></li>
+								<li><a href="<%=pjName%>/main/mainAcc.do">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -100,9 +98,9 @@
 						<li class="has-children">
 							<a href="qnA.do">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="qnA.do">Q & A</a></li>
-								<li><a href="styleReview.do">STYLE REVIEW</a></li>
-								<li><a href="free.do">자유 게시판</a></li>
+								<li><a href="<%=pjName%>/qnA.do">Q & A</a></li>
+								<li><a href="<%=pjName%>/styleReview.do">STYLE REVIEW</a></li>
+								<li><a href="<%=pjName%>/free.do">자유 게시판</a></li>
 							</ul>
 						</li>
 						
@@ -110,11 +108,11 @@
 						<li class="has-children">
 							<a href="manOuter.do">MAN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="<%=pjName%>/man/manOuter.do">OUTER</a></li>
+								<li><a href="<%=pjName%>/man/manTop.do">TOP</a></li>
+								<li><a href="<%=pjName%>/man/manBottom.do">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/man/manShoes.do">SHOES</a></li>
+								<li><a href="<%=pjName%>/man/manAcc.do">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -122,11 +120,11 @@
 						<li class="has-children">
 							<a href="womanOuter.do">WOMAN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="<%=pjName%>/woman/womanOuter.do">OUTER</a></li>
+								<li><a href="<%=pjName%>/woman/womanTop.do">TOP</a></li>
+								<li><a href="<%=pjName%>/woman/womanBottom.do">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/woman/womanShoes.do">SHOES</a></li>
+								<li><a href="<%=pjName%>/woman/womanAcc.do">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
@@ -176,7 +174,7 @@
         <div class="col-lg-7 mx-auto">
           <!-- 이름대신 배너 넣음 -->
            <img src="<%=pjName%>/resources/images/MD추천배너1.jpg" alt="Image" class="md_img">
-          <p class="mb-4"><a href="index.do">Home</a> / <strong>이달의 이벤트 MD추천 특별기획</strong></p>        
+          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>이달의 이벤트 MD추천 특별기획</strong></p>        
         </div>
       </div>
     </div>
@@ -185,107 +183,91 @@
   <div class="untree_co-section pt-3">
     <div class="container">
 
-      <div class="row align-items-center mb-5">
-        <div class="col-lg-8">
-          <h2 class="mb-3 mb-lg-0">카테고리</h2>
-        </div>
-        <div class="col-lg-4">
-
-          <div class="d-flex sort align-items-center justify-content-lg-end">
-            <strong class="mr-3">Sort by:</strong>
-            <form action="#">
-              <select class="" required>
-              <!-- 1118일 가격높은순 낮은순만 남겨놓음 -->
-                <option value="1">Price: Ascending</option>
-                <option value="2">Price: Descending</option>
-              </select>
-            </form>
-          </div>
-        </div>
-      </div>
-
       <div class="row">
 
-        <div class="col-md-3">
-          <ul class="list-unstyled categories">
-          
-          
-          <!-- 1118링크 수정과 이름까지 수정 ! -->
-            <li><a href="mainOuter.do">OUTER <span>2,919</span></a></li>
-            <li><a href="mainTop.do">TOP <span>5,381</span></a></li>
-            <li><a href="mainBottm.do">BOTTM <span>7,119</span></a></li>
-            <li><a href="mainShoes.do">SHOES <span>1,012</span></a></li>
-            <li><a href="mainAcc.do">ACC <span>919</span></a></li>
-          </ul>
-        </div>
-        	
-        	
-            
-          <div class="col-md-9">
-          <div class="row">
-          <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-          <c:set var="count" value="1" />
-        	<table>
-        	<tr>
-           <div class="product-item">
-           <c:forEach items="${mdList}" var="mds">
 
-                <td><a href="goodsPage.do?g_Id=${mds.g_Id}" class="product-img">
-                  <img src="<%=pjName%>/resources/images/upload/${mds.gl_Img1} " width="280" height="350">
-                </a><br/>
-                <h3 class="title"><a href="#">${mds.g_Name}</a></h3><br/>
-                  <span>${mds.g_Price}</span>
-                </td>
-                <c:if test="${count %3 ==0}">
-                </tr><tr>
-                
-                </c:if>                
-                 <c:set var="count" value='${count+1}'/>
-                </c:forEach>   
-               
-              
-			</div>
-			</tr>
-
-			</table>
-
-          
-
-          <div class="row mt-5 pb-5">
-            <div class="col-lg-12">
-              <div class="custom-pagination">
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#">
-                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
-                        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                      </svg>                      
-                    </a>
-                  </li>
-                  <li class="active"><span>1</span></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#">
-                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
-                        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        
+        <!-- 사진예시용 하나넣어둠 -->
+        <div class="eximg" id = "mdcssimg">
+       <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img1}"  width="400" height="350 alt="Image" class="md_ex_img">
+       </div>
+       
+       <!-- 상품명 -->
+        <div class="orderInfo" id = "mdcss">
+        
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="mdcss">상품명</span>
           </div>
-
-
+          <input  type="text" id="g_Name" class="form-control" name="g_Name" value='${goods.g_Name}' >
         </div>
-      </div>
-    </div> <!-- /.untree_co-section -->
+        
+        <!-- 가격 -->
+         <div class="input-group mb-3" id = "mdcss">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">가격</span>
+          </div>
+          <input type="text" class="form-control" value='${goods.g_Price} 원'>
+        </div>
+        
+        
+        <!-- 재고 -->
+        <div class="input-group mb-3" id = "mdcss">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">재고</label>
+          </div>
+           <input type="text" class="form-control" value='${goods.g_Stock}' >
+        </div>
+        
+                  
+        <!-- 수량 -->
+        <div class="input-group mb-3" id = "mdcss">
+          <div class="input-group-prepend">
+         
+            <span class="input-group-text" id="basic-addon4">수량</span>
+          </div>
+           <div class="input-group-prepend">
+               <button class="btn btn-outline-black js-btn-minus" type="button">&minus;</button>
+           </div>
+           <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+           <div class="input-group-append">
+               <button class="btn btn-outline-black js-btn-plus" type="button">&plus;</button>
+           </div>
+        
+        </div>
+        
+                  <!-- 장바구니,바로주문버튼 -->
+      <div class="cart__mainbtns" id = "carts">
+            <button class="btn btn-outline-black btn-sm btn-block">장바구니</button>
+            <button class="btn btn-outline-black btn-sm btn-block">바로주문</button>
+        </div> 
+        
+  
+    </div>
+    
 
+  
+    
+
+<!-- 사진예시용 하나넣어둠 -->
+        <div class="eximg" id = "mdcssimg_2">
+       <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img2}" width='830' height='630'>
+       </div>
+       
+       <!-- 사진예시용 하나넣어둠 -->
+        <div class="eximg" id = "mdcssimg_2">
+       <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img3}" width='830' height='630' alt="Image" class="md_ex_img3"><br/><br/><br/><br/>
+       </div>
+       <!--  상품 설명 -->
+		<div class="inputArea">
+			<textarea rows="10" cols="100" id="g_Message" style="border: none" name="g_Message">${goods.g_Message}</textarea>
+		</div>
+       
+
+                 
+</div>
+</div>
+</div>
    
 
 

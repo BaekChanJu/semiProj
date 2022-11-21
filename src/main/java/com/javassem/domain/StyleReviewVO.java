@@ -1,5 +1,11 @@
 package com.javassem.domain;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class StyleReviewVO {
 
 	//StyleReview 게시판 VO
@@ -13,6 +19,35 @@ public class StyleReviewVO {
 	String s_pass;		//StyleReview 게시판 패스워드
 	int s_cnt; 			//StyleReview 게시판 조회수
 	String s_img; 		//StyleReview 게시판 착용샷 이미지
+	
+	
+	MultipartFile file1;
+	
+	public MultipartFile getFile1() {
+		return file1;
+	}
+	
+	public void setFile1(MultipartFile file1) {
+		this.file1 = file1;
+		
+		if (!file1.isEmpty()) {
+
+			this.s_img = file1.getOriginalFilename();
+			
+
+			UUID uuid = UUID.randomUUID();
+			this.s_img = uuid.toString() + "_" + s_img;
+
+			File f = new File("D:\\springweb\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + s_img);
+			
+
+			try {
+				file1.transferTo(f);
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
 	//setter,getter
 	public int getS_id() {

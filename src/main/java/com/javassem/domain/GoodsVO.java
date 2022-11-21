@@ -48,7 +48,7 @@ public class GoodsVO {
 			this.gl_Img1 = uuid.toString() + "_" + g_Img1;
 
 			File f = new File("D:\\springweb\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + gl_Img1);
-			
+			//File f = new File("C:\\Users\\dkfma\\Spring\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + gl_Img1);
 
 			try {
 				file1.transferTo(f);
@@ -72,7 +72,7 @@ public class GoodsVO {
 			this.gl_Img2 = uuid.toString() + "_" + g_Img2;
 
 			File f = new File("D:\\springweb\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + gl_Img2);
-			
+			//File f = new File("C:\\Users\\dkfma\\Spring\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + gl_Img2);
 			
 			try {
 				file2.transferTo(f);
@@ -96,7 +96,7 @@ public class GoodsVO {
 			this.gl_Img3 = uuid.toString() + "_" + g_Img3;
 
 			File f = new File("D:\\springweb\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + gl_Img3);
-			
+			//File f = new File("C:\\Users\\dkfma\\Spring\\semiProject\\src\\main\\webapp\\resources\\images\\upload\\" + gl_Img3);
 
 			try {
 				file3.transferTo(f);

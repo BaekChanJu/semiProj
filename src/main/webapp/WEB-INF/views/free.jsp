@@ -211,7 +211,7 @@
 			<c:forEach items="${free}" var="free">
 				<tr>
 					<td>${free.f_id}</td><!-- FREE 게시판 번호  -->
-					<td align="left">${free.f_title}</td><!-- FREE 게시판 제목  -->
+					<td align="left"><a href="freelist.do?f_id=${free.f_id}">${free.f_title}</a></td><!-- FREE 게시판 제목  -->
 					<td>${free.m_id}</td><!-- FREE 게시판 회원 아이디  -->
 					<td>"${free.f_date}</td><!-- FREE 게시판 작성날짜  -->
 					<td>${free.f_cnt}</td><!-- FREE 게시판 목록  -->

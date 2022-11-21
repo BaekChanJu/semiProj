@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
+<% String pjName = "/semiProject1"; %>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/animate.min.css">
   <link rel="stylesheet" href="resources/css/owl.carousel.min.css">
   <link rel="stylesheet" href="resources/css/owl.theme.default.min.css">
@@ -27,7 +28,7 @@
   <link rel="stylesheet" href="resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="resources/css/aos.css">
   <link rel="stylesheet" href="resources/css/style.css">
-	<link rel="stylesheet" href="resources/css/mystyle.css">
+  <link rel="stylesheet" href="resources/css/mystyle.css">
 
   <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
@@ -170,14 +171,15 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <h1>QnA게시판</h1>  
-          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>QnA</strong></p>        
+          <h1>${freedetail.f_title}</h1>  
+          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>글</strong></p>        
         </div>
       </div>
     </div>
   </div>
 <!-- 게시판 목록 -->
   <div class="untree_co-section pt-3">
+
     <div class="container">
 
       <div class="row align-items-center mb-5">
@@ -190,37 +192,36 @@
             <li><a href="free.do">자유 게시판</a></li>
             <li><a href="styleReview.do">Style 게시판</a></li>
           </ul>
-        </div>
+        </div>	
         <div class="col-md-9">
           <div class="row">
+          
             <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
               <div class="product-item">
 
 			<!-- 게시판 틀 -->
-			<form action="">
-			<table id = "ins">
-			<tr>
-				<th bgcolor="white" width="300">번호</th>
-				<th bgcolor="white" width="500">제목</th>
-				<th bgcolor="white" width="600">작성자</th>
-				<th bgcolor="white" width="600">등록일</th>
-				<th bgcolor="white" width="300">조회수</th>
-				<th><a href='qnawrite.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
-			</tr>
-			<!-- qna 게시판 목록보기 -->
-			<c:forEach items="${qnA}" var="qna">
-				<tr>
-					<td>${qna.q_id}</td><!-- qna 게시판 번호 -->
-					<td align="left"><a href="qnalist.do?q_id=${qna.q_id}">${qna.q_title}</a></td><!-- qna 게시판 제목 -->
-					<td>${qna.m_id}</td><!-- qna 게시판 회원 아이디 -->
-					<td>"${qna.q_date}</td><!-- qna 게시판 작성 날짜 -->
-					<td>${qna.q_cnt}</td><!-- qna 게시판 조회수 -->
-				</tr>
-			</c:forEach>
-		</table>
-		</form>
+	<form action="freemodi.do" id ="freemodi" name="freemodi" method="post">
+   	 <table id="gtext" >
+   	  <input type="hidden" name='f_id' value='${freedetail.f_id}'>
+      <tr>
+      <td>제목</td>
+      
+      <td><input type="text" name="f_title" id="f_title" value="${freedetail.f_title}"/></td>
+      </tr>
+	  <tr>
+	  <td>내용</td>
+	  <td><textarea name="f_message" id="f_message" cols="73" rows="10">${freedetail.f_message}</textarea></td>
+	  </tr>
+    </table>
+    	<input id="modi" type= "submit" value="수정"/>
+    	<a href="freedelete.do?f_id=${freedetail.f_id}">
+    	  <input id="modi" type= "button" value="삭제"/>
+    	 </a>
+</form>
+	
 	
 
+	
     <div id="overlayer"></div>
     <div class="loader">
       <div class="spinner-border" role="status">
@@ -237,7 +238,7 @@
     <script src="resources/js/jquery.sticky.js"></script>
     <script src="resources/js/aos.js"></script>
     <script src="resources/js/custom.js"></script>
-    
-  </body>
 
+ 
+  </body>
   </html>

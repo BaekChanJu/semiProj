@@ -33,6 +33,8 @@
 		<value>com.javassem.domain.QnaVO</value>
 		<value>com.javassem.domain.FreeVO</value>
 		<value>com.javassem.domain.StyleReviewVO</value>
+		
+		
   	</list>
   </property>
 </bean>

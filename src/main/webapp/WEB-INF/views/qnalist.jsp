@@ -171,8 +171,8 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <h1>QnA게시판 글 수정</h1>  
-          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>글수정</strong></p>        
+          <h1>${qnadetail.q_title}</h1>  
+          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>글</strong></p>        
         </div>
       </div>
     </div>
@@ -200,26 +200,28 @@
               <div class="product-item">
 
 			<!-- 게시판 틀 -->
-			<form action="writeon.do" method="post">
-   	<table id="gtext" >
-      
+	<form action="qnadmodi.do" id ="qnadmodi" name="qnadmodi" method="post">
+   	 <table id="gtext" >
+   	  <input type="hidden" name='q_id' value='${qnadetail.q_id}'>
       <tr>
       <td>제목</td>
-      <td><input type="text" name="q_title" id="q_title" /></td>
-      </tr></hr>
+      
+      <td><input type="text" name="q_title" id="q_title" value="${qnadetail.q_title}"/></td>
+      </tr>
 	  <tr>
-	  <td id="me">내용</td>
-	  <td><textarea name="q_message" id="q_message" cols="73" rows="10" ></textarea></td>
+	  <td>내용</td>
+	  <td><textarea name="q_message" id="q_message" cols="73" rows="10">${qnadetail.q_message}</textarea></td>
 	  </tr>
     </table>
-   
-		 <td colspan="2"><button type="submit" id="delete">수정</button>
-         <td colspan="2"><button type="submit" id="modi">삭제</button></td>
+    	<input id="modi" type= "submit" value="수정"/>
+    	<a href="qnadelete.do?q_id=${qnadetail.q_id}">
+    	  <input id="modi" type= "button" value="삭제"/>
+    	 </a>
 </form>
-
-
+	
 	
 
+	
     <div id="overlayer"></div>
     <div class="loader">
       <div class="spinner-border" role="status">

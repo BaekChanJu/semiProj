@@ -31,13 +31,64 @@
 		VALUES(seq_f_id.nextval,1,1,#{f_title},#{f_message},sysdate,#{f_pass},1)
 	</insert>
 
+	<!-- qna 게시판 상세 보기 -->
+	<select id="qnadetail" resultType="QnaVO">
+		SELECT *
+		FROM qna
+		WHERE q_id = #{q_id}
+	</select>
+	
+	<!-- qna 게시판 삭제 -->
+	<delete id="qnadelete" parameterType="QnaVO">
+	DELETE from qna
+	WHERE q_id = #{q_id}
+	</delete>
+
+	<!-- qna 게시판 수정 -->
+	<update id="qnaupdate" parameterType="QnaVO">
+	UPDATE qna SET
+	Q_TITLE = #{q_title},
+	Q_MESSAGE = #{q_message},
+	Q_DATE = sysdate
+	WHERE q_id = #{q_id}
+	</update>
+
+	<!-- Free 게시판 상세 보기 -->
+	<select id="freedetail" resultType="FreeVO">
+		SELECT *
+		FROM free
+		WHERE f_id = #{f_id}
+	</select>
+	
+	<!-- Free 게시판 삭제 -->
+	<delete id="freedelete" parameterType="FreeVO">
+	DELETE from free
+	WHERE f_id = #{f_id}
+	</delete>
+	
+	<!-- Free 게시판 수정 -->
+	<update id="freeupdate" parameterType="FreeVO">
+	UPDATE free SET
+	F_TITLE = #{f_title},
+	F_MESSAGE = #{f_message},
+	F_DATE = sysdate
+	WHERE f_id = #{f_id}
+	</update>
 
 
+<!--  style 목록 -->
+	<select id="stylelist" parameterType="StyleReviewVO" resultType="StyleReviewVO">
+		SELECT *
+		FROM style 
+		ORDER BY s_id DESC
+	</select>
 
-
-
-
-
+<!--  style 목록 -->
+	<select id="styledetail" parameterType="StyleReviewVO" resultType="StyleReviewVO">
+		SELECT *
+		FROM style 
+		WHERE s_id = #{s_id}
+	</select>
 
 
 

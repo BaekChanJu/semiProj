@@ -82,11 +82,11 @@
 						<li class="has-children">
 							<a href="mainOuter.do">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="mainOuter.do">OUTER</a></li>
-								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottom.do">BOTTOM</a></li>
-								<li><a href="mainShoes.do">SHOES</a></li>
-								<li><a href="mainAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -104,11 +104,11 @@
 						<li class="has-children">
 							<a href="manOuter.do">MAN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=20">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=20">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -116,11 +116,11 @@
 						<li class="has-children">
 							<a href="womanOuter.do">WOMAN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=30">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=30">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=30">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>

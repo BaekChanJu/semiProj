@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.javassem.domain.FreeVO;
+import com.javassem.domain.GoodsVO;
 import com.javassem.domain.QnaVO;
+import com.javassem.domain.StyleReviewVO;
 import com.javassem.service.BoardService;
 
 @Controller//게시판 컨트롤러
@@ -18,7 +20,7 @@ public class BoardController {
 	@Autowired 
 	private BoardService boardSerice ;
 
-	//QNA게시판 목록
+	//QNA게시판 목록 
 	@RequestMapping("/qnA.do") 
 	public void qnaList (Model m) {
 		System.out.println(" -- 컨트롤 qna 요청완료 ---");
@@ -58,6 +60,69 @@ public class BoardController {
 		return "redirect:free.do";
 	}//end of qnaInsert
 
+	//QNA게시판 상세보기
+	@RequestMapping("/qnalist.do") 
+	public void qnaList1 (QnaVO vo,Model m) {
+		System.out.println(" -- 컨트롤 qna 요청완료 ---");
+	QnaVO result = boardSerice.qnaDetail(vo);
+	m.addAttribute("qnadetail", result);
+	}//end of qnaList
 
+	//QnA게시판 삭제
+	@RequestMapping("qnadelete")
+	public String qnaDelete(QnaVO vo) {
+		System.out.println("컨트롤 qnaDelete 요청완료");
+		boardSerice.qnaDelete(vo);
+		return "redirect:qnA.do";
+	}//end of qnaDelete
+	
+	//QnA게시판 수정
+	@RequestMapping("qnadmodi")
+	public String qnaUpdate(QnaVO vo) {
+		System.out.println("컨트롤 qnaUpdate 요청완료: " + vo);
+		boardSerice.qnaUpdate(vo);
+		return "redirect:qnA.do";
+	}//end of qnaUpdate
+	
+	//Free 게시판 상세보기
+	@RequestMapping("freelist")
+	public void freeDetail(FreeVO vo,Model m) {
+		System.out.println("컨트롤 freeDetail 요청완료 :" +vo);
+	FreeVO result =	boardSerice.freeDetail(vo);
+	m.addAttribute("freedetail",result);
+	}//end of freeDetail
+	
+	//Free 게시판 삭제
+	@RequestMapping("freedelete")
+	public String freeDelete(FreeVO vo) {
+		System.out.println("컨트롤 freeDelete 요청완료 :"+vo);
+		boardSerice.freeDelete(vo);
+		return "redirect:free.do";
+	}//end of freeDelete
+	
+	//Free 게시판 수정
+	@RequestMapping("freemodi")
+	public String freeUpdate(FreeVO vo) {
+		System.out.println("컨트롤 freeUpdate 요청완료 :"+vo);
+		boardSerice.freeUpdate(vo);
+		System.out.println("컨트롤 freeUpdate 요청완료 :"+vo);
+		return "redirect:free.do";
+	}//end of freeUpdate
+	
+	//style 게시판 목록
+	@RequestMapping("styleReview.do")
+	public void goodsList(StyleReviewVO vo, Model model) {
+		System.out.println("컨트롤 sytlelist 요청완료 :" + vo);
+		model.addAttribute("style", boardSerice.sytlelist(vo));
+	}//end of goodsList
+	
+	//style 게시판 상세보기
+	@RequestMapping("styleReviewList")
+	public void styledetail(StyleReviewVO vo,Model m) {
+		System.out.println("컨트롤 styledetail 요청완료"+vo);
+	StyleReviewVO result =	boardSerice.styledetail(vo);
+		m.addAttribute("style",result);
+	}//end of styledetail
+	
 }
  

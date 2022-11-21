@@ -20,16 +20,18 @@
 	<!-- 상품목록 -->
  	<select id="goodsList" parameterType="GoodsVO" resultType="GoodsVO">
 		SELECT g_id, g_name, gl_Img1, g_Img1, g_size1, sc_id, g_price, g_stock, g_date
-		FROM goods ORDER BY g_id DESC
+		FROM goods 
+		ORDER BY g_id DESC
 	</select>
 	
 	<!-- 상품 상세 -->
 	<select id="getGoods" parameterType="GoodsVO" resultType="GoodsVO">
-		SELECT g_id, g_name, g_price, g_stock, g_message, g_img1, g_img2, g_img3, gl_Img1, gl_Img2, gl_Img3
+		SELECT g_id,sc_Id, ct_Id, g_name, g_price, g_stock, g_message, g_img1, g_img2, g_img3, gl_Img1, gl_Img2, gl_Img3
 		FROM goods 
 		WHERE g_id = #{g_Id}
 	</select>
 	
+	<!-- 상품 수정 -->
  	<update id="updateGoods" parameterType="GoodsVO">
 	UPDATE Goods SET
 	g_name=#{g_Name}, g_price=#{g_Price}, g_stock=#{g_Stock}, g_message=#{g_Message}, g_date=sysdate
@@ -40,10 +42,60 @@
 	WHERE g_id = #{g_Id}
 	</update> 
 	
+	<!-- 상품 삭제 -->
 	<delete id="deleteGoods" parameterType="GoodsVO">
 	DELETE FROM goods
 	WHERE g_id = #{g_Id}
 	</delete>
+	
+	<!-- 상품 상세 페이지 -->
+	<select id="goodsPage" parameterType="GoodsVO" resultType="GoodsVO">
+		SELECT g_id, g_name, g_price, g_stock, g_message, gl_Img1, gl_Img2, gl_Img3
+		FROM goods 
+		WHERE g_id = #{g_Id}
+	</select>
+	
+	<!-- 각 카테고리 상품목록 출력 -->
+	<select id="productList" parameterType="GoodsVO" resultType="GoodsVO">
+		SELECT g_Id, g_name, gl_Img1, g_price
+		FROM goods 
+		<where>
+			<if test="sc_Id != null">
+				sc_id = #{sc_Id}
+			</if>		
+				
+			<if test="ct_Id != null">
+				AND	ct_id = #{ct_Id}
+			</if>		
+		</where>
+		ORDER BY g_id DESC
+	</select>
+	
+	<select id="priceNum" parameterType="hashmap" resultType="GoodsVO"  >
+			
+			SELECT *
+			FROM goods
+			<where>
+			<if test="priceNum != null">
+			${priceNum} = 1
+			</if>
+			</where>
+			ORDER BY g_price
+		
+	</select> 
+	
+	<!-- 아래쪽 찬주1121 추가 -->
+
+	<!-- mdItems 목록 -->
+	<select id="mdItems" parameterType="GoodsVO"
+		resultType="GoodsVO">
+		SELECT g_Id, g_name, gl_Img1, g_price
+		FROM goods
+		WHERE sc_id = 15
+		ORDER BY g_id DESC
+	</select>
+	
+
 
 
 
