@@ -27,6 +27,11 @@ public class GoodsVO {
 	private long	g_Size3;
 	private String  g_Date;
 	
+	private int page;
+	private int perPageNum;
+	private int rowStart;
+	private int rowEnd;
+	
 	MultipartFile file1;
 	MultipartFile file2;
 	MultipartFile file3;
@@ -105,6 +110,52 @@ public class GoodsVO {
 			}
 		}
 	}
+
+	
+	public GoodsVO() {
+		this.page = 1;
+		this.perPageNum = 6;
+	}
+	
+	public void setPage(int page) {
+		if (page <= 0) {
+			this.page = 1;
+			return;
+		}
+		this.page = page;
+	}
+	
+	public void setPerPageNum(int perPageNum) {
+		if (perPageNum <= 0 || perPageNum > 100) {
+			this.perPageNum = 6;
+			return;
+		}
+		this.perPageNum = perPageNum;
+	}
+	
+	public int getPage() {
+		return page;
+	}
+	
+	public int getPageStart() {
+		return (this.page - 1) * perPageNum;
+	}
+	
+	public int getPerPageNum() {
+		return this.perPageNum;
+	}
+	
+	public int getRowStart() {
+		rowStart = ((page - 1) * perPageNum) + 1;
+		return rowStart;
+	}
+	
+	public int getRowEnd() {
+		rowEnd = rowStart + perPageNum - 1;
+		return rowEnd;
+	}
+
+
 	
 	
 	
@@ -212,12 +263,11 @@ public class GoodsVO {
 	}
 	@Override
 	public String toString() {
-		return "GoodsVO [g_Id=" + g_Id + ", sc_Id=" + sc_Id + ", ct_Id=" + ct_Id + ", g_Name=" + g_Name + ", g_Price="
-				+ g_Price + ", g_Stock=" + g_Stock + ", g_Message=" + g_Message + ", g_Img1=" + g_Img1 + ", g_Img2="
-				+ g_Img2 + ", g_Img3=" + g_Img3 + ", gl_Img1=" + gl_Img1 + ", gl_Img2=" + gl_Img2 + ", gl_Img3="
-				+ gl_Img3 + ", g_Size1=" + g_Size1 + ", g_Size2=" + g_Size2 + ", g_Size3=" + g_Size3 + ", file1="
-				+ file1 + ", file2=" + file2 + ", file3=" + file3 + "]";
+		return "GoodsVO [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
+				+ "]";
 	}
+	
+	
 
 	
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javassem.dao.GoodsDAO;
+
 import com.javassem.domain.GoodsVO;
 
 @Service
@@ -61,14 +62,30 @@ public class GoodsServiceImpl implements GoodsService{
 		return goodsDAO.productList(vo);
 	}
 	
+	// 상품목록 게시물 총 갯수
+	public int listCount(GoodsVO vo) {
+		return goodsDAO.listCount(vo);
+	}
+	
 	// 상품정렬
 	public List<GoodsVO> priceNum(HashMap map) {
 		return goodsDAO.priceNum(map);
 	}
 	
+	// md상품목록
 	@Override
 	public List<GoodsVO> mdShop(GoodsVO vo) {
 		return goodsDAO.mdItems(vo);
 	}
+	
+	public List<GoodsVO> bestShop(GoodsVO vo){
+		return goodsDAO.bestItem(vo);
+	}
+	
+	public int mdCount(GoodsVO vo) {
+		return goodsDAO.mdCount(vo);
+	}
+	
+	
 
 }

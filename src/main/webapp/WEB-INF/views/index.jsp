@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <!-- 1119일 토요일 추가 -->
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -80,13 +82,13 @@
 						<!-- Vintagure 카테고리  -->
 							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
 						<li class="has-children">
-							<a href="mainOuter.do">Vintagere</a>
+							<a href="main/productList.do?sc_Id=11">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="mainOuter.do">OUTER</a></li>
-								<li><a href="mainTop.do">TOP</a></li>
-								<li><a href="mainBottom.do">BOTTOM</a></li>
-								<li><a href="mainShoes.do">SHOES</a></li>
-								<li><a href="mainAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12">ACC</a></li>
 							</ul>
 						</li>
 						
@@ -102,25 +104,25 @@
 						
 						<!-- MEN 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MAN</a>
+							<a href="main/productList.do?sc_Id=11&ct_Id=20">MAN</a>
 							<ul class="dropdown">
-								<li><a href="manOuter.do">OUTER</a></li>
-								<li><a href="manTop.do">TOP</a></li>
-								<li><a href="manBottom.do">BOTTOM</a></li>
-								<li><a href="manShoes.do">SHOES</a></li>
-								<li><a href="manAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=20">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=20">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
 							</ul>
 						</li>
 						
 						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMAN</a>
+							<a href="main/productList.do?sc_Id=11&ct_Id=30">WOMAN</a>
 							<ul class="dropdown">
-								<li><a href="womanOuter.do">OUTER</a></li>
-								<li><a href="womanTop.do">TOP</a></li>
-								<li><a href="womanBottom.do">BOTTOM</a></li>
-								<li><a href="womanShoes.do">SHOES</a></li>
-								<li><a href="womanAcc.do">ACC</a></li>
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=30">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=30">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=30">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
@@ -163,20 +165,20 @@
 		</div>
 	</nav>
 
-
 	<!--  이달의 이벤트 슬라이더 사진1  -->
 	<div class="owl-carousel owl-single home-slider">
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('resources/images/이달의이벤트1.gif');">
+			<div class="untree_co-hero" style="background-image: url('resources/images/MD겨울추천.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">무슨이벤트인가 <a href="https://untree.co">색포인트</a></h1>
+							<h1  style ="color:#FDFDFD" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Vintagere 겨울맞이<br></h1>
+								<h1  style ="color:#FDFDFD; text-decoration:underline" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Sale Event<br></h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
-							<!-- eventSale1.do -->
-							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="eventSale1.do" class="btn btn-outline-black">눌러!</a></p>
+							<!-- eventSale1.do --> <!-- 크리스마스 상품으로 넘어가는게 아닌 이벤트 배너 만들어서 거기로 넘어가게 하기 -->
+							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="eventSale1.do" class="btn btn-outline-black">click!</a></p>
 
 						</div>
 					</div>
@@ -186,12 +188,13 @@
 
 	<!--  이달의 이벤트 슬라이더 사진2  -->
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('resources/images/이달의이벤트2.gif');">
+			<div class="untree_co-hero" style="background-image: url('resources/images/바다항해.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">무슨이벤트인가 <a href="https://untree.co">색포인트</a></h1>
+							<h1  style ="color:#FDFDFD" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Vintagere 다가온 신년<br></h1>
+								<h1  style ="color:#FDFDFD; text-decoration:underline" class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Sale Event<br></h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
 									<!-- eventSale2.do -->
@@ -213,12 +216,12 @@
 		<div class="container">
 
 
-			<div class="deal-hero overlay" style="background-image: url('resources/images/MD겨울추천.gif')"> 
+			<div class="deal-hero overlay" style="background-image: url('resources/images/눈오는시계탑.gif')"> 
 				<div class="deal-contents">
-					<span class="subtitle">MD추천상품이야</span>
-					<h2 class="title mb-4"><a href="#">겨울 추천!</a></h2>
-					<p class="mb-5">간단한 이번달 추천상품 이유설명.</p>
-					<a href="mdRecommend.do" class="btn btn-black">눌러!</a>
+					<span class="subtitle">MD의추천상품</span>
+					<h2 class="title mb-4"><a href="#">겨울상품추천</a></h2>
+					<p class="mb-5">차가운 겨울 따듯한 Vintagere에서 </p>
+					<a href="mdRecommend.do" class="btn btn-black">click!</a>
 				</div>
 			</div> <!-- /.deal-hero -->
 
@@ -227,137 +230,45 @@
 <!--  MD 종료 -->
 
 <!--  NEW 상품 -->
-	<div class="untree_co-section">
-		<div class="container">
+   <div class="untree_co-section">
+      <div class="container">
+<h2 class="h3">BEST Items</h2>     
+         <div class="row">
+         <form action="newItems.do">
+            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
+           <table>
+           <tr>
+           <div class="product-item">
+           
+           <c:forEach items="${bestList}" var="best">
+			
+              <td>
+                
+                	<a href="bestItems.do?g_Id=${best.g_Id}" class="product-img">
+                  	<img src="resources/images/upload/${best.gl_Img1} " width="370" height="330">
+                	</a><br/>
+                	
+                </td>
+                <c:if test="${count %3 ==2}">       
+                </tr><tr>          
+                </c:if>                
+                
+                <c:set var="count" value='${count+1}'/>
+            </c:forEach>
+                
+             </div>   
+         </tr>
 
-			<div class="row">
-				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-					<div class="product-item">
-						<a href="shop-single.jsp" class="product-img">
+         </table>    
+            </div>
+            </form>
+            
 
-							<div class="label new top-right">
-								<div class='content'>New 라벨</div>
-							</div>
-							
-							<!-- 신규상품 클릭시 -->
-							<a href="newItemPage.do">
-							<img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-							</a>
-							
-						</a>
-						<h3 class="title"><a href="newItemPage.do">상품이름</a></h3>
-						<div class="price">
-							<span>상품가격</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-					<div class="product-item">
-						<a href="shop-single.jsp" class="product-img">
-						
-							<div class="label new top-right">
-								<div class='content'>New 라벨</div>
-							</div>
-
-							<div class="label sale top-right second">
-								<div class='content'>Sale 라벨</div>
-							</div>
-							
-						<!-- 신규상품 클릭시 -->
-							<a href="newItemPage.do">
-							<img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-							</a>
-							
-						</a>
-						<h3 class="title"><a href="newItemPage.do">상품이름</a></h3>
-						<div class="price">
-							<del>세일전가격</del> &mdash; <span>세일후가격</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-					<div class="product-item">
-						<a href="shop-single.jsp" class="product-img">
-						
-							<!-- 신규상품 클릭시 -->
-							<a href="newItemPage.do">
-							<img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-							</a>
-							
-						</a>
-						<h3 class="title"><a href="newItemPage.do">상품이름</a></h3>
-						<div class="price">
-							<span>가격</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-
-					<div class="product-item">
-						<a href="shop-single.jsp" class="product-img">
-						
-							<!-- 신규상품 클릭시 -->
-							<a href="newItemPage.do">
-							<img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-							</a>
-							
-						</a>
-						<h3 class="title"><a href="newItemPage.do">상품이름</a></h3>
-						<div class="price">
-							<span>가격</span>
-						</div>
-					</div>
-
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-
-					<div class="product-item">
-						<a href="shop-single.jsp" class="product-img">
-							<div class="label sale top-right">
-								<div class='content'>Sale 라벨</div>
-							</div>
-							
-								<!-- 신규상품 클릭시 -->
-							<a href="newItemPage.do">
-							<img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-							</a>
-							
-						<h3 class="title"><a href="newItemPage.do">상품이름</a></h3>
-						<div class="price">
-							<del>세일전 가격</del> &mdash; <span>세일후 가격</span>
-						</div>
-					</div>
-
-
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
-
-					<div class="product-item">
-						<a href="shop-single.jsp" class="product-img">
-							<div class="label sale top-right">
-								<div class='content'>Sale 라벨</div>
-							</div>
-					
-						<!-- 신규상품 클릭시 -->
-							<a href="newItemPage.do">
-							<img src="resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
-							</a>
-							
-						</a>
-						<h3 class="title"><a href="newItemPage.do">상품이름</a></h3>
-						<div class="price">
-							<del>세일전가격</del> &mdash; <span>세일후 가격</span>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</div>
-	</div> <!-- /.untree_co-section -->
+         </div>
+      </div>
+   </div> <!-- /.untree_co-section -->
 <!--  new 상품종료 -->
-
+	
 
 <!--  스타일샷 게시판 -->
 	<div class="container">
@@ -381,7 +292,7 @@
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-md-6">
-					<h2 class="h3">BEST Items</h2>        
+					<h2 class="h3">New Items</h2>        
 				</div>
 				<div class="col-sm-6 carousel-nav text-sm-right">
 				<!--  왼쪽 으로 이동 버튼 -->
@@ -505,8 +416,11 @@
 				<div class="col-lg-5">
 					<div class="widget mb-4">
 						<h3 class="mb-2">Vintagure</h3>
-						<p>우리회사 소개 정보 등등등!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						!!!!!!!!!!!!!!!!!!! 고객센터 시간, 번호, 회사주소, 회사연락처 등등등!!!!!!!!!!!!!!!!!</p>
+						<p>COMPANY: Vintagure 　OWNER: 세즈카　BUSINESS LICENSE: 258-42-00220　ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인]
+CS CENTER: 070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time 1:00pm~2:00pm (Weekends, Public holiday off)
+ADDRESS: 04355 서울특별시 금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙　PERSON IN CHARGE: 세즈카　E - MAIL: Vintagure@naver.com
+BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
+</p>
 					</div>
 
 				</div>
@@ -518,8 +432,8 @@
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<ul class="list-unstyled social">
-						<li><a href="#"><span class="icon-facebook"></span></a></li>
-						<li><a href="#"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.instagram.com/vintagure1234/"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.facebook.com/vintagure"><span class="icon-facebook"></span></a></li>
 					</ul>
 				</div>
 				<div class="col-12 text-center copyright">

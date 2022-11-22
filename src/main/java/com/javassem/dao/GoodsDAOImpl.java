@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.javassem.domain.GoodsVO;
 
+
 @Repository
 public class GoodsDAOImpl implements GoodsDAO{
 	
@@ -63,8 +64,17 @@ public class GoodsDAOImpl implements GoodsDAO{
 	// *********** 상품목록
 	@Override
 	public List<GoodsVO> productList(GoodsVO vo) {
-		System.out.println("===> Mybatis productList() 호출");
+		System.out.println("===> Mybatis productList() 호출 >" + vo.getRowStart()+":"+vo.getRowEnd());
+		
+		
 		return mybatis.selectList("GoodsDAO.productList",vo);
+	}
+	
+	// 상품 갯수
+	public int listCount(GoodsVO vo) {
+		System.out.println("===> Mybatis listCount() 호출" +vo);
+		return mybatis.selectOne("GoodsDAO.listCount",vo);
+		
 	}
 	
 	public List<GoodsVO> priceNum(HashMap map) {
@@ -72,12 +82,24 @@ public class GoodsDAOImpl implements GoodsDAO{
 		return mybatis.selectList("GoodsDAO.priceNum",map);
 	}
 
-
+	// MD추천 상품 목록
 	@Override
 	public List<GoodsVO> mdItems(GoodsVO vo) {
 		System.out.println("===> Mybatis mainShoes() 호출");
 		return mybatis.selectList("GoodsDAO.mdItems",vo);
 	}
+
+	public List<GoodsVO> bestItem(GoodsVO vo){
+		System.out.println("===> newItems 호출");
+		return mybatis.selectList("GoodsDAO.bestItems",vo);
+	}
+
+	// 상품 갯수
+		public int mdCount(GoodsVO vo) {
+			System.out.println("===> Mybatis mdCount() 호출" +vo);
+			return mybatis.selectOne("GoodsDAO.mdCount",vo);
+			
+		}
 
 
 }

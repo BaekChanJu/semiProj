@@ -7,10 +7,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.javassem.domain.GoodsVO;
+import com.javassem.domain.PagingVO;
 import com.javassem.service.GoodsService;
 
 @Controller
@@ -18,6 +19,18 @@ public class GoodsController {
 
 	@Autowired
 	private GoodsService goodsService;
+	
+	
+	
+	@RequestMapping("/index")
+	public String startTest(GoodsVO vo, Model model) {
+		List<GoodsVO> list = goodsService.bestShop(vo);
+		  System.out.println("--> list.size : "+list.size());
+		  model.addAttribute("bestList", list);
+		return "index"; //화면에 베스트 아이템들이안뜸
+	}
+					
+	
 
 	// 상품등록(관리자)
 	@RequestMapping("saveGoods.do")
@@ -71,11 +84,19 @@ public class GoodsController {
 	// *********** 상품목록
 	@RequestMapping("/main/productList.do")
 	public void productList(GoodsVO vo, Model model) {
-
+		
 		System.out.println("ct_id:" + vo.getCt_Id());
 		System.out.println("sc_id:" + vo.getSc_Id());
-
-		model.addAttribute("goodsList", goodsService.productList(vo));
+		
+		List<GoodsVO> list = goodsService.productList(vo);
+		System.out.println("productList확인:" +list);
+		model.addAttribute("goodsList", list);
+		
+		PagingVO pageMaker = new PagingVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(goodsService.listCount(vo));
+		System.out.println("listCount확인:" +goodsService.listCount(vo));
+		model.addAttribute("pageMaker", pageMaker);
 	}
 
 	//상품정렬
@@ -97,6 +118,21 @@ public class GoodsController {
 	public void mdRecommend(GoodsVO vo, Model model){
 		  List<GoodsVO> list = goodsService.mdShop(vo);
 	  model.addAttribute("mdList", list);
+	  
+	  PagingVO pageMaker = new PagingVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(goodsService.mdCount(vo));
+		System.out.println("listCount확인:" +goodsService.listCount(vo));
+		model.addAttribute("pageMaker", pageMaker);
 		}
+	  
+	  //1121 일 찬주 추가 md 추천사진용
+		 
+	  @RequestMapping("bestItems.do") 
+	public void bestItems(GoodsVO vo, Model model){
+		  List<GoodsVO> list = goodsService.bestShop(vo);
+	  model.addAttribute("bestList", list);
+		}
+	  
 
 }

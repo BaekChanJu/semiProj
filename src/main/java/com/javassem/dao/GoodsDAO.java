@@ -4,8 +4,8 @@ package com.javassem.dao;
 import java.util.HashMap;
 import java.util.List;
 
-
 import com.javassem.domain.GoodsVO;
+
 
 public interface GoodsDAO {
 	
@@ -32,11 +32,19 @@ public interface GoodsDAO {
 	// *********** 상품목록
 	public List<GoodsVO> productList(GoodsVO vo) ;
 	
+	// 상품 갯수
+	public int listCount(GoodsVO vo);
+	
 	// 상품 정렬
 	public List<GoodsVO> priceNum(HashMap map) ;
 	
 
 	//1121 찬주추가 md
 	public List<GoodsVO> mdItems(GoodsVO vo);
+	
+	
+	public List<GoodsVO> bestItem(GoodsVO vo);
+	
+	public int mdCount(GoodsVO vo);
 
 }

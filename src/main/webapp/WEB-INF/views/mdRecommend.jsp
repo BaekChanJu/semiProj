@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/css/font.css">
   
   
   
@@ -220,20 +221,19 @@
         </div>
         	
         	
-            
-          <div class="col-md-9">
+                   
+          <div class="col-md-9" >
           <div class="row">
           <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
           <c:set var="count" value="1" />
         	<table>
         	<tr>
-           <div class="product-item">
            <c:forEach items="${mdList}" var="mds">
 
                 <td><a href="goodsPage.do?g_Id=${mds.g_Id}" class="product-img">
-                  <img src="<%=pjName%>/resources/images/upload/${mds.gl_Img1} " width="280" height="350">
+                  <img src="<%=pjName%>/resources/images/upload/${mds.gl_Img1} " width="280" height="">
                 </a><br/>
-                <h3 class="title"><a href="#">${mds.g_Name}</a></h3><br/>
+                <h3 class="title"><a href="#"><div id = "css">${mds.g_Name}</div></a></h3>
                   <span>${mds.g_Price}</span>
                 </td>
                 <c:if test="${count %3 ==0}">
@@ -249,31 +249,35 @@
 
 			</table>
 
+        </div>
+      </div>
+    </div> <!-- /.untree_co-section -->
           
-
-          <div class="row mt-5 pb-5">
+<div class="row mt-5 pb-5">
             <div class="col-lg-12">
               <div class="custom-pagination">
                 <ul class="list-unstyled">
                   <li>
-                    <a href="#">
+                   <c:if test="${pageMaker.prev}">
+                    <a href="<%=pjName%>/mdRecommend.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
                         <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                      </svg>                      
+                      </svg>  
+                      </c:if>                     
                     </a>
                   </li>
-                  <li class="active"><span>1</span></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="<%=pjName%>/mdRecommend.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+    </c:forEach>
                   <li>
-                    <a href="#">
+                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                    <a href="<%=pjName%>/mdRecommend.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
                         <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
                       </svg>
+                      </c:if> 
                     </a>
                   </li>
                 </ul>
@@ -281,12 +285,11 @@
             </div>
           </div>
 
-
+</div></div>
         </div>
       </div>
     </div> <!-- /.untree_co-section -->
 
-   
 
 
     <div id="overlayer"></div>

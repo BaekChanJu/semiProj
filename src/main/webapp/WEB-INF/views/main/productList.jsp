@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+   <link rel="stylesheet" href="<%=pjName%>/resources/css/font.css">
 
   <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
@@ -73,7 +74,7 @@
 			<!--  메인 헤더 우측 상표 홈버튼 -->
 			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.jsp" class="logo menu-absolute m-0">Vintagere<span class="text-primary">.</span></a>
+					<a href="<%=pjName%>/index.do" class="logo menu-absolute m-0">Vintagere<span class="text-primary">.</span></a>
 
 					<!--  메인 헤더 중앙 카테고리  -->
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
@@ -81,47 +82,47 @@
 						<!-- Vintagure 카테고리  -->
 							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
 						<li class="has-children">
-							<a href="mainOuter.do">Vintagere</a>
+							<a href="<%=pjName%>/main/productList.do?sc_Id=11">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="main/productList.do?sc_Id=11">OUTER</a></li>
-								<li><a href="main/productList.do?sc_Id=15">TOP</a></li>
-								<li><a href="main/productList.do?sc_Id=13">BOTTOM</a></li>
-								<li><a href="main/productList.do?sc_Id=14">SHOES</a></li>
-								<li><a href="main/productList.do?sc_Id=12">ACC</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=10">OUTER</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=10">TOP</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=13&ct_Id=10">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=14&ct_Id=10">SHOES</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=12&ct_Id=10">ACC</a></li>
 							</ul>
 						</li>
 						
 						<!-- PAGES 카테고리 -->
 						<li class="has-children">
-							<a href="qnA.do">PAGES</a>
+							<a href="<%=pjName%>/qnA.do">PAGES</a>
 							<ul class="dropdown">
-								<li><a href="qnA.do">Q & A</a></li>
-								<li><a href="styleReview.do">STYLE REVIEW</a></li>
-								<li><a href="free.do">자유 게시판</a></li>
+								<li><a href="<%=pjName%>/qnA.do">Q & A</a></li>
+								<li><a href="<%=pjName%>/styleReview.do">STYLE REVIEW</a></li>
+								<li><a href="<%=pjName%>/free.do">자유 게시판</a></li>
 							</ul>
 						</li>
 						
 						<!-- MEN 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MAN</a>
+							<a href="<%=pjName%>/productList.do?sc_Id=11&ct_Id=20">MAN</a>
 							<ul class="dropdown">
-								<li><a href="main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
-								<li><a href="main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
-								<li><a href="main/productList.do?sc_Id=13&ct_Id=20">BOTTOM</a></li>
-								<li><a href="main/productList.do?sc_Id=14&ct_Id=20">SHOES</a></li>
-								<li><a href="main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=13&ct_Id=20">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=14&ct_Id=20">SHOES</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
 							</ul>
 						</li>
 						
 						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMAN</a>
+							<a href="<%=pjName%>/productList.do?sc_Id=11&ct_Id=23">WOMAN</a>
 							<ul class="dropdown">
-								<li><a href="main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
-								<li><a href="main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
-								<li><a href="main/productList.do?sc_Id=13&ct_Id=30">BOTTOM</a></li>
-								<li><a href="main/productList.do?sc_Id=14&ct_Id=30">SHOES</a></li>
-								<li><a href="main/productList.do?sc_Id=12&ct_Id=30">ACC</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=13&ct_Id=30">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=14&ct_Id=30">SHOES</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=12&ct_Id=30">ACC</a></li>
 							</ul>
 						</li>		
 					</ul>
@@ -131,20 +132,20 @@
 					<!--  홈 메인상단 우측 아이콘 3개 -->
 					<div class="menu-icons">
 						<!--  검색 버튼 -->
-						<a href="select.do" class="btn-custom-search" id="btn-search">
+						<a href="<%=pjName%>/select.do" class="btn-custom-search" id="btn-search">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
 								<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
 							</svg>
 						</a>
 						<!--  유저 버튼 -->
-						<a href="login.do" class="user-profile">
+						<a href="<%=pjName%>/login.do" class="user-profile">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 							</svg>
 						</a>
 						<!--  장바구니 버튼 -->
-						<a href="cart.do" class="cart">
+						<a href="<%=pjName%>/cart.do" class="cart">
 							<span class="item-in-cart">2</span>
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -170,7 +171,7 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
           <h1>VINTAGERE</h1>  
-          <p class="mb-4">Shop / <strong>${sc_Name}</strong></p>        
+          <p class="mb-4">Shop</p>        
         </div>
       </div>
     </div>
@@ -203,11 +204,11 @@
 
         <div class="col-md-3">
           <ul class="list-unstyled categories">
-            <li><a href="mainOuter.do">OUTER <span>${goodsList.size()}</span></a></li>
-            <li><a href="mainTop.do">TOP <span>${goodsList.size()}</span></a></li>
-            <li><a href="mainBottom.do">BOTTOM <span>${goodsList.size()}</span></a></li>
-            <li><a href="mainShoes.do">SHOES <span>${goodsList.size()}</span></a></li>
-            <li><a href="mainAcc.do">ACC <span>${goodsList.size()}</span></a></li>
+            <li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=${param.ct_Id}">OUTER <span>${goodsList.size()}</span></a></li>
+            <li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=${param.ct_Id}">TOP <span>${goodsList.size()}</span></a></li>
+            <li><a href="<%=pjName%>/main/productList.do?sc_Id=13&ct_Id=${param.ct_Id}">BOTTOM <span>${goodsList.size()}</span></a></li>
+            <li><a href="<%=pjName%>/main/productList.do?sc_Id=14&ct_Id=${param.ct_Id}">SHOES <span>${goodsList.size()}</span></a></li>
+            <li><a href="<%=pjName%>/main/productList.do?sc_Id=12&ct_Id=${param.ct_Id}">ACC <span>${goodsList.size()}</span></a></li>
 
           </ul>
         </div>
@@ -226,7 +227,7 @@
                 <td><a href="<%=pjName%>/goodsPage.do?g_Id=${goods.g_Id}" class="product-img">
                   <img src="<%=pjName%>/resources/images/upload/${goods.gl_Img1} " width="280" height="350">
                 </a><br/>
-                <h3 class="title"><a href="#">${goods.g_Name}</a></h3><br/>
+                <h3 class="title"><a href="#"><div id = "css">${goods.g_Name}</div></a></h3>
                   <span>${goods.g_Price}</span>
                 </td>
                 <c:if test="${count %3 ==0}">
@@ -252,24 +253,26 @@
               <div class="custom-pagination">
                 <ul class="list-unstyled">
                   <li>
-                    <a href="#">
+                   <c:if test="${pageMaker.prev}">
+                    <a href="<%=pjName%>/main/productList.do${pageMaker.makeQuery(pageMaker.startPage - 1)}&sc_Id=${param.sc_Id}&ct_Id=${param.ct_Id}">
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
                         <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                      </svg>                      
+                      </svg>  
+                      </c:if>                     
                     </a>
                   </li>
-                  <li class="active"><span>1</span></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="<%=pjName%>/main/productList.do${pageMaker.makeQuery(idx)}&sc_Id=${param.sc_Id}&ct_Id=${param.ct_Id}">${idx}</a></li>
+    </c:forEach>
                   <li>
-                    <a href="#">
+                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                    <a href="<%=pjName%>/main/productList.do${pageMaker.makeQuery(pageMaker.endPage + 1)}&sc_Id=${param.sc_Id}&ct_Id=${param.ct_Id}">
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
                         <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
                       </svg>
+                      </c:if> 
                     </a>
                   </li>
                 </ul>

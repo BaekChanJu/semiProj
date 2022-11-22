@@ -30,12 +30,21 @@ public interface GoodsService {
 	// *********** 상품목록
 	List<GoodsVO> productList(GoodsVO vo);
 	
+	// 상품 갯수
+	int listCount(GoodsVO vo);
+	
 	// 상품정렬
 	List<GoodsVO> priceNum(HashMap map);
 	
 
 	//1121찬주추가 /md추천상품용
 	List<GoodsVO> mdShop(GoodsVO vo);
+	
+	
+	List<GoodsVO> bestShop(GoodsVO vo);
+	
+	int mdCount(GoodsVO vo);
+	
 	
 	
 	
