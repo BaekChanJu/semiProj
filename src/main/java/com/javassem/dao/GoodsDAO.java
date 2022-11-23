@@ -4,6 +4,7 @@ package com.javassem.dao;
 import java.util.HashMap;
 import java.util.List;
 
+
 import com.javassem.domain.GoodsVO;
 
 
@@ -29,11 +30,19 @@ public interface GoodsDAO {
 	public GoodsVO goodsPage(GoodsVO vo) ;
 	
 	
+	
+	
+	//검색기능 구현2개
+	
 	// *********** 상품목록
 	public List<GoodsVO> productList(GoodsVO vo) ;
 	
 	// 상품 갯수
 	public int listCount(GoodsVO vo);
+	
+	
+	
+	
 	
 	// 상품 정렬
 	public List<GoodsVO> priceNum(HashMap map) ;
@@ -41,10 +50,19 @@ public interface GoodsDAO {
 
 	//1121 찬주추가 md
 	public List<GoodsVO> mdItems(GoodsVO vo);
+	public int mdCount(GoodsVO vo);
 	
-	
+	//베스트용
 	public List<GoodsVO> bestItem(GoodsVO vo);
 	
-	public int mdCount(GoodsVO vo);
+	//new 용
+	public List<GoodsVO> newItem(GoodsVO vo);
+	
+	//전체앤검색 용
+	public List<GoodsVO> allItem(HashMap map);
+	
+	
+
+	
 
 }

@@ -23,12 +23,20 @@ public class GoodsController {
 	
 	
 	@RequestMapping("/index")
-	public String startTest(GoodsVO vo, Model model) {
+	public String bestTest(GoodsVO vo, Model model) {
 		List<GoodsVO> list = goodsService.bestShop(vo);
+		List<GoodsVO> list2 = goodsService.newShop(vo);
+	
+	
 		  System.out.println("--> list.size : "+list.size());
 		  model.addAttribute("bestList", list);
+		  model.addAttribute("newList", list2);
+		
+	
 		return "index"; //화면에 베스트 아이템들이안뜸
 	}
+	
+
 					
 	
 
@@ -126,7 +134,8 @@ public class GoodsController {
 		model.addAttribute("pageMaker", pageMaker);
 		}
 	  
-	  //1121 일 찬주 추가 md 추천사진용
+	  
+	  //1122 일 찬주 추가 best 추천사진용
 		 
 	  @RequestMapping("bestItems.do") 
 	public void bestItems(GoodsVO vo, Model model){
@@ -134,5 +143,30 @@ public class GoodsController {
 	  model.addAttribute("bestList", list);
 		}
 	  
+	  
+	  //1123일 new상품 찬주 추가
+	  @RequestMapping("newItems.do") 
+		public void newItems(GoodsVO vo, Model model){
+		  System.out.println("vo :" + vo);
+			  List<GoodsVO> list = goodsService.newShop(vo);
+		  model.addAttribute("newList", list);
+			}
+	  
 
+	  //1123일 전체상품 찬주 추가
+	  @RequestMapping("allItems.do") 
+		public void allItems(String searchKeyWord, Model model){
+			System.out.println("searchKeyword:" + searchKeyWord);
+			
+			 HashMap map = new HashMap();
+		    map.put("searchKeyWord", searchKeyWord);
+			
+			  List<GoodsVO> list = goodsService.allShop(map);
+		  model.addAttribute("allItems", list);
+			}
+	  
+	  
+	
+		
+	  
 }

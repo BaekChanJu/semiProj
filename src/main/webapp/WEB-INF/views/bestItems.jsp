@@ -180,7 +180,7 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
           <!-- 이름대신 배너 넣음 -->
-           <img src="<%=pjName%>/resources/images/베스트상품배너.jpg" alt="Image" class="md_img">
+           <img src="<%=pjName%>/resources/images/best상품배너.jpg" alt="Image" class="md_img">
           <p class="mb-4"><a href="index.do">Home</a> / <strong>이달의 베스트 상품 선정 특별기획★</strong></p>        
         </div>
       </div>

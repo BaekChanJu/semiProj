@@ -173,8 +173,8 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
           <!-- 이름대신 배너 넣음 -->
-           <img src="<%=pjName%>/resources/images/MD추천배너1.jpg" alt="Image" class="md_img">
-          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>이달의 이벤트 MD추천 특별기획</strong></p>        
+          <h1>VINTAGERE</h1>
+          <p class="mb-4"><a href="index.do">Home</a> / <strong>select Dsign</strong></p>        
         </div>
       </div>
     </div>

@@ -170,8 +170,8 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <h1>VINTAGERE</h1>  
-          <p class="mb-4">Shop</p>        
+        <img src="<%=pjName%>/resources/images/mainShop배너.jpg" alt="Image" class="md_img">
+          <p class="mb-4"><a href="index.do">Home</a> / <strong>이달의 빈티져 상품 선정 특별상품 기획★
         </div>
       </div>
     </div>
@@ -225,7 +225,7 @@
            <c:forEach items="${goodsList}" var="goods">
 
                 <td><a href="<%=pjName%>/goodsPage.do?g_Id=${goods.g_Id}" class="product-img">
-                  <img src="<%=pjName%>/resources/images/upload/${goods.gl_Img1} " width="280" height="350">
+                  <img src="<%=pjName%>/resources/images/upload/${goods.gl_Img1} " width="280" height="300">
                 </a><br/>
                 <h3 class="title"><a href="#"><div id = "css">${goods.g_Name}</div></a></h3>
                   <span>${goods.g_Price}</span>

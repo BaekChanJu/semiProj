@@ -39,11 +39,21 @@ public interface GoodsService {
 
 	//1121찬주추가 /md추천상품용
 	List<GoodsVO> mdShop(GoodsVO vo);
+	int mdCount(GoodsVO vo);
 	
-	
+	//1122일 베스트 상품용
 	List<GoodsVO> bestShop(GoodsVO vo);
 	
-	int mdCount(GoodsVO vo);
+
+	//1123일 new상품용
+	List<GoodsVO> newShop(GoodsVO vo);
+	
+
+	//1123일 전체상품용
+	List<GoodsVO> allShop(HashMap map);
+	
+	
+	
 	
 	
 	

@@ -12,7 +12,12 @@ public class PagingVO {
 	private boolean next;
 	private int displayPageNum = 5;
 	private GoodsVO vo;
+
+
 	
+
+	
+		
 	public void setCri(GoodsVO vo) {
 		this.vo = vo;
 	}

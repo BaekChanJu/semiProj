@@ -226,9 +226,9 @@
                               <option value="13">Bottom</option>
                               <option value="14">Shoes</option>
                               <option value="12">Acc</option>
-                              <option value="16">New event</option>
-                              <option value="17">MD event</option>
-                              <option value="18">best event</option>
+                              <option value="16">MD event</option>
+                              <option value="17">bset event</option>
+                              <option value="18">New event</option>
                            </select>
                         </div>
 

@@ -31,12 +31,20 @@ public class GoodsVO {
 	private int perPageNum;
 	private int rowStart;
 	private int rowEnd;
+	private String keyword; //1123일검색기능떄문에 추가
 	
 	MultipartFile file1;
 	MultipartFile file2;
 	MultipartFile file3;
 	
 	
+	//1123일검색기능떄문에 추가
+			public String getKeyword() {
+				return keyword;
+			}
+			public void setKeyword(String keyword) {
+				this.keyword = keyword;
+			}
 	
 	public MultipartFile getFile1() {
 		return file1;

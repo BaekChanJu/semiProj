@@ -85,6 +85,7 @@
 		
 	</select> 
 	
+
 	<!-- 아래쪽 찬주1121 추가 -->
 
 	<!-- mdItems 목록 -->
@@ -92,32 +93,12 @@
 	<select id="mdItems" parameterType="GoodsVO" resultType="GoodsVO">
  		SELECT * FROM  goods  WHERE  g_id in (SELECT g_id FROM 
 		(SELECT rownum AS rnum ,g_id FROM (select rownum, g_id from goods 
-		
+		WHERE sc_id = 16
 		order by g_id desc))
 				<![CDATA[WHERE rnum>=#{rowStart} AND rnum<=#{rowEnd})]]> 
 				ORDER BY g_id DESC
 	</select>
-
-
-	<!-- 	SELECT g_Id, g_name, gl_Img1, g_price
-		FROM goods
-		WHERE sc_id = 16
-		ORDER BY g_id DESC
-	</select> -->
 	
-	
-	<select id="bestItems" parameterType="GoodsVO"
-		resultType="GoodsVO">
-		SELECT g_Id, g_name, gl_Img1, g_price
-		FROM goods
-		WHERE sc_id = 17
-		ORDER BY g_id DESC
-	</select>
-	
-	
-
-
-		
 	<!-- 상품목록 카운트 -->
 	<select id="listCount" parameterType="GoodsVO" resultType="int">
 
@@ -135,7 +116,7 @@
 
 	</select>
 
-<!-- md카운트 -->
+<!-- md카운트용 -->
 <select id="mdCount" parameterType="GoodsVO" resultType="int">
 
 		SELECT COUNT(sc_Id)
@@ -143,6 +124,71 @@
 		  where sc_id = 16
 
 	</select>
+
+
+
+<!-- 베스트용 -->
+	<select id="bestItems" parameterType="GoodsVO"
+		resultType="GoodsVO">
+		SELECT g_Id, g_name, gl_Img1, g_price
+		FROM goods
+		WHERE sc_id = 17
+		ORDER BY g_id DESC
+	</select>
+
+
+<!-- new용 -->
+<select id="newItems" parameterType="GoodsVO"
+		resultType="GoodsVO">
+		SELECT g_Id, g_name, gl_Img1, g_price
+		FROM goods
+		WHERE sc_id = 18
+		ORDER BY g_id DESC
+	</select>
+	
+	
+	
+<!-- 전체상품용 앤드 검색추가 -->
+<select id="allItems" resultType="GoodsVO"  parameterType="hashmap">
+		
+		SELECT g_Id, g_name, gl_Img1, g_price
+		FROM goods
+		<where>
+			<if test="searchKeyWord!=null">
+				g_name LIKE '%${searchKeyWord}%'
+			</if>
+		</where>
+		ORDER BY g_id DESC
+	</select>
+	
+	
+	
+	
+	
+	
+	 
+	<!-- 검색용
+			<select id="searchList" resultType="GoodsVO"  parameterType="hashmap">
+		
+		SELECT *
+		FROM goods
+		
+		<where>
+			<if test="searchKeyWord!=null">
+				g_name LIKE '%${searchKeyWord}%'
+			</if>
+		</where>
+		ORDER BY g_id DESC
+		
+	</select> 
+	
+	 -->
+
+
+	
+	
+	
+	
 
 
 
