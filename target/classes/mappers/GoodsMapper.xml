@@ -64,7 +64,7 @@
 				sc_id = #{sc_Id}
 			</if>		
 				
-			<if test="ct_Id != null">
+			<if test="ct_Id != null and ct_Id != ''">
 				AND	ct_id = #{ct_Id}
 			</if>
 		</where> order by g_id desc))
@@ -118,7 +118,7 @@
 
 
 		
-	<!--  카운트 -->
+	<!-- 상품목록 카운트 -->
 	<select id="listCount" parameterType="GoodsVO" resultType="int">
 
 		SELECT COUNT(sc_Id)
@@ -128,14 +128,14 @@
 			sc_id = #{sc_Id}
 		  </if>		
 				
-		  <if test="ct_Id != null">
+		  <if test="ct_Id != null and ct_Id != '' ">
 			AND	ct_id = #{ct_Id}
 		  </if>
 			</where>
 
 	</select>
 
-<!-- 찬주카운트 -->
+<!-- md카운트 -->
 <select id="mdCount" parameterType="GoodsVO" resultType="int">
 
 		SELECT COUNT(sc_Id)

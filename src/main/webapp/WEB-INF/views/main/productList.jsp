@@ -82,13 +82,13 @@
 						<!-- Vintagure 카테고리  -->
 							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
 						<li class="has-children">
-							<a href="<%=pjName%>/main/productList.do?sc_Id=11">Vintagere</a>
+							<a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=10">OUTER</a></li>
-								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=10">TOP</a></li>
-								<li><a href="<%=pjName%>/main/productList.do?sc_Id=13&ct_Id=10">BOTTOM</a></li>
-								<li><a href="<%=pjName%>/main/productList.do?sc_Id=14&ct_Id=10">SHOES</a></li>
-								<li><a href="<%=pjName%>/main/productList.do?sc_Id=12&ct_Id=10">ACC</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=">OUTER</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=">TOP</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=13&ct_Id=">BOTTOM</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=14&ct_Id=">SHOES</a></li>
+								<li><a href="<%=pjName%>/main/productList.do?sc_Id=12&ct_Id=">ACC</a></li>
 							</ul>
 						</li>
 						
