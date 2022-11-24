@@ -38,24 +38,35 @@
 </head>
 
 <body>
+	<div class="search-form" id="search-form">
+	<!-- 여기를쓰기 -->
+		<form action="allItems.do" name ='sub1'>
+			<input type="text" name = 'searchKeyWord' class="form-control" placeholder="검색어를 입력하세요">
+			
+			 <button class="button">
+			
+				<svg width="1em" height="1em" viewBox="0 0 16 16"
+					class="bi bi-search" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+					<path fill-rule="evenodd"
+						d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+				</svg>
+				
+			</button>
+			
+			
+			
+			<button class="button">
+				<div class="close-search">
+					<span class="icofont-close js-close-search"></span>
+				</div>
+			</button>
 
-  <div class="search-form" id="search-form">
-    <form action="">
-      <input type="search" class="form-control" placeholder="Enter keyword to search...">
-      <button class="button">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-        </svg>
-      </button>
-      <button class="button">
-        <div class="close-search">
-          <span class="icofont-close js-close-search"></span>
-        </div>
-      </button>
+		</form>
+	</div>
 
-    </form>
-  </div>
 
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
@@ -84,7 +95,7 @@
 						<!-- Vintagure 카테고리  -->
 							<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
 						<li class="has-children">
-							<a href="mainOuter.do">Vintagere</a>
+						<a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=">Vintagere</a>
 							<ul class="dropdown">
 								<li><a href="<%=pjName%>/main/mainOuter.do">OUTER</a></li>
 								<li><a href="<%=pjName%>/main/mainTop.do">TOP</a></li>
@@ -106,7 +117,7 @@
 						
 						<!-- MEN 카테고리 -->
 						<li class="has-children">
-							<a href="manOuter.do">MAN</a>
+								<a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=20">MAN</a>
 							<ul class="dropdown">
 								<li><a href="<%=pjName%>/man/manOuter.do">OUTER</a></li>
 								<li><a href="<%=pjName%>/man/manTop.do">TOP</a></li>
@@ -118,7 +129,7 @@
 						
 						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="womanOuter.do">WOMAN</a>
+							<a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=30">WOMAN</a>
 							<ul class="dropdown">
 								<li><a href="<%=pjName%>/woman/womanOuter.do">OUTER</a></li>
 								<li><a href="<%=pjName%>/woman/womanTop.do">TOP</a></li>
@@ -173,12 +184,13 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
           <!-- 이름대신 배너 넣음 -->
-          <h1>VINTAGERE</h1>
-          <p class="mb-4"><a href="index.do">Home</a> / <strong>select Dsign</strong></p>        
+           <img src="<%=pjName%>/resources/images/mainShop배너.jpg" alt="Image" class="md_img">
+          <p class="mb-4"><a href="index.jsp">Home</a> / <strong>빈티저 만의 무드있는 상품들★</strong></p>        
         </div>
       </div>
     </div>
   </div>
+
 
   <div class="untree_co-section pt-3">
     <div class="container">
@@ -187,9 +199,9 @@
 
 
         
-        <!-- 사진예시용 하나넣어둠 -->
+
         <div class="eximg" id = "mdcssimg">
-       <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img1}"  width="400" height="350 alt="Image" class="md_ex_img">
+       <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img1}" name='g_Img1'  width="400" height="350 alt="Image" class="md_ex_img">
        </div>
        
        <!-- 상품명 -->
@@ -218,43 +230,46 @@
           </div>
            <input type="text" class="form-control" value='${goods.g_Stock}' >
         </div>
-        
-                  
+
+         <form action="cart.do" id='cartForm' name='cartForm'>          
         <!-- 수량 -->
         <div class="input-group mb-3" id = "mdcss">
           <div class="input-group-prepend">
          
-            <span class="input-group-text" id="basic-addon4">수량</span>
+            <span class="input-group-text" id="basic-addon4" >수량</span>
           </div>
            <div class="input-group-prepend">
                <button class="btn btn-outline-black js-btn-minus" type="button">&minus;</button>
            </div>
-           <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+           <input type="text" class="form-control text-center" value="1" placeholder="" id='c_Cnt' name='c_Cnt' aria-label="Example text with button addon" aria-describedby="button-addon1">
            <div class="input-group-append">
                <button class="btn btn-outline-black js-btn-plus" type="button">&plus;</button>
            </div>
         
         </div>
         
-                  <!-- 장바구니,바로주문버튼 -->
-      <div class="cart__mainbtns" id = "carts">
-            <button class="btn btn-outline-black btn-sm btn-block">장바구니</button>
-            <button class="btn btn-outline-black btn-sm btn-block">바로주문</button>
-        </div> 
+
         
-  
+          <!-- 장바구니,바로주문버튼 -->
+           
+            <input type="hidden" name='g_Id' id='g_Id' value="${goods.g_Id}"/>
+			<input type="hidden" name='m_Id' id='m_Id' value='${sessionScope.login}'>
+			<input type='hidden' name='gl_img' id='gl_img' value='${goods.gl_Img1}'>
+            
+      <div class="cart__mainbtns" id = "carts">
+      
+            <button class="btn btn-outline-black btn-sm btn-block" id='cart_btn' name='cart_btn'>장바구니</button>
+            <button class="btn btn-outline-black btn-sm btn-block" id='checkOut' name='checkOut'>바로주문</button>
+        </div>
+        </form>
+        
     </div>
     
-
-  
-    
-
-<!-- 사진예시용 하나넣어둠 -->
-        <div class="eximg" id = "mdcssimg_2">
+       <div class="eximg" id = "mdcssimg_2">
        <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img2}" width='830' height='630'>
        </div>
        
-       <!-- 사진예시용 하나넣어둠 -->
+
         <div class="eximg" id = "mdcssimg_2">
        <img src="<%=pjName %>/resources/images/upload/${goods.gl_Img3}" width='830' height='630' alt="Image" class="md_ex_img3"><br/><br/><br/><br/>
        </div>
@@ -262,13 +277,13 @@
 		<div class="inputArea">
 			<textarea rows="10" cols="100" id="g_Message" style="border: none" name="g_Message">${goods.g_Message}</textarea>
 		</div>
-       
+	
+		
 
                  
 </div>
 </div>
 </div>
-   
 
 
     <div id="overlayer"></div>
@@ -288,7 +303,7 @@
     <script src="<%=pjName%>/resources/js/jquery.sticky.js"></script>
     <script src="<%=pjName%>/resources/js/aos.js"></script>
     <script src="<%=pjName%>/resources/js/custom.js"></script>
-    
+    <script src="<%=pjName%>/resources/js/jquery.cart.js"></script>
   </body>
 
   </html>

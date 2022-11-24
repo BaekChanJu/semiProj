@@ -11,3 +11,45 @@ div#css {
                 line-height: 1.2;
                 text-decoration: none;
 }
+
+
+div#event1{
+	
+	float: center;
+	 padding: 150px 30px 10px 800px;
+}
+
+
+div#eventFont{
+		color: lightpink;
+	 font-size: 30px;
+                font-family: Fixedsys;
+                font-style: normal;
+                font-weight: bold;
+                text-align: left;
+                line-height: 1.2;
+                text-decoration: none;
+
+	 padding: 150px 30px 10px 670px;
+}
+
+
+div#allCss{
+	padding: 50px 30px 10px 630px;
+	
+}
+
+
+div#pagecss{
+	padding: 0px 0px 200px 300px;
+}
+
+div#thankyou{
+	padding: 100px 400px 0px 0px;
+	
+}
+
+p#thankyouB{
+	padding: 0px 0px 0px 450px;
+}
+

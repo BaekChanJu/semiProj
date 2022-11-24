@@ -37,24 +37,34 @@
 </head>
 
 <body>
+	<div class="search-form" id="search-form">
+	<!-- 여기를쓰기 -->
+		<form action="<%=pjName%>/allItems.do" name ='sub1'>
+			<input type="text" name = 'searchKeyWord' class="form-control" placeholder="검색어를 입력하세요">
+			
+			 <button class="button">
+			
+				<svg width="1em" height="1em" viewBox="0 0 16 16"
+					class="bi bi-search" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+					<path fill-rule="evenodd"
+						d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+				</svg>
+				
+			</button>
+			
+			
+			
+			<button class="button">
+				<div class="close-search">
+					<span class="icofont-close js-close-search"></span>
+				</div>
+			</button>
 
-  <div class="search-form" id="search-form">
-    <form action="">
-      <input type="search" class="form-control" placeholder="Enter keyword to search...">
-      <button class="button">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-        </svg>
-      </button>
-      <button class="button">
-        <div class="close-search">
-          <span class="icofont-close js-close-search"></span>
-        </div>
-      </button>
-
-    </form>
-  </div>
+		</form>
+	</div>
 
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
@@ -104,7 +114,7 @@
 						
 						<!-- MEN 카테고리 -->
 						<li class="has-children">
-							<a href="<%=pjName%>/productList.do?sc_Id=11&ct_Id=20">MAN</a>
+							<a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=20">MAN</a>
 							<ul class="dropdown">
 								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
 								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
@@ -116,7 +126,7 @@
 						
 						<!-- WOMEN 카테고리 -->
 						<li class="has-children">
-							<a href="<%=pjName%>/productList.do?sc_Id=11&ct_Id=23">WOMAN</a>
+							<a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=30">WOMAN</a>
 							<ul class="dropdown">
 								<li><a href="<%=pjName%>/main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
 								<li><a href="<%=pjName%>/main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
@@ -171,7 +181,7 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
         <img src="<%=pjName%>/resources/images/mainShop배너.jpg" alt="Image" class="md_img">
-          <p class="mb-4"><a href="index.do">Home</a> / <strong>이달의 빈티져 상품 선정 특별상품 기획★
+          <p class="mb-4"><a href="index.do">Home</a> / <strong>빈티저 만의 자유하고 무드있는 상품★
         </div>
       </div>
     </div>

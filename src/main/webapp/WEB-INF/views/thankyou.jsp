@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+   <link rel="stylesheet" href="<%=pjName%>/resources/css/font.css">
 
   <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
@@ -158,28 +159,25 @@
 			</div>
 		</div>
 	</nav>
+	
+	
 
 
-  <div class="untree_co-section">
+  <div class="untree_co-section" id = 'thankyou'>
     <div class="container">
       <div class="row">
-        <div class="col-md-12 text-center pt-5">
-          <span class="display-3 thankyou-icon text-primary">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check mb-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-              <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-            </svg>
-          </span>
-          <h2 class="display-3 text-black">Thank you!</h2>
-          <p class="lead mb-5">You order was successfuly completed.</p>
-          <p><a href="shop.jsp" class="btn btn-sm btn-outline-black">Back to shop</a></p>
+        <div class="col-md-12 text-center pt-5" >
+        
+          <img src="<%=pjName%>/resources/images/땡큐.jpg" alt="Image" class="md_img" >
+          <p  id = 'thankyouB'><a href="index.do" class="btn btn-sm btn-outline-black">Back to shop</a></p>
         </div>
       </div>
     </div>
   </div>
 
 
-<div class="site-footer">
+
+	<div class="site-footer">
 
 
 		<div class="container">
@@ -187,18 +185,24 @@
 				<div class="col-lg-5">
 					<div class="widget mb-4">
 						<h3 class="mb-2">Vintagure</h3>
-						<p>우리회사 소개 정보 등등등!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						!!!!!!!!!!!!!!!!!!! 고객센터 시간, 번호, 회사주소, 회사연락처 등등등!!!!!!!!!!!!!!!!!</p>
+						<p>COMPANY: Vintagure 　OWNER: 세즈카　BUSINESS LICENSE: 258-42-00220　ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인]
+CS CENTER: 070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time 1:00pm~2:00pm (Weekends, Public holiday off)
+ADDRESS: 04355 서울특별시 금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙　PERSON IN CHARGE: 세즈카　E - MAIL: Vintagure@naver.com
+BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
+</p>
 					</div>
-				
+
 				</div>
 				
+				
+
+
 
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<ul class="list-unstyled social">
-						<li><a href="#"><span class="icon-facebook"></span></a></li>
-						<li><a href="#"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.instagram.com/vintagure1234/"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.facebook.com/vintagure"><span class="icon-facebook"></span></a></li>
 					</ul>
 				</div>
 				<div class="col-12 text-center copyright">
@@ -210,12 +214,12 @@
 		</div> <!-- /.container -->
 	</div> <!-- /.site-footer -->
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
-  </div>
 
   <script src="resources/js/jquery-3.4.1.min.js"></script>
   <script src="resources/js/popper.min.js"></script>

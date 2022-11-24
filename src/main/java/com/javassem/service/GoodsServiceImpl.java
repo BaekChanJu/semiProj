@@ -77,32 +77,31 @@ public class GoodsServiceImpl implements GoodsService{
 	public List<GoodsVO> mdShop(GoodsVO vo) {
 		return goodsDAO.mdItems(vo);
 	}
+	
+	
+	// md 페이징 카운트
 	public int mdCount(GoodsVO vo) {
 		return goodsDAO.mdCount(vo);
 	}
 	
 	
-	
 	//베스트상품용
-	public List<GoodsVO> bestShop(GoodsVO vo){
-		return goodsDAO.bestItem(vo);
-	}
-	
-	
-	//new상품용
-	public List<GoodsVO> newShop(GoodsVO vo){
-		return goodsDAO.newItem(vo);
-	}
-
-	//전체 검색 용
-		public List<GoodsVO> allShop(HashMap map){
-			return goodsDAO.allItem(map);
+		public List<GoodsVO> bestShop(GoodsVO vo){
+			return goodsDAO.bestItem(vo);
 		}
-	
 		
+		
+		//new상품용
+		public List<GoodsVO> newShop(GoodsVO vo){
+			return goodsDAO.newItem(vo);
+		}
 
+		//전체 검색 용
+			public List<GoodsVO> allShop(HashMap map){
+				return goodsDAO.allItem(map);
+			}
 		
-		
+	
 	
 
 }

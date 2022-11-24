@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="resources/css/aos.css">
 <link rel="stylesheet" href="resources/css/style.css">
 
+
 <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
 
@@ -97,7 +98,7 @@
 
 						<!-- Vintagure 카테고리  -->
 						<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
-						<li class="has-children"><a
+						<li class="has-children" ><a
 							href="main/productList.do?sc_Id=11">Vintagere</a>
 							<ul class="dropdown">
 								<li><a href="main/productList.do?sc_Id=11">OUTER</a></li>
@@ -108,7 +109,7 @@
 							</ul></li>
 
 						<!-- PAGES 카테고리 -->
-						<li class="has-children"><a href="qnA.do">PAGES</a>
+						<li class="has-children" ><a href="qnA.do">PAGES</a>
 							<ul class="dropdown">
 								<li><a href="qnA.do">Q & A</a></li>
 								<li><a href="styleReview.do">STYLE REVIEW</a></li>
@@ -116,7 +117,7 @@
 							</ul></li>
 
 						<!-- MEN 카테고리 -->
-						<li class="has-children"><a
+						<li class="has-children" ><a
 							href="main/productList.do?sc_Id=11&ct_Id=20">MAN</a>
 							<ul class="dropdown">
 								<li><a href="main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
@@ -126,8 +127,8 @@
 								<li><a href="main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
 							</ul></li>
 
-						<!-- WOMEN 카테고리 -->
-						<li class="has-children"><a
+						<!-- WOMEN 카테고리 --> 
+						<li class="has-children" ><a
 							href="main/productList.do?sc_Id=11&ct_Id=30">WOMAN</a>
 							<ul class="dropdown">
 								<li><a href="main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
@@ -165,7 +166,7 @@
 							</svg>
 						</a>
 						<!--  장바구니 버튼 -->
-						<a href="cart.do" class="cart"> <span class="item-in-cart">2</span>
+						<a href="cart.do?m_Id=${sessionScope.login}" class="cart" > <span class="item-in-cart">2</span>
 							<svg width="1em" height="1em" viewBox="0 0 16 16"
 								class="bi bi-cart" fill="currentColor"
 								xmlns="http://www.w3.org/2000/svg">
@@ -223,7 +224,7 @@
 		<!--  이달의 이벤트 슬라이더 사진2  -->
 		<div class="item">
 			<div class="untree_co-hero"
-				style="background-image: url('resources/images/바다항해.gif');">
+				style="background-image: url('resources/images/감성지하철남자.gif');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
@@ -263,9 +264,9 @@
 			<div class="deal-hero overlay"
 				style="background-image: url('resources/images/눈오는시계탑.gif')">
 				<div class="deal-contents">
-					<span class="subtitle">MD의추천상품</span>
+					<span class="subtitle">MD강력 추천상품</span>
 					<h2 class="title mb-4">
-						<a href="#">겨울상품추천</a>
+						<a href="#">겨울 Item 추천</a>
 					</h2>
 					<p class="mb-5">차가운 겨울 따듯한 Vintagere에서</p>
 					<a href="mdRecommend.do" class="btn btn-black">click!</a>
@@ -325,11 +326,11 @@
 		<div class="deal-hero overlay"
 			style="background-image: url('resources/images/스타일게시판.gif')">
 			<div class="deal-contents">
-				<span class="subtitle">빈티지의류 착샷을 올려주세요</span>
+				<span class="subtitle">고객님들의 소중한 착샷을 올려주세요!</span>
 				<h2 class="title mb-4">
-					<a href="#">스타일샷 게시판</a>
+					<a href="#">#Style shot</a>
 				</h2>
-				<p class="mb-5">여러분들의 개성~~~~~ 빈티지의류를 뽐내보자!!.</p>
+				<p class="mb-5">#Vintagere#OOTD#daily#리뷰</p>
 				<a href="styleReview.do" class="btn btn-black">STYLE REVIEW</a>
 			</div>
 		</div>

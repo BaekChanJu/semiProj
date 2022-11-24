@@ -7,7 +7,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 import com.javassem.domain.GoodsVO;
 
 
@@ -89,34 +88,38 @@ public class GoodsDAOImpl implements GoodsDAO{
 		System.out.println("===> Mybatis mainShoes() 호출");
 		return mybatis.selectList("GoodsDAO.mdItems",vo);
 	}
-	// md페이징
-	public int mdCount(GoodsVO vo) {
-		System.out.println("===> Mybatis mdCount() 호출" +vo);
-		return mybatis.selectOne("GoodsDAO.mdCount",vo);
-	}
 
-	//베스트용
-	public List<GoodsVO> bestItem(GoodsVO vo){
-		System.out.println("===> bestItems 호출");
-		return mybatis.selectList("GoodsDAO.bestItems",vo);
-	}
 
-	
-	//newList 용
-	public List<GoodsVO> newItem(GoodsVO vo){
-			System.out.println("===> newItems 호출");
-			return mybatis.selectList("GoodsDAO.newItems",vo);
+	// 상품 갯수
+		public int mdCount(GoodsVO vo) {
+			System.out.println("===> Mybatis mdCount() 호출" +vo);
+			return mybatis.selectOne("GoodsDAO.mdCount",vo);
+			
 		}
-	
-	
-	//전체앤 검색용
-		public List<GoodsVO> allItem(HashMap map){
-				System.out.println("===> allItems 호출");
-				System.out.println(map.get("searchKeyword"));
-				
-				return mybatis.selectList("GoodsDAO.allItems",map);
-			}
+		
 
-	
+		//베스트용
+		public List<GoodsVO> bestItem(GoodsVO vo){
+			System.out.println("===> bestItems 호출");
+			return mybatis.selectList("GoodsDAO.bestItems",vo);
+		}
+
+		
+		//newList 용
+		public List<GoodsVO> newItem(GoodsVO vo){
+				System.out.println("===> newItems 호출");
+				return mybatis.selectList("GoodsDAO.newItems",vo);
+			}
+		
+		
+		//전체앤 검색용
+			public List<GoodsVO> allItem(HashMap map){
+					System.out.println("===> allItems 호출");
+					System.out.println(map.get("searchKeyword"));
+					
+					return mybatis.selectList("GoodsDAO.allItems",map);
+				}
+
+
 
 }

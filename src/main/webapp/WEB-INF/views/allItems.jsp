@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
-    <link rel="stylesheet" href="<%=pjName%>/resources/css/font.css">
+   <link rel="stylesheet" href="<%=pjName%>/resources/css/font.css">
   
   
   
@@ -187,8 +187,8 @@
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
           <!-- 이름대신 배너 넣음 -->
-           <img src="<%=pjName%>/resources/images/New상품배너.jpg" alt="Image" class="md_img">
-          <p class="mb-4"><a href="index.do">Home</a> / <strong>이달의 이벤트 New추천 특별기획</strong></p>        
+           <img src="<%=pjName%>/resources/images/전체상품검색용배너.jpg" alt="Image" class="md_img">
+          <p class="mb-4"><a href="index.do">Home</a> / <strong>빈티저 모든상품을 한눈에 볼 수 있는 기회!</strong></p>        
         </div>
       </div>
     </div>
@@ -196,7 +196,7 @@
 
 
                    
-          <div class="col-md-9" >
+          <div class="col-md-9" id="allCss" >
           <div class="row">
           <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
           <c:set var="count" value="1" />

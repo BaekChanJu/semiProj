@@ -22,6 +22,7 @@ public class GoodsController {
 	
 	
 	
+	
 	@RequestMapping("/index")
 	public String bestTest(GoodsVO vo, Model model) {
 		List<GoodsVO> list = goodsService.bestShop(vo);
@@ -35,8 +36,6 @@ public class GoodsController {
 	
 		return "index"; //화면에 베스트 아이템들이안뜸
 	}
-	
-
 					
 	
 
@@ -120,7 +119,7 @@ public class GoodsController {
 		return "redirect:/main/productList.do";
 	}
 	
-	 //1121 일 찬주 추가 md 추천사진용
+	
 	 
 	  @RequestMapping("mdRecommend.do") 
 	public void mdRecommend(GoodsVO vo, Model model){
@@ -133,10 +132,9 @@ public class GoodsController {
 		System.out.println("listCount확인:" +goodsService.listCount(vo));
 		model.addAttribute("pageMaker", pageMaker);
 		}
-	  
-	  
+	
 	  //1122 일 찬주 추가 best 추천사진용
-		 
+	 
 	  @RequestMapping("bestItems.do") 
 	public void bestItems(GoodsVO vo, Model model){
 		  List<GoodsVO> list = goodsService.bestShop(vo);
@@ -165,8 +163,5 @@ public class GoodsController {
 		  model.addAttribute("allItems", list);
 			}
 	  
-	  
-	
-		
-	  
+
 }

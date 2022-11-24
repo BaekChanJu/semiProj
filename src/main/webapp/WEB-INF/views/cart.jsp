@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="/" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +72,7 @@
 			<!--  메인 헤더 우측 상표 홈버튼 -->
 			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.jsp" class="logo menu-absolute m-0">Vintagere<span class="text-primary">.</span></a>
+					<a href="index.di" class="logo menu-absolute m-0">Vintagere<span class="text-primary">.</span></a>
 
 					<!--  메인 헤더 중앙 카테고리  -->
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
@@ -170,7 +172,7 @@
     <div class="container">
       <div class="row align-items-end text-center">
         <div class="col-lg-7 mx-auto">
-          <h1>Cart</h1>    
+        <img src="<%=pjName%>/resources/images/카트맨윗단배너.jpg" alt="Image" class="img-fluid">
         </div>
       </div>
     </div>
@@ -201,53 +203,31 @@
               좌측에 구매목록, 장바구니가 안들어감
               장바구니는 그냥두고 로그인후 마이페이지 클릭시 shop 틀을 떠와서 구매목록 만드는게 나을수도...
                -->
+               <c:forEach items="${cartList}" var="cart">
                 <tr>
                   <td class="product-thumbnail">
-                    <img src="<%=pjName%>/resources/images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
+                    <img src="<%=pjName%>/resources/images/upload/${cart.gl_Img1}" alt="Image" class="img-fluid">
                   </td>
                   <td class="product-name">
-                    <h2 class="h5 text-black">Top Up T-Shirt</h2>
+                    <h2 class="h5 text-black">${cart.g_Name}</h2>
                   </td>
-                  <td>$49.00</td>
-                  <td>
+                  <td>${cart.g_Price}</td>
+                    <td>
                     <div class="input-group mb-3" style="max-width: 120px;">
                       <div class="input-group-prepend">
                         <button class="btn btn-outline-black js-btn-minus" type="button">&minus;</button>
                       </div>
-                      <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      <input type="text" class="form-control text-center" value="${cart.c_Cnt}"  name='c_Cnt' placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                       <div class="input-group-append">
                         <button class="btn btn-outline-black js-btn-plus" type="button">&plus;</button>
                       </div>
                     </div>
 
                   </td>
-                  <td>$49.00</td>
-                  <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                  <td class='totalPrice'>${cart.totalPrice }</td>
+                  <td><a href="deleteCart.do?c_Id=${cart.c_Id}&m_Id=${cart.m_Id}" class="btn btn-black btn-sm">X</a></td>
                 </tr>
-
-                <tr>
-                  <td class="product-thumbnail">
-                    <img src="<%=pjName%>/resources/images/products/bottoms-1-min.jpg" alt="Image" class="img-fluid">
-                  </td>
-                  <td class="product-name">
-                    <h2 class="h5 text-black">Polo Shirt</h2>
-                  </td>
-                  <td>$49.00</td>
-                  <td>
-                    <div class="input-group mb-3" style="max-width: 120px;">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-black js-btn-minus" type="button">&minus;</button>
-                      </div>
-                      <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-black js-btn-plus" type="button">&plus;</button>
-                      </div>
-                    </div>
-
-                  </td>
-                  <td>$49.00</td>
-                  <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                </tr>
+                </c:forEach>
               </tbody>
             </table>
           </div>
@@ -271,7 +251,7 @@
 
         <div class="row">
             <div class="col-md-12">
-        <img src="<%=pjName%>/resources/images/products/tt.png" alt="Image" class="img-fluid">
+        <img src="<%=pjName%>/resources/images/카트용배너.jpg" alt="Image" class="img-fluid">
          </div>
             <div class="col-md-8 mb-3 mb-md-0">
             </div>
@@ -280,41 +260,46 @@
           </div>
         </div>
         
+        
         <div class="col-md-6 pl-5">
           <div class="row justify-content-end">
             <div class="col-md-7">
               <div class="row">
                 <div class="col-md-12 text-right border-bottom mb-5">
-                  <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                  <h3 class="text-black h4 text-uppercase">Order List</h3>
                 </div>
               </div>
-              <div class="row mb-3">
-                <div class="col-md-6">
-                  <span class="text-black">Subtotal</span>
-                </div>
-                <div class="col-md-6 text-right">
-                  <strong class="text-black">나중에 금액</strong>
-                </div>
-              </div>
+
               <div class="row mb-5">
+              
                 <div class="col-md-6">
-                  <span class="text-black">Total</span>
                 </div>
-                <div class="col-md-6 text-right">
-                  <strong class="text-black">나중에 총 금액</strong>
+                <form>
+              	<c:forEach items="${cartList}" var="cart">
+                <div class="col-md-12 text-right">
+                <strong class="text-black">${cart.g_Name}  </strong>
+                  <strong class="text-black">${cart.totalPrice}원</strong><br/>
+                </div>
+                </c:forEach>
+                </form>
+                <div class="col-md-6">
+                <br/> <br/> <br/>
+                  <span class="text-black h4 text-uppercase">total</span>
+                  <span class="text-black h2 text-uppercase" id='totalPriecs'></span><br/><br/>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12">
                 <a href="checkOut.do" class="cart">
-                  <button class="btn btn-outline-black btn-sm btn-block" ">결제하기</button>
+                  <button class="btn btn-outline-black btn-sm btn-block" >결제하기</button>
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <!--   -->
       </div>
     </div>
@@ -325,7 +310,8 @@
 
  
 
-  <div class="site-footer">
+ 
+	<div class="site-footer">
 
 
 		<div class="container">
@@ -333,66 +319,24 @@
 				<div class="col-lg-5">
 					<div class="widget mb-4">
 						<h3 class="mb-2">Vintagure</h3>
-						<p>우리회사 소개 정보 등등등!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						!!!!!!!!!!!!!!!!!!! 고객센터 시간, 번호, 회사주소, 회사연락처 등등등!!!!!!!!!!!!!!!!!</p>
+						<p>COMPANY: Vintagure 　OWNER: 세즈카　BUSINESS LICENSE: 258-42-00220　ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인]
+CS CENTER: 070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time 1:00pm~2:00pm (Weekends, Public holiday off)
+ADDRESS: 04355 서울특별시 금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙　PERSON IN CHARGE: 세즈카　E - MAIL: Vintagure@naver.com
+BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
+</p>
 					</div>
-					<!-- <div class="widget">
-						<h3>Join our mailing list and receive exclusives</h3>
-						<form action="#" class="subscribe">
-							<div class="d-flex">
-								<input type="email" class="form-control" placeholder="Email address">
-								<input type="submit" class="btn btn-black" value="Subscribe">
-							</div>
-						</form>
 
-						
-					</div> -->
 				</div>
 				
 				
-<!-- 				<div class="col-lg-2">
-					<div class="widget">
-						<h3>Help</h3> 
-						<ul class="list-unstyled">
-							<li><a href="#">Contact us</a></li>
-							<li><a href="#">Account</a></li>
-							<li><a href="#">Shipping</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="#">FAQ</a></li>   
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2">
-					<div class="widget">
-						<h3>About</h3>
-						<ul class="list-unstyled">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Press</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Team</a></li>
-							<li><a href="#">FAQ</a></li>   
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2">
-					<div class="widget">
-						<h3>Shop</h3>
-						<ul class="list-unstyled">
-							<li><a href="#">Store</a></li>
-							<li><a href="#">Gift Cards</a></li>
-							<li><a href="#">Student Discount</a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div> -->
+
 
 
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<ul class="list-unstyled social">
-						<li><a href="#"><span class="icon-facebook"></span></a></li>
-						<li><a href="#"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.instagram.com/vintagure1234/"><span class="icon-instagram"></span></a></li>
+						<li><a href="https://www.facebook.com/vintagure"><span class="icon-facebook"></span></a></li>
 					</ul>
 				</div>
 				<div class="col-12 text-center copyright">
@@ -404,12 +348,12 @@
 		</div> <!-- /.container -->
 	</div> <!-- /.site-footer -->
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
-  </div>
 
   <script src="<%=pjName%>/resources/js/jquery-3.4.1.min.js"></script>
   <script src="<%=pjName%>/resources/js/popper.min.js"></script>
@@ -421,7 +365,7 @@
   <script src="<%=pjName%>/resources/js/jquery.sticky.js"></script>
   <script src="<%=pjName%>/resources/js/aos.js"></script>
   <script src="<%=pjName%>/resources/js/custom.js"></script>
-  
+  <script src="<%=pjName%>/resources/js/totalPrice.js"></script>
 </body>
 
 </html>
