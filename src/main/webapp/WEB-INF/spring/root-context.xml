@@ -34,6 +34,8 @@
 		<value>com.javassem.domain.FreeVO</value>
 		<value>com.javassem.domain.StyleReviewVO</value>
 		<value>com.javassem.domain.CartVO</value>
+		<value>com.javassem.domain.SalesVO</value>
+		<value>com.javassem.domain.BuyVO</value>
 		
   	</list>
   </property>

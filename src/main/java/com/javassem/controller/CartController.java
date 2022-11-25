@@ -54,27 +54,18 @@ public class CartController {
 		
 
 	}
-	// 목록보기
-		@GetMapping("cart.do")
-		public String getCartList( String m_Id, Model model,  HttpSession session) {
-			Object obj = session.getAttribute("login");
-			
-			
-			 if( obj == null) {
-				 System.out.println("obj == null");
-				 return "login"; 
-			}
-			 
-			
-			System.out.println("m_id 확인"+ m_Id);
-			model.addAttribute("cartList", cartService.getCartList(m_Id));
-			System.out.println("확인 : " + cartService.getCartList(m_Id));
-			
-			return "cart";
-		}
-
 	
-	// 삭제
+	// 목록보기
+	@GetMapping("cart.do")
+	public String getCartList( String m_Id, Model model) {
+		System.out.println("m_id 확인"+ m_Id);
+		model.addAttribute("cartList", cartService.getCartList(m_Id));
+		System.out.println("확인 : " + cartService.getCartList(m_Id));
+		
+		return "cart";
+	}
+	
+	// 카트 상품 삭제
 	@RequestMapping("deleteCart.do")
 	public String deleteCart(String c_Id, String m_Id) {
 		System.out.println("delete : " + c_Id);
@@ -82,16 +73,30 @@ public class CartController {
 		return "redirect:cart.do?m_Id="+m_Id;
 	}
 	
-	// 수정
-	/* 장바구니 수량 수정 */
-	/*
-	 * @PostMapping("updateCart.do") public String updateCart(CartVO cart) {
-	 * 
-	 * cartService.updateCart(cart);
-	 * 
-	 * return "redirect:/cart/" + cart.getM_Id();
-	 * 
-	 * }
-	 */
+	// 카트 상품 전체 삭제
+		@RequestMapping("deleteAllCart.do")
+		public String deleteAllCart(String m_Id) {
+			System.out.println("delete : " + m_Id);
+			cartService.deleteCart(m_Id);
+			return "redirect:cart.do?m_Id="+m_Id;
+		}
+	
+
+	/* 카트 + 증가*/
+	@RequestMapping("plusCart.do")
+	public String plusCart(String g_Id, String m_Id) {
+		System.out.println("plusM_Id" + m_Id + "plusG_Id" + g_Id);
+		cartService.plusCart(g_Id, m_Id);
+		return "redirect:cart.do?m_Id="+m_Id;
+	}
+	
+	/* 카트 - 감소*/
+	@RequestMapping("minCart.do")
+	public String minCart(String g_Id, String m_Id) {
+		System.out.println("plusM_Id" + m_Id + "plusG_Id" + g_Id);
+		cartService.minCart(g_Id, m_Id);
+		return "redirect:cart.do?m_Id="+m_Id;
+	}
+	
 
 }

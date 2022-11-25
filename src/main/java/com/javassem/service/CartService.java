@@ -15,11 +15,19 @@ public interface CartService {
 	/* 카트 삭제 */
 	public void deleteCart(String c_Id);
 	
+	/* 카트 전체 삭제 */
+	public void deleteAllCart(String m_Id);
+	
 	/* 카트 수량 수정 */
 	public void updateCart(CartVO cart);
 	
 	/* 카트 상품 확인*/
 	public int countCart(String g_Id, String m_Id);
 
+	/* 카트 + 증가*/
+	public int plusCart(String g_Id, String m_Id);
+	
+	/* 카트 - 감소*/
+	public int minCart(String g_Id, String m_Id);
 
 }

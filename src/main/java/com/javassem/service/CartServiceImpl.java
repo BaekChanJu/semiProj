@@ -30,7 +30,6 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public List<CartVO> getCartList(String m_Id) {
 		List<CartVO> cart = cartDAO.getCartList(m_Id);
-		
 		for(CartVO dto : cart) {
 			dto.initTotal();
 		}
@@ -42,6 +41,12 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public void deleteCart(String c_Id) {
 		cartDAO.deleteCart(c_Id);
+	}
+	
+	// 장바구니 전체 삭제
+	@Override
+	public void deleteAllCart(String m_Id) {
+		cartDAO.deleteCart(m_Id);
 	}
 
 	// 장바구니 수정
@@ -55,6 +60,22 @@ public class CartServiceImpl implements CartService {
 	public int countCart(String g_Id, String m_Id) {
 		return cartDAO.countCart(g_Id, m_Id);
 	}
+
+	/* 카트 + 증가*/
+	@Override
+	public int plusCart(String g_Id, String m_Id) {
+		int plus = cartDAO.plusCart(g_Id, m_Id);
+		System.out.println("plusServise 확인 : "+ plus);
+		return plus;
+	}
+
+	/* 카트 - 감소*/
+	@Override
+	public int minCart(String g_Id, String m_Id) {
+		return cartDAO.minCart(g_Id, m_Id);
+	}
+
+	
 	
 	
 

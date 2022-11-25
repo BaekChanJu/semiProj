@@ -14,7 +14,7 @@ $(function(){
 	})
 
 	
-		$("#totalPriecs").text(sum);
+		$("#totalPrices").text(sum);
 
 	
 

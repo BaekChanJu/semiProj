@@ -27,8 +27,15 @@ public class CartDAOImpl implements CartDAO{
 	@Override
 	public void deleteCart(String c_Id) {
 		System.out.println("===> Mybatis deleteCart() 호출");
-		 mybatis.delete("CartDAO.deleteCart", c_Id);
+		 mybatis.delete("CartDAO.deleteAllCart", c_Id);
 	}
+	
+	// 카트 전체 삭제
+		@Override
+		public void deleteAllCart(String m_Id) {
+			System.out.println("===> Mybatis deleteCart() 호출");
+			 mybatis.delete("CartDAO.deleteCart", m_Id);
+		}
 
 	// 카트 수정
 	@Override
@@ -59,5 +66,29 @@ public class CartDAOImpl implements CartDAO{
 		map.put("m_Id", m_Id);
 		System.out.println("g : " + g_Id + "m : " + m_Id);
 		return mybatis.selectOne("CartDAO.countCart", map);
+	}
+
+	/* 카트 + 증가*/
+	@Override
+	public int plusCart(String g_Id, String m_Id) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		System.out.println("plusDAO g : "+ g_Id+"plusDAO m : "+ m_Id);
+		map.put("g_Id", g_Id);
+		System.out.println("plusDAO g2 : "+ map.put("g_Id", g_Id));
+		map.put("m_Id", m_Id);
+		System.out.println("plusDAO g2 : "+ map.put("m_Id", m_Id));
+		System.out.println("map : " + map);
+		if(mybatis == null)System.out.println("mybatis == null");
+		else System.out.println("mybatis != null");
+		return mybatis.update("CartDAO.plusCart", map);
+	}
+
+	/* 카트 - 감소*/
+	@Override
+	public int minCart(String g_Id, String m_Id) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("g_Id", g_Id);
+		map.put("m_Id", m_Id);
+		return mybatis.update("CartDAO.minCart",map);
 	}
 }

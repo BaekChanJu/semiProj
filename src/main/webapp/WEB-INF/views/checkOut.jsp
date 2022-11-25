@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 function sample6_execDaumPostcode() {
@@ -235,14 +235,17 @@ function sample6_execDaumPostcode() {
           </div>
         </div>
       </div>
+      
+      <form action="addBuy.do" name='addBuy'>
       <div class="row">
+      	<input type="hidden" name='m_Id' id='m_Id' value='${sessionScope.login}'>
         <div class="col-md-6 mb-5 mb-md-0">
           <h2 class="h3 mb-3 text-black">Billing Details</h2>
           <div class="p-3 p-lg-5 border">
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="c_fname" class="text-black">Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname" placeholder="Name">
+                <input type="text" class="form-control" id="c_fname" name="c_fname" placeholder="Name" value="${memberInfo.m_Name}">
               </div>
 
             </div>
@@ -250,14 +253,14 @@ function sample6_execDaumPostcode() {
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="c_email" class="text-black">E - Mail </label>
-                <input type="email" class="form-control" id="c_email" name="c_email" placeholder="E - Mail">
+                <input type="email" class="form-control" id="c_email" name="c_email" placeholder="E - Mail" value='${memberInfo.m_Email}'>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="c_address" class="text-black">Phone Number <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_tel" name="c_tel" placeholder="Phone Number">
+                <input type="text" class="form-control" id="c_tel" name="c_tel" placeholder="Phone Number" value='${memberInfo.m_Tell}'>
               </div>
             </div>
           
@@ -266,7 +269,7 @@ function sample6_execDaumPostcode() {
             <div class="form-group row">
               <div class="col-md-6">
                 <label for="sample6_postcode" class="text-black" > <span class="text-danger"></span></label>
-                <input type="text" class="form-control" id="sample6_postcode" name="sample6_postcode" placeholder="우편번호">
+                <input type="text" class="form-control" id="sample6_postcode" name="sample6_postcode" placeholder="우편번호" value='${memberInfo.m_Num}'>
               </div>
               
             <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>  
@@ -276,15 +279,16 @@ function sample6_execDaumPostcode() {
             <div class="form-group row mb-5">
               <div class="col-md-12">
                 <label for="sample6_address" class="text-black"><span class="text-danger"></span></label>
-                <input type="text" class="form-control" id="sample6_address" name="sample6_address" placeholder="주소" >
+                <input type="text" class="form-control" id="sample6_address" name="sample6_address" placeholder="주소" value='${memberInfo.m_Addr}' >
               </div>
               <div class="col-md-12">
                 <label for="sample6_detailAddress" class="text-black"><span class="text-danger"></span></label>
-                <input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소">
+                <input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소" value='${memberInfo.m_SubAddr}'>
               </div>
             </div>
 
 
+	<!--  다른 주소로 배송 -->
             <div class="form-group">
               <label for="c_ship_different_address" class="text-black" data-toggle="collapse" href="#ship_different_address" role="button" aria-expanded="false" aria-controls="ship_different_address"><input type="checkbox" value="1" id="c_ship_different_address"> 다른 배송지로 </label>
               <div class="collapse" id="ship_different_address">
@@ -338,37 +342,39 @@ function sample6_execDaumPostcode() {
 
               </div>
             </div>
-
-
           </div>
         </div>
+
+        
         
         <div class="col-md-6">
           <div class="row mb-5">
             <div class="col-md-12">
               <h2 class="h3 mb-3 text-black">Your Order</h2>
               <div class="p-3 p-lg-5 border">
+              
+             
                 <table class="table site-block-order-table mb-5">
                   <thead>
                     <th>Product</th>
                     <th>Total</th>
                   </thead>
+                   <c:forEach items="${goodsList}" var="goods">
                   <tbody>
+					<input type="hidden" name='g_Id' id='g_Id' value="${goods.g_Id}"/>
                     <tr>
-                      <td>상품이름 <strong class="mx-2">x</strong> 수량</td>
-                      <td>상품가격</td>
+                      <td>${goods.g_Name}<strong class="mx-2">x</strong> ${goods.c_Cnt}</td>
+                      <td class='totalPrice'>${goods.g_Price * goods.c_Cnt}</td>
                     </tr>
-                  
-                    <tr>
-                      <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-                      <td class="text-black">$총금액</td>
-                    </tr>
+                  </c:forEach>
                     <tr>
                       <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-                      <td class="text-black font-weight-bold"><strong>$결제금액</strong></td>
+                      <td class="text-black font-weight-bold" id='totalPrices'><strong></strong></td>
                     </tr>
                   </tbody>
+                  
                 </table>
+                 
 
                 <div class="border p-3 mb-3">
                   <h3 class="h6 mb-0"><a href="thankyou.do" class="d-block" role="button" aria-expanded="false" aria-controls="collapsebank">카드결제</a></h3>
@@ -385,9 +391,7 @@ function sample6_execDaumPostcode() {
                 </div>
 
                 <div class="form-group">
-                <a href="thankyou.do">
-                  <button class="btn btn-black btn-lg py-3 btn-block"">결제 하기</button>
-                </a>
+                  <input type="submit" class="btn btn-black btn-lg py-3 btn-block" value='결제 하기'>
                 </div>
 
               </div>
@@ -396,7 +400,8 @@ function sample6_execDaumPostcode() {
 
         </div>
       </div>
-      <!-- </form> -->
+      </form>
+
     </div>
   </div>
 
@@ -497,7 +502,7 @@ function sample6_execDaumPostcode() {
   <script src="<%=pjName%>/resources/js/jquery.sticky.js"></script>
   <script src="<%=pjName%>/resources/js/aos.js"></script>
   <script src="<%=pjName%>/resources/js/custom.js"></script>
-  
+  <script src="<%=pjName%>/resources/js/cartTotalPrice.js"></script>
 </body>
 
 </html>
