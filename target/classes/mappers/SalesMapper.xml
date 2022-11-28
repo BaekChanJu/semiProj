@@ -10,7 +10,7 @@
  
  <![CDATA[
  SELECT MONTH,NVL(SALES,0) SALES 
-         FROM (SELECT TO_NUMBER(TO_CHAR(b_date,'MM')) MONTH,SUM(b_total) SALES 
+         FROM (SELECT TO_NUMBER(TO_CHAR(b_date,'MM')) MONTH,SUM(totalPrice) SALES 
          FROM buy 
          WHERE TO_CHAR(b_date,'YYYY') = '2022'
          GROUP BY TO_NUMBER(TO_CHAR(b_date,'MM')))A 

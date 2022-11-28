@@ -6,21 +6,22 @@ public class BuyVO {
 	private String	g_Id;
 	private int		c_Cnt;
 	
-	// Db로 부터 꺼내올 값
+
 	private String 	g_Name;
 	private int		g_Price;
 	private String	m_Name;
 	private String  m_Email;
 	private String	m_Tell;
-	private int		m_Num;
-	private String  m_Addr;
-	private String	m_SubAddr;
+	private int		m_Num;		// 우편번호
+	private String  m_Addr;		// 기본주소
+	private String	m_SubAddr;	// 상세주소
 	private String  m_Id;
-	
-	// 만들어낼 값
-	private int totalPrice;
-	private String b_Id;
-	private String b_Date;
+	private String  delivery;
+	private String  cancel;
+
+	private int totalPrice;		// 총 가격
+	private String b_Id;		// 주문 고유번호
+	private String b_Date;		// 주문 날짜
 
 	
 	
@@ -145,14 +146,35 @@ public class BuyVO {
 	public void initSaleTotal() {
 		this.totalPrice = this.g_Price*this.c_Cnt;
 	}
+	
+
+	public String getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(String delivery) {
+		this.delivery = delivery;
+	}
+
+	public String getCancel() {
+		return cancel;
+	}
+
+	public void setCancel(String cancel) {
+		this.cancel = cancel;
+	}
 
 	@Override
 	public String toString() {
 		return "BuyVO [g_Id=" + g_Id + ", c_Cnt=" + c_Cnt + ", g_Name=" + g_Name + ", g_Price=" + g_Price + ", m_Name="
 				+ m_Name + ", m_Email=" + m_Email + ", m_Tell=" + m_Tell + ", m_Num=" + m_Num + ", m_Addr=" + m_Addr
-				+ ", m_SubAddr=" + m_SubAddr + ", m_Id=" + m_Id + ", totalPrice=" + totalPrice + ", b_Id=" + b_Id
-				+ ", b_Date=" + b_Date + "]";
+				+ ", m_SubAddr=" + m_SubAddr + ", m_Id=" + m_Id + ", delivery=" + delivery + ", cancel=" + cancel
+				+ ", totalPrice=" + totalPrice + ", b_Id=" + b_Id + ", b_Date=" + b_Date + "]";
 	}
+
+	
+
+	
 
 	
 

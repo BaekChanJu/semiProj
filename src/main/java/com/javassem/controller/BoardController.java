@@ -25,7 +25,7 @@ public class BoardController {
 	private BoardService boardSerice ;
 
 	//QNA게시판 목록 
-	@RequestMapping("/qnA.do") 
+	@RequestMapping(value={"qnA.do","qnaanswer.do"}) 
 	public void qnaList (Model m, QnaVO vo) {
 		System.out.println(" -- 컨트롤 qna 요청완료 ---"+vo);
 
@@ -45,7 +45,6 @@ public class BoardController {
 	public void freeList(Model m,FreeVO vo) {
 		System.out.println(" -- 컨트롤 free 요청완료 ---"+vo);
 
-		
 		List<FreeVO> list = boardSerice.freeList(vo);
 		m.addAttribute("free", list); 
 		System.out.println("list:"+list);
@@ -79,7 +78,7 @@ public class BoardController {
 	}//end of qnaInsert
 
 	//QNA게시판 상세보기
-	@RequestMapping("/qnalist.do") 
+	@RequestMapping(value={"/qnalist.do","qnalistadmin.do"}) 
 	public void qnaList1 (QnaVO vo,Model m) {
 		System.out.println(" -- 컨트롤 qna 요청완료 ---");
 	QnaVO result = boardSerice.qnaDetail(vo);
@@ -90,9 +89,10 @@ public class BoardController {
 	}//end of qnaList
 
 	//QnA게시판 삭제
-	@RequestMapping("qnadelete")
+	@RequestMapping(value={"qnadelete",""})
 	public String qnaDelete(QnaVO vo) {
 		System.out.println("컨트롤 qnaDelete 요청완료");
+		boardSerice.orderdelete(vo);
 		boardSerice.qnaDelete(vo);
 		return "redirect:qnA.do";
 	}//end of qnaDelete
@@ -122,7 +122,7 @@ public class BoardController {
 	}//end of freeDelete
 	
 	//Free 게시판 수정
-	@RequestMapping("freemodi")
+	@RequestMapping(value={"freemodi","qnaup"})
 	public String freeUpdate(FreeVO vo) {
 		System.out.println("컨트롤 freeUpdate 요청완료 :"+vo);
 		boardSerice.freeUpdate(vo);
@@ -157,7 +157,7 @@ public class BoardController {
 		System.out.println("컨트롤 styleInsert() 요청완료" +vo);
 		boardSerice.styleInsert(vo);
 		return "redirect:styleReview.do";
-	}
+	}//end of styleInsert
 	
 	//style 게시판 수정
 	@RequestMapping("styleUpdate")
@@ -165,30 +165,41 @@ public class BoardController {
 		System.out.println("컨트롤 styleUpdate() 요청완료" +vo);
 		boardSerice.styleUpdate(vo);
 		return "redirect:styleReview.do";
+	}//end of styleUpdate
+	
+	//style 게시판 삭제
+	@RequestMapping("styledelete")
+	public String styleDelete(StyleReviewVO vo) {
+		System.out.println("컨트롤 styleDelete 요청완료 :"+vo);
+		boardSerice.styleDelete(vo);
+		return "redirect:styleReview.do";
+	}//end of freeDelete
+	
+	//관리자 QnA게시판 삭제
+	@RequestMapping("qnadelete1")
+	public String qnaDelete1(QnaVO vo) {
+			System.out.println("컨트롤 qnaDelete 요청완료");
+			boardSerice.orderdelete(vo);
+			boardSerice.qnaDelete(vo);
+			return "redirect:qnaanswer.do";
+	}//end of qnaDelete
+		
+	//관리자 qna 게시판 답변 등록
+	@RequestMapping("qnaadmin")
+	public String qnaWrite(QnaVO vo) {
+			System.out.println("컨트롤 qnaWrite 요청완료");
+			boardSerice.qnaWrite(vo);
+			return "redirect:qnaanswer.do";
 	}
-	
-	//qna 게시판 답글 등록
-	
-	//QNA게시판 목록 
-	@RequestMapping("/qnaanswer") 
-	public String qnaList1 (Model m, QnaVO vo) {
-		System.out.println(" -- 컨트롤 qna 요청완료 ---"+vo);
-
-		List<QnaVO> list = boardSerice.qnaList(vo);
-		m.addAttribute("qnA", list);  
 		
-		ppVO pageMaker = new ppVO();
-		pageMaker.setCri(vo);
-		pageMaker.setTotalCount(boardSerice.listCount(vo));
-		System.out.println("listCount확인:" +boardSerice.listCount(vo));
-		m.addAttribute("pageMaker", pageMaker);
+	//관리자 QnA게시판 수정
+	@RequestMapping("qnaup.do")
+	public String qnaUpdate1(QnaVO vo) {
+			System.out.println("컨트롤 qnaUpdate 요청완료: " + vo);
+			boardSerice.orderupdate(vo);
+			return "redirect:qnaanswer.do";
+	}//end of qnaUpdate
 		
-		return "redirect:qnaanswer.do";
-		
-		
-	}//end of qnaList
-	
-	
 	
 }
  

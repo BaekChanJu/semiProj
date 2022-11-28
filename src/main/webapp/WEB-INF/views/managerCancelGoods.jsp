@@ -212,61 +212,37 @@
                <div class="row">
                   <div class="col-12 col-sm-12 col-md-12 mb-12 col-lg-12">
 
-                     <form action="saveGoods.do"  role="form" method='post' enctype="multipart/form-data" autocomplete="off">
+                     <form action=""  role="form" method='post' enctype="multipart/form-data" autocomplete="off">
 
-                        <div class="inputArea">
-                           <label>1차 분류</label> <select name=ct_Id class="category1">
-                              <option value="20">man</option>
-                              <option value="30">woman</option>
-                              <option value="40">event</option>
-                           </select>
-                           <label>2차 분류</label> <select name="sc_Id" class="category1">
-                              <option value="11">Outer</option>
-                              <option value="15">Top</option>
-                              <option value="13">Bottom</option>
-                              <option value="14">Shoes</option>
-                              <option value="12">Acc</option>
-                              <option value="16">New event</option>
-                              <option value="17">MD event</option>
-                              <option value="18">best event</option>
-                           </select>
-                        </div>
 
 
                         <div class="inputArea">
+                           <img src="<%=pjName%>/resources/images/upload/${view.gl_Img1}" alt="Image" class="img-fluid"><br/>
                            <label for="g_Name"> 상품명 </label> 
-                           <input type="text" id="g_Name" name="g_Name"/>
-                        </div>
-                        <div class="inputArea">
-
+                           <input type="text" id="g_Name" name="g_Name"/><br/>
                            <label for="gdsPrice">상품가격</label> 
-                           <input type="text"id="g_Price" name="g_Price"/>
-                        </div>
-
-                        <div class="inputArea">
+                           <input type="text"id="g_Price" name="g_Price"/><br/>
                            <label for="g_Stock">상품수량</label> 
-                           <input type="text" id="g_Stock" name="g_Stock" />
+                           <input type="text" id="c_Cnt" name="c_Cnt" />
 
                         </div>
 
-                        <div class="col-md-12 mb-3 mb-md-0">
-                           <td bgcolor="orange" width="70">상품 이미지 첨부</td>
-                           <td align="left"><input type="file" id="g_img1" multiple="multiple" name='file1' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-                           <td align="left"><input type="file" id="g_img1" multiple="multiple" name='file2' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-                           <td align="left"><input type="file" id="g_img1" multiple="multiple" name='file3' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
+            
+                          
                         </div>
-
+                       <label>취소/교환/반품 사유</label>
+                        <input type="text" id="" name=""/><br/>
 
                         <div class="inputArea">
-                           <label for="g_Message">상품소개</label>
+                           <label for="g_Message">상세 사유</label><br/>
                            <textarea rows="10" cols="100" id="g_Message" name="g_Message"></textarea>
 
                         </div>
 
 
                         <div class="inputArea">
-                           <button type="submit" id="register_Btn" class="btn btn-primary">등록</button>
-                           <button type="submit" id="register_Btn" class="btn btn-primary">취소</button>
+                           <button type="submit" id="register_Btn" class="btn btn-primary">승인</button>
+                           <button type="submit" id="register_Btn" class="btn btn-primary">반려</button>
                         </div>
 
                      </form>

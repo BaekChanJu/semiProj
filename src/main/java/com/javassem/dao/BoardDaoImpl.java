@@ -94,51 +94,69 @@ public class BoardDaoImpl implements BoardDao {
 	public StyleReviewVO styledetail(StyleReviewVO vo) {
 		System.out.println("다오 styleDetail 호출"+vo);
 		return mybatis.selectOne("board.styledetail",vo);
-	}
+	}//end of styledetail
 	
 	//style 게시판 등록
 	public void styleInsert(StyleReviewVO vo) {
 		System.out.println("다오 styleInsert 호출"+vo);
 		mybatis.insert("board.styleinsert",vo);
-	}
+	}//end of styleInsert
 	
 	//style 게시판 수정
 	public void styleUpdate(StyleReviewVO vo) {
 		System.out.println("다오 styleUpdate 호출"+vo);
 		mybatis.update("board.styleupdate",vo);
-	}
+	}//end of styleUpdate
+	
+	//style 게시판 삭제
+	public void styleDelete(StyleReviewVO vo) {
+		System.out.println("다오 styleDelete 호출"+vo);
+		mybatis.delete("board.styleedelete",vo);
+	}//end of styleDelete
 	
 	//qna 게시판 총 레코드 개수
 	public int listCount(QnaVO vo) {
 		System.out.println("===> Mybatis listCount() 호출" +vo);
 		return mybatis.selectOne("board.listCount",vo);
 		
-	}
+	}//end of listCount
 	
 	//free게시판 총 레코드 개수
 	public int listCount1(FreeVO vo) {
 		System.out.println("===> Mybatis listCount() 호출" +vo);
 		return mybatis.selectOne("board.listCount1",vo);
 		
-	}
+	}//end of listCount1
 	
 	//style 게시판 총 레코드 개수
 	public int listCount2(StyleReviewVO vo) {
 		System.out.println("===> Mybatis listCount() 호출" +vo);
 		return mybatis.selectOne("board.listCount2",vo);	
-		}
+		}//end of listCount2
 	
-	//qna 게시판 답글 출력
+	//관리자 qna 게시판 답글 출력
 	public QnaVO qnaAnswer(QnaVO vo) {
 		System.out.println("다오 qnadetail 호출");
 	 return	mybatis.selectOne("board.qnaanswer", vo);	
-	}//end of qnaDetail
+	}//end of qnaAnswer
 	
-	//qna 게시판 답글 등록
+	//관리자 qna 게시판 답글 등록
 	public void qnaWrite (QnaVO vo) {
 		System.out.println("다오 qnaWrite 호출"+vo);
 		mybatis.insert("board.qnaWrite",vo);
-	}
+	}//end of qnaWrite
+	
+	//관리자 qna 게시판 답변 삭제
+	public void orderdelete(QnaVO vo) {
+		System.out.println("다오 orderdelete 호출"+vo);
+		mybatis.delete("board.qnaanswerdelete",vo);
+	}//end of orderdelete
+	
+	//관리자 qna 게시판 답변 수정
+	public void orderupdate(QnaVO vo) {
+		System.out.println("다오 orderupdate 호출"+vo);
+		mybatis.update("board.orderupdate",vo);
+	}//end of orderupdate
 	
 
 }

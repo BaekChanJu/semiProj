@@ -38,16 +38,21 @@ public interface BoardService {
 	public void styleInsert(StyleReviewVO vo);
 	//style 게시판 수정
 	public void styleUpdate(StyleReviewVO vo);
+	//style 게시판 삭제
+	public void styleDelete(StyleReviewVO vo );
 	// Qna 상품 갯수
 	int listCount(QnaVO vo);
 	// free 상품 갯수
 	int listCount1(FreeVO vo);
 	// free 상품 갯수
 	int listCount2(StyleReviewVO vo);
-	// qna 게시판 답글 보기
+	//관리자 qna 게시판 답글 보기
 	public QnaVO qnaAnswer(QnaVO vo);
-	// qna 게시판 답글 등록
+	//관리자 qna 게시판 답글 등록
 	void qnaWrite(QnaVO vo);
-	
+	//관리자 qna 게시판 답글 삭제
+	public void orderdelete(QnaVO vo);
+	//관리자 qna 게시판 답글 수정
+	public void orderupdate(QnaVO vo);
 }	
 

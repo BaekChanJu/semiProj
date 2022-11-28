@@ -1,7 +1,12 @@
 package com.javassem.controller;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +16,19 @@ import org.springframework.web.servlet.ModelAndView;
 import com.javassem.domain.MemberVO;
 import com.javassem.service.MemberService;
 
+import ch.qos.logback.classic.Logger;
+
 @Controller
 public class MemberController {
 	
 	
 	  @Autowired 
 	  private MemberService memberService;
+
+	   private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
+	   LocalDateTime now = LocalDateTime.now();      
+
+
 	
 	/*1117 요청 insertJoin.do 들어옴
 	 고객의 입력값들을 받고 디비를타서 들어가야합니다!
@@ -41,15 +53,26 @@ public class MemberController {
 	
 	//로그인시 세션에 아이디 저장함
 	@RequestMapping("loginMember.do")
-	public String login(MemberVO memberVO, HttpSession session) {
+	public String login(MemberVO memberVO, HttpSession session, HttpServletRequest req) {
 		MemberVO result = memberService.idCheck_Login(memberVO);
 		
+		
+
+		logger.info("상품페이지에 접속함:" + memberVO.getM_Id()+",접속한IP : "
+				+req.getRemoteAddr()+",접속시간 : "+new Date().toString()
+				+",요청구분:A요청,path:요청path분석하고 싶은 path나 각종 데이터");
+		
+		
 		if(result==null || result.getM_Id() == null) {
+
+			
 			return "login"; //로그인버튼 누르면 세션저장까지는 되는데 메인화면으로 안돌아감 ㅠㅠㅠㅠㅠ
 		}else {
 			//로그인 성공경우 세션에 저장 중요!!!!
 			session.setAttribute("login", memberVO.getM_Id());
 			return "index";
+			
+			
 		
 		}
 	}
@@ -75,5 +98,7 @@ public class MemberController {
 			//System.out.println("message :" + message);
 			return message;
 		}
+		
+		
 		
 }

@@ -38,10 +38,10 @@ function sample6_execDaumPostcode() {
             }
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('sample6_postcode').value = data.zonecode;
-            document.getElementById("sample6_address").value = addr;
+            document.getElementById('m_Num').value = data.zonecode;
+            document.getElementById("m_Addr").value = addr;
             // 커서를 상세주소 필드로 이동한다.
-            document.getElementById("sample6_detailAddress").focus();
+            document.getElementById("m_SubAddr").focus();
         }
     }).open();
 }
@@ -236,16 +236,17 @@ function sample6_execDaumPostcode() {
         </div>
       </div>
       
-      <form action="addBuy.do" name='addBuy'>
+      <form name='BuyInfo' method='post'>
       <div class="row">
       	<input type="hidden" name='m_Id' id='m_Id' value='${sessionScope.login}'>
+      	<input type="hidden" id='hiddenTotalPrice' name='totalPrice'>
         <div class="col-md-6 mb-5 mb-md-0">
           <h2 class="h3 mb-3 text-black">Billing Details</h2>
           <div class="p-3 p-lg-5 border">
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="c_fname" class="text-black">Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname" placeholder="Name" value="${memberInfo.m_Name}">
+                <input type="text" class="form-control" id="m_Name" name="m_Name" placeholder="Name" value="${memberInfo.m_Name}">
               </div>
 
             </div>
@@ -253,14 +254,14 @@ function sample6_execDaumPostcode() {
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="c_email" class="text-black">E - Mail </label>
-                <input type="email" class="form-control" id="c_email" name="c_email" placeholder="E - Mail" value='${memberInfo.m_Email}'>
+                <input type="email" class="form-control" id="m_Email" name="m_Email" placeholder="E - Mail" value='${memberInfo.m_Email}'>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="c_address" class="text-black">Phone Number <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="c_tel" name="c_tel" placeholder="Phone Number" value='${memberInfo.m_Tell}'>
+                <input type="text" class="form-control" id="m_Tell" name="m_Tell" placeholder="Phone Number" value='${memberInfo.m_Tell}'>
               </div>
             </div>
           
@@ -269,7 +270,7 @@ function sample6_execDaumPostcode() {
             <div class="form-group row">
               <div class="col-md-6">
                 <label for="sample6_postcode" class="text-black" > <span class="text-danger"></span></label>
-                <input type="text" class="form-control" id="sample6_postcode" name="sample6_postcode" placeholder="우편번호" value='${memberInfo.m_Num}'>
+                <input type="text" class="form-control" id="m_Num" name="m_Num" placeholder="우편번호" value='${memberInfo.m_Num}'>
               </div>
               
             <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>  
@@ -279,11 +280,11 @@ function sample6_execDaumPostcode() {
             <div class="form-group row mb-5">
               <div class="col-md-12">
                 <label for="sample6_address" class="text-black"><span class="text-danger"></span></label>
-                <input type="text" class="form-control" id="sample6_address" name="sample6_address" placeholder="주소" value='${memberInfo.m_Addr}' >
+                <input type="text" class="form-control" id="m_Addr" name="m_Addr" placeholder="주소" value='${memberInfo.m_Addr}' >
               </div>
               <div class="col-md-12">
                 <label for="sample6_detailAddress" class="text-black"><span class="text-danger"></span></label>
-                <input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소" value='${memberInfo.m_SubAddr}'>
+                <input type="text" class="form-control" id="m_SubAddr" name="m_SubAddr" placeholder="상세주소" value='${memberInfo.m_SubAddr}'>
               </div>
             </div>
 
@@ -361,7 +362,7 @@ function sample6_execDaumPostcode() {
                   </thead>
                    <c:forEach items="${goodsList}" var="goods">
                   <tbody>
-					<input type="hidden" name='g_Id' id='g_Id' value="${goods.g_Id}"/>
+
                     <tr>
                       <td>${goods.g_Name}<strong class="mx-2">x</strong> ${goods.c_Cnt}</td>
                       <td class='totalPrice'>${goods.g_Price * goods.c_Cnt}</td>
@@ -369,11 +370,12 @@ function sample6_execDaumPostcode() {
                   </c:forEach>
                     <tr>
                       <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-                      <td class="text-black font-weight-bold" id='totalPrices'><strong></strong></td>
+                      <td class="text-black font-weight-bold"  id='totalPrices'><strong></strong></td>
                     </tr>
                   </tbody>
                   
                 </table>
+
                  
 
                 <div class="border p-3 mb-3">

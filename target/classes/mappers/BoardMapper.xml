@@ -130,6 +130,12 @@
 	WHERE s_id = #{s_id}
 	</update>
 	
+	<!-- style 게시판 삭제 -->
+	<delete id="styleedelete" parameterType="StyleReviewVO">
+	DELETE from style
+	WHERE s_id = #{s_id}
+	</delete>
+	
 	<!-- qna 게시판 총레코드 갯수 -->
 	<select id="listCount" parameterType="QnaVO" resultType="int">
 		SELECT COUNT(*)
@@ -148,7 +154,7 @@
 		  FROM style
 	</select>
 	
-	<!-- 관리자 게시판  -->
+	<!-- 관리자 qna 게시판 상세보기 답글 출력  -->
 	
 	<select id="qnaanswer" resultType="QnaVO">
 		SELECT *
@@ -156,12 +162,24 @@
         WHERE q_id = #{q_id}
 	</select>
 	
-	<!--  -->
+	<!-- 관리자 qna게시판 답글 등록-->
 	<insert id="qnaWrite" parameterType="QnaVO">
 		INSERT into orderanswer(o_id,o_message)
-		values(#{q_id},#{0_message});
+		values(#{q_id},#{o_message})	
 	</insert>
 	
+	<!-- 관리자 qna게시판 답글 삭제-->
+	<delete id="qnaanswerdelete" parameterType="QnaVO">
+	DELETE from orderanswer
+	WHERE o_id = #{q_id}
+	</delete>
+	
+	<!-- 관리자 qna게시판 답글 수정 -->
+	<update id="orderupdate" parameterType="QnaVO">
+	UPDATE orderanswer SET
+	O_MESSAGE = #{o_message}
+	WHERE o_id = #{q_id}
+	</update>
 	
 </mapper>
 

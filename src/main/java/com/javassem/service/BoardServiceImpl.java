@@ -102,6 +102,12 @@ public class BoardServiceImpl implements BoardService{
 		boardDao.styleUpdate(vo);
 	}//end of styleUpdate
 	
+	//style 게시판 삭제
+	public void styleDelete(StyleReviewVO vo ) {
+		System.out.println("서비스 styleDelete 확인");
+		boardDao.styleDelete(vo);
+	}//end of styleDelete
+	
 	// Qna상품목록 게시물 총 갯수
 	public int listCount(QnaVO vo) {
 		return boardDao.listCount(vo);
@@ -131,6 +137,18 @@ public class BoardServiceImpl implements BoardService{
 		System.out.println("서비스 styleInsert 확인");
 		 boardDao.qnaWrite(vo);
 	}//end of styleInsert
+	
+	//관리자 qna 게시판 답글 삭제
+	public void orderdelete(QnaVO vo) {
+		System.out.println("서비스 orderdelete 확인");
+		boardDao.orderdelete(vo);
+	}//end of orderdelete
+	
+	//관리자 qna 게시판 답글 수정
+	public void orderupdate(QnaVO vo) {
+		System.out.println("서비스 orderupdate 확인");
+		boardDao.orderupdate(vo);
+	}//end of orderupdate
 	
 
 

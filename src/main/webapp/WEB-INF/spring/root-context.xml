@@ -36,6 +36,8 @@
 		<value>com.javassem.domain.CartVO</value>
 		<value>com.javassem.domain.SalesVO</value>
 		<value>com.javassem.domain.BuyVO</value>
+		<value>com.javassem.domain.OrderDetailsVO</value>
+		<value>com.javassem.domain.OrderListVO</value>
 		
   	</list>
   </property>

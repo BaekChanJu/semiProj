@@ -7,19 +7,18 @@ import org.springframework.stereotype.Service;
 
 import com.javassem.dao.BuyDAO;
 import com.javassem.domain.BuyVO;
-
+import com.javassem.domain.OrderDetailsVO;
+import com.javassem.domain.OrderListVO;
 
 @Service
-public class BuyServiceImpl implements BuyService{
-	
-	@Autowired		
-	private BuyDAO buyDAO; 
-	
+public class BuyServiceImpl implements BuyService {
+
+	@Autowired
+	private BuyDAO buyDAO;
+
 	// 카트 상품 정보
 	@Override
 	public List<BuyVO> goodsCartList(String m_Id) {
-		System.out.println("m_Id 확인 : " + m_Id);
-		System.out.println("buySrevice 확인 : "+ buyDAO.goodsCartList(m_Id));
 		return buyDAO.goodsCartList(m_Id);
 	}
 
@@ -29,10 +28,55 @@ public class BuyServiceImpl implements BuyService{
 		return buyDAO.memberCartInfo(m_Id);
 	}
 
-	// 구매등록
+	// 주문 정보
 	@Override
-	public void addBuy(BuyVO vo) {
-		buyDAO.addBuy(vo);
+	public void buyInfo(BuyVO buy) {
+		buyDAO.buyInfo(buy);
+
+	}
+
+	// 주문 상세 정보
+	@Override
+	public void orderInfo_Details(OrderDetailsVO orderDetails) {
+		buyDAO.orderInfo_Details(orderDetails);
+
+	}
+
+	// 카트 삭제
+	@Override
+	public void cartAllDelete(String m_Id) {
+		buyDAO.cartAllDelete(m_Id);
+
+	}
+
+	// 주문 목록
+	@Override
+	public List<BuyVO> orderList(BuyVO buy) {
+		return buyDAO.orderList(buy);
+	}
+
+	// 특정 주문
+	@Override
+	public List<OrderListVO> orderView(BuyVO buy) {
+		return buyDAO.orderView(buy);
+	}
+
+	// 주문 목록 <관리자>
+	@Override
+	public List<BuyVO> managerOrderList(BuyVO buy) {
+		return buyDAO.managerOrderList(buy);
+	}
+
+	// 특정 주문 <관리자>
+	@Override
+	public List<OrderListVO> managerOrderView(BuyVO buy) {
+		return buyDAO.managerOrderView(buy);
+	}
+
+	// 배송 상태<관리자>
+	@Override
+	public void delivery(BuyVO buy) {
+		buyDAO.delivery(buy);
 	}
 
 }
