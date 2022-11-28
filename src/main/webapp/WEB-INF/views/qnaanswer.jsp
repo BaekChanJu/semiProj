@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,6 +40,7 @@
    href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/mystyle.css">
 
 <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
@@ -184,7 +186,7 @@
       <div class="container">
          <div class="row align-items-end text-center">
             <div class="col-lg-7 mx-auto">
-               <h1>관리자 페이지</h1>
+               <h1>QnA답변</h1>
 
             </div>
          </div>
@@ -203,88 +205,80 @@
                   <li><a href="insertGoods.do">상품 등록</a></li>
                   <li><a href="goodsList.do">상품 목록</a></li>
                   <li><a href="#">카테고리별 매출</a></li>
-                  <li><a href="chart.do">월별 매출</a></li>
-                  <li><a href="qnaanswer.do">Q&A 게시판 관리</a></li>
+                  <li><a href="#">월별 매출</a></li>
+                  <li><a href="#">Q&A 게시판 관리</a></li>
                   <li><a href="#">주문 관리</a></li>
                </ul>
             </div>
-            <div class="col-md-9">
-               <div class="row">
-                  <div class="col-12 col-sm-12 col-md-12 mb-12 col-lg-12">
+          	<div class="col-md-9">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 mb-4 col-lg-4">
+              <div class="product-item">
 
-                     <form action="saveGoods.do"  role="form" method='post' enctype="multipart/form-data" autocomplete="off">
+			<!-- 게시판 틀 -->
+			<form action="">
+			<table id = "ins">
+			<tr>
+				<th bgcolor="white" width="300">번호</th>
+				<th bgcolor="white" width="500">제목</th>
+				<th bgcolor="white" width="600">작성자</th>
+				<th bgcolor="white" width="600">등록일</th>
+				<th bgcolor="white" width="300">조회수</th>
+				<th><a href='qnawrite.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
+			</tr>
+			<!-- qna 게시판 목록보기 -->
+			<c:forEach items="${qnA}" var="qna">
+				<tr>
+					<td>${qna.q_id}</td><!-- qna 게시판 번호 -->
+					<td align="left"><a href="qnalist.do?q_id=${qna.q_id}">${qna.q_title}</a></td><!-- qna 게시판 제목 -->
+					<td>${qna.m_id}</td><!-- qna 게시판 회원 아이디 -->
+					<td>"${qna.q_date}</td><!-- qna 게시판 작성 날짜 -->
+					<td>${qna.q_cnt}</td><!-- qna 게시판 조회수 -->
+				</tr>
+			</c:forEach>
+		</table>
+		</form>
+		
+		<div class="row mt-5 pb-5">
+            <div class="col-lg-12">
+              <div class="custom-pagination">
+                <ul class="list-unstyled">
+                  <li>
+                   <c:if test="${pageMaker.prev}">
+                    <a href="<%=pjName%>/qnA.do${pageMaker.makeQuery(pageMaker.startPage - 1)}&g_cid =${g_cid}">
 
-                        <div class="inputArea">
-                           <label>1차 분류</label> <select name=ct_Id class="category1">
-                              <option value="20">man</option>
-                              <option value="30">woman</option>
-                              <option value="40">event</option>
-                           </select>
-                           <label>2차 분류</label> <select name="sc_Id" class="category1">
-                              <option value="11">Outer</option>
-                              <option value="15">Top</option>
-                              <option value="13">Bottom</option>
-                              <option value="14">Shoes</option>
-                              <option value="12">Acc</option>
-                              <option value="16">New event</option>
-                              <option value="17">MD event</option>
-                              <option value="18">best event</option>
-                           </select>
-                        </div>
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                      </svg>  
+                      </c:if>                     
+                    </a>
+                  </li>
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="<%=pjName%>/qnA.do${pageMaker.makeQuery(idx)}&g_cid =${g_cid}">${idx}</a></li>
+    </c:forEach>
+                  <li>
+                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                    <a href="<%=pjName%>/qnA.do${pageMaker.makeQuery(pageMaker.endPage + 1)}&g_cid =${g_cid}">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
+                      </svg>
+                      </c:if> 
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+	
 
-
-                        <div class="inputArea">
-                           <label for="g_Name"> 상품명 </label> 
-                           <input type="text" id="g_Name" name="g_Name"/>
-                        </div>
-                        <div class="inputArea">
-
-                           <label for="gdsPrice">상품가격</label> 
-                           <input type="text"id="g_Price" name="g_Price"/>
-                        </div>
-
-                        <div class="inputArea">
-                           <label for="g_Stock">상품수량</label> 
-                           <input type="text" id="g_Stock" name="g_Stock" />
-
-                        </div>
-
-                        <div class="col-md-12 mb-3 mb-md-0">
-                           <td bgcolor="orange" width="70">상품 이미지 첨부</td>
-                           <td align="left"><input type="file" id="g_img1" multiple="multiple" name='file1' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-                           <td align="left"><input type="file" id="g_img1" multiple="multiple" name='file2' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-                           <td align="left"><input type="file" id="g_img1" multiple="multiple" name='file3' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-                        </div>
-
-
-                        <div class="inputArea">
-                           <label for="g_Message">상품소개</label>
-                           <textarea rows="10" cols="100" id="g_Message" name="g_Message"></textarea>
-
-                        </div>
-
-
-                        <div class="inputArea">
-                           <button type="submit" id="register_Btn" class="btn btn-primary">등록</button>
-                           <button type="submit" id="register_Btn" class="btn btn-primary">취소</button>
-                        </div>
-
-                     </form>
-                  </div>
-
-
-
-               </div>
-               
-
-
-
-               <div id="overlayer"></div>
-               <div class="loader">
-                  <div class="spinner-border" role="status">
-                     <span class="sr-only">Loading...</span>
-                  </div>
-               </div>
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+       
+      </div>
+    </div>
 
                <script src="<%=pjName%>/resources/js/jquery-3.4.1.min.js"></script>
                <script src="<%=pjName%>/resources/js/popper.min.js"></script>

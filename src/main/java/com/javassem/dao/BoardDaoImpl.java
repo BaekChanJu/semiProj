@@ -10,6 +10,7 @@ import com.javassem.domain.FreeVO;
 import com.javassem.domain.GoodsVO;
 import com.javassem.domain.QnaVO;
 import com.javassem.domain.StyleReviewVO;
+import com.javassem.domain.freeppVO;
 
 @Repository
 public class BoardDaoImpl implements BoardDao {
@@ -19,14 +20,19 @@ public class BoardDaoImpl implements BoardDao {
 
 	//qna 게시판 목록 
 	public List<QnaVO> qnaList(QnaVO vo) { 
-		System.out.println("===> Mybatis 다오 qnaList() 호출"); 
-		return mybatis.selectList("board.qnaList"); 
+		System.out.println("===> Mybatis 다오 qnaList() 호출 >"+ vo.getRowStart()+":"+vo.getRowEnd()); 
+		return mybatis.selectList("board.qnaList", vo); 
 	}//end of qnaList
 
 	//free 게시판 목록 
 	public List<FreeVO> freeList(FreeVO vo){
-		System.out.println("===> Mybatis 다오 freeList() 호출"); 
-		return mybatis.selectList("board.freeList"); 
+		System.out.println("===> Mybatis 다오 freeList() 호출");
+		System.out.println(vo.getG_cid());
+		System.out.println(vo.getF_id());
+		System.out.println(vo.getRowStart());
+		System.out.println(vo.getRowEnd());
+		
+		return mybatis.selectList("board.freeList", vo); 
 
 	}//end of freeList
 
@@ -90,6 +96,49 @@ public class BoardDaoImpl implements BoardDao {
 		return mybatis.selectOne("board.styledetail",vo);
 	}
 	
+	//style 게시판 등록
+	public void styleInsert(StyleReviewVO vo) {
+		System.out.println("다오 styleInsert 호출"+vo);
+		mybatis.insert("board.styleinsert",vo);
+	}
+	
+	//style 게시판 수정
+	public void styleUpdate(StyleReviewVO vo) {
+		System.out.println("다오 styleUpdate 호출"+vo);
+		mybatis.update("board.styleupdate",vo);
+	}
+	
+	//qna 게시판 총 레코드 개수
+	public int listCount(QnaVO vo) {
+		System.out.println("===> Mybatis listCount() 호출" +vo);
+		return mybatis.selectOne("board.listCount",vo);
+		
+	}
+	
+	//free게시판 총 레코드 개수
+	public int listCount1(FreeVO vo) {
+		System.out.println("===> Mybatis listCount() 호출" +vo);
+		return mybatis.selectOne("board.listCount1",vo);
+		
+	}
+	
+	//style 게시판 총 레코드 개수
+	public int listCount2(StyleReviewVO vo) {
+		System.out.println("===> Mybatis listCount() 호출" +vo);
+		return mybatis.selectOne("board.listCount2",vo);	
+		}
+	
+	//qna 게시판 답글 출력
+	public QnaVO qnaAnswer(QnaVO vo) {
+		System.out.println("다오 qnadetail 호출");
+	 return	mybatis.selectOne("board.qnaanswer", vo);	
+	}//end of qnaDetail
+	
+	//qna 게시판 답글 등록
+	public void qnaWrite (QnaVO vo) {
+		System.out.println("다오 qnaWrite 호출"+vo);
+		mybatis.insert("board.qnaWrite",vo);
+	}
 	
 
 }

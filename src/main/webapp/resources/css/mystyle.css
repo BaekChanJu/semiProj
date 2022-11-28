@@ -72,8 +72,37 @@
     border-radius:10px;
 } 
 
+  
+ #s_pass{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+  
+ #s_message{
+ width: 565px;
+ border-radius:10px
+ }
  
  
+  
+ #s_title{
+ width: 565px;
+ border-radius:10px
+ }
  
+ #s_tilte{
+ width: 565px;
+ border-radius:10px
+ }
  
+ #s_message{
+ width: 565px;
+ border-radius:10px
+ }
+ 
+  #o_message{
+ width: 565px;
+ border-radius:10px
+ }
  

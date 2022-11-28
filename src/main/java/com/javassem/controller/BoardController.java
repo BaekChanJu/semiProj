@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.javassem.domain.FreeVO;
 import com.javassem.domain.GoodsVO;
+import com.javassem.domain.PagingVO;
 import com.javassem.domain.QnaVO;
+import com.javassem.domain.StylePPVO;
 import com.javassem.domain.StyleReviewVO;
+import com.javassem.domain.freeppVO;
+import com.javassem.domain.ppVO;
 import com.javassem.service.BoardService;
 
 @Controller//게시판 컨트롤러
@@ -22,24 +26,38 @@ public class BoardController {
 
 	//QNA게시판 목록 
 	@RequestMapping("/qnA.do") 
-	public void qnaList (Model m) {
-		System.out.println(" -- 컨트롤 qna 요청완료 ---");
+	public void qnaList (Model m, QnaVO vo) {
+		System.out.println(" -- 컨트롤 qna 요청완료 ---"+vo);
 
-		QnaVO vo = new QnaVO();
 		List<QnaVO> list = boardSerice.qnaList(vo);
 		m.addAttribute("qnA", list);  
+		
+		ppVO pageMaker = new ppVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(boardSerice.listCount(vo));
+		System.out.println("listCount확인:" +boardSerice.listCount(vo));
+		m.addAttribute("pageMaker", pageMaker);
+		
 	}//end of qnaList
 
 	//free게시판 목록 
 	@RequestMapping("free")
-	public void freeList(Model m) {
-		System.out.println(" -- 컨트롤 free 요청완료 ---");
+	public void freeList(Model m,FreeVO vo) {
+		System.out.println(" -- 컨트롤 free 요청완료 ---"+vo);
 
-		FreeVO vo = new FreeVO();
+		
 		List<FreeVO> list = boardSerice.freeList(vo);
 		m.addAttribute("free", list); 
 		System.out.println("list:"+list);
+		
+		freeppVO pageMaker = new freeppVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(boardSerice.listCount1(vo));
+		System.out.println("listCount확인:" +boardSerice.listCount1(vo));
+		m.addAttribute("pageMaker", pageMaker);
 	}//end of freeList
+
+	
 
 	//qna게시판 등록
 	@PostMapping("writeon")
@@ -65,7 +83,10 @@ public class BoardController {
 	public void qnaList1 (QnaVO vo,Model m) {
 		System.out.println(" -- 컨트롤 qna 요청완료 ---");
 	QnaVO result = boardSerice.qnaDetail(vo);
+	QnaVO answers = boardSerice.qnaAnswer(vo);
 	m.addAttribute("qnadetail", result);
+	m.addAttribute("qnadetail1",answers );
+	//
 	}//end of qnaList
 
 	//QnA게시판 삭제
@@ -114,6 +135,12 @@ public class BoardController {
 	public void goodsList(StyleReviewVO vo, Model model) {
 		System.out.println("컨트롤 sytlelist 요청완료 :" + vo);
 		model.addAttribute("style", boardSerice.sytlelist(vo));
+		
+		StylePPVO pageMaker = new StylePPVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(boardSerice.listCount2(vo));
+		System.out.println("listCount확인:" +boardSerice.listCount2(vo));
+		model.addAttribute("pageMaker", pageMaker);
 	}//end of goodsList
 	
 	//style 게시판 상세보기
@@ -123,6 +150,45 @@ public class BoardController {
 	StyleReviewVO result =	boardSerice.styledetail(vo);
 		m.addAttribute("style",result);
 	}//end of styledetail
+	
+	//style 게시판 등록
+	@RequestMapping("styleInsert")
+	public String styleInsert(StyleReviewVO vo) {
+		System.out.println("컨트롤 styleInsert() 요청완료" +vo);
+		boardSerice.styleInsert(vo);
+		return "redirect:styleReview.do";
+	}
+	
+	//style 게시판 수정
+	@RequestMapping("styleUpdate")
+	public String styleUpdate(StyleReviewVO vo) {
+		System.out.println("컨트롤 styleUpdate() 요청완료" +vo);
+		boardSerice.styleUpdate(vo);
+		return "redirect:styleReview.do";
+	}
+	
+	//qna 게시판 답글 등록
+	
+	//QNA게시판 목록 
+	@RequestMapping("/qnaanswer") 
+	public String qnaList1 (Model m, QnaVO vo) {
+		System.out.println(" -- 컨트롤 qna 요청완료 ---"+vo);
+
+		List<QnaVO> list = boardSerice.qnaList(vo);
+		m.addAttribute("qnA", list);  
+		
+		ppVO pageMaker = new ppVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(boardSerice.listCount(vo));
+		System.out.println("listCount확인:" +boardSerice.listCount(vo));
+		m.addAttribute("pageMaker", pageMaker);
+		
+		return "redirect:qnaanswer.do";
+		
+		
+	}//end of qnaList
+	
+	
 	
 }
  

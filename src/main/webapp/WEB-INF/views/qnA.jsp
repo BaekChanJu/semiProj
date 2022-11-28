@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% String pjName = "/semiProject"; %>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -219,6 +220,39 @@
 			</c:forEach>
 		</table>
 		</form>
+		
+		<div class="row mt-5 pb-5">
+            <div class="col-lg-12">
+              <div class="custom-pagination">
+                <ul class="list-unstyled">
+                  <li>
+                   <c:if test="${pageMaker.prev}">
+                    <a href="<%=pjName%>/qnA.do${pageMaker.makeQuery(pageMaker.startPage - 1)}&g_cid =${g_cid}">
+
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                      </svg>  
+                      </c:if>                     
+                    </a>
+                  </li>
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="<%=pjName%>/qnA.do${pageMaker.makeQuery(idx)}&g_cid =${g_cid}">${idx}</a></li>
+    </c:forEach>
+                  <li>
+                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                    <a href="<%=pjName%>/qnA.do${pageMaker.makeQuery(pageMaker.endPage + 1)}&g_cid =${g_cid}">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
+                      </svg>
+                      </c:if> 
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 	
 
     <div id="overlayer"></div>

@@ -5,16 +5,32 @@
 
 	<!-- qna 게시판 목록 보기 -->
 	<select id="qnaList" resultType="QnaVO">
-		SELECT *
-		FROM qna
-		order by q_id desc
+		SELECT * FROM qna
+		WHERE q_id in (SELECT q_id FROM 
+		(SELECT rownum AS rnum ,q_id FROM (select rownum, q_id from qna
+		<where>
+			<if test="g_cid != null">
+				g_cid  = #{g_cid }
+			</if>		
+		</where> 
+		order by q_id desc))
+		<![CDATA[WHERE rnum>= #{rowStart} AND rnum<= #{rowEnd}]]>)
+		ORDER BY q_id DESC
 	</select>
 
 	<!-- free 게시판 목록 보기 -->
-	<select id="freeList" resultType="FreeVO">
-		SELECT *
-		FROM free
-		order by f_id desc
+	<select id="freeList" parameterType="FreeVO" resultType="FreeVO">
+		SELECT * from free
+		WHERE f_id in (SELECT f_id FROM 
+		(SELECT rownum AS rnum ,f_id FROM (select rownum, f_id from free
+		<where>
+			<if test="g_cid != null">
+				g_cid  = #{g_cid }
+			</if>		
+		</where> 
+		order by f_id desc))
+		<![CDATA[WHERE rnum>= #{rowStart} AND rnum<= #{rowEnd}]]>)
+		ORDER BY f_id DESC
 	</select>
 
 	<!-- qna 게시판 등록 -->
@@ -28,7 +44,7 @@
 	<!-- free 게시판 등록 -->
 	<insert id="freeinsert" parameterType="FreeVO">
 		INSERT INTO free (f_id,g_cid,m_id,f_title,f_message,f_date,f_pass,f_cnt)
-		VALUES(seq_f_id.nextval,1,1,#{f_title},#{f_message},sysdate,#{f_pass},1)
+		VALUES(seq_f_id.nextval,2,1,#{f_title},#{f_message},sysdate,#{f_pass},1)
 	</insert>
 
 	<!-- qna 게시판 상세 보기 -->
@@ -78,20 +94,75 @@
 
 <!--  style 목록 -->
 	<select id="stylelist" parameterType="StyleReviewVO" resultType="StyleReviewVO">
-		SELECT *
-		FROM style 
+		SELECT * FROM style 
+		WHERE s_id in (SELECT s_id FROM 
+		(SELECT rownum AS rnum ,s_id FROM (select rownum, s_id from style
+		<where>
+			<if test="g_cid != null">
+				g_cid  = #{g_cid }
+			</if>		
+		</where> 
+		order by s_id desc))
+		<![CDATA[WHERE rnum>= #{rowStart} AND rnum<= #{rowEnd}]]>)
 		ORDER BY s_id DESC
 	</select>
+	
 
-<!--  style 목록 -->
+	<!--  style 상세보기 -->
 	<select id="styledetail" parameterType="StyleReviewVO" resultType="StyleReviewVO">
 		SELECT *
 		FROM style 
 		WHERE s_id = #{s_id}
 	</select>
 
+	<!-- style 게시판 등록 -->
+	<insert id="styleinsert" parameterType="StyleReviewVO">
+		INSERT INTO style (s_id,g_cid,m_id,s_title,s_message,s_date,s_img,s_pass,s_cnt)
+		VALUES(seq_s_id.nextval,1,1,#{s_title},#{s_message},sysdate,#{s_img},#{s_pass},1)
+	</insert>
+	
+	<!-- style 게시판 수정 -->
+	<update id="styleupdate" parameterType="StyleReviewVO">
+	UPDATE style SET
+	S_TITLE = #{s_title},
+	S_MESSAGE = #{s_message},
+	S_DATE = sysdate
+	WHERE s_id = #{s_id}
+	</update>
+	
+	<!-- qna 게시판 총레코드 갯수 -->
+	<select id="listCount" parameterType="QnaVO" resultType="int">
+		SELECT COUNT(*)
+		  FROM qna
+	</select>
+	
+	<!-- free 게시판 총레코드 갯수 -->
+	<select id="listCount1" parameterType="FreeVO" resultType="int">
+		SELECT COUNT(*)
+		  FROM free
+	</select>
 
-
+	<!-- style 게시판 총레코드 갯수 -->
+	<select id="listCount2" parameterType="StyleReviewVO" resultType="int">
+		SELECT COUNT(*)
+		  FROM style
+	</select>
+	
+	<!-- 관리자 게시판  -->
+	
+	<select id="qnaanswer" resultType="QnaVO">
+		SELECT *
+		FROM (SELECT * FROM qna q, orderanswer o WHERE q.q_id = o.o_id)
+        WHERE q_id = #{q_id}
+	</select>
+	
+	<!--  -->
+	<insert id="qnaWrite" parameterType="QnaVO">
+		INSERT into orderanswer(o_id,o_message)
+		values(#{q_id},#{0_message});
+	</insert>
+	
+	
 </mapper>
 
 

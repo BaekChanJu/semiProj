@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
   <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+  <link rel="stylesheet" href="<%=pjName%>/resources/css/mystyle.css">
   
   <link rel="stylesheet" href="<%=pjName%>/resources/css/mdRecommend상세.css">
   
@@ -189,44 +190,21 @@
         
         <!-- 사진예시용 하나넣어둠 -->
         <div class="eximg" id = "mdcssimg">
-       <img src="<%=pjName %>/resources/images/upload/${style.s_img}"  width="400" height="350">
-       </div>
-       
-       <!-- 상품명 -->
-        <div class="orderInfo" id = "mdcss">
+        <form action="styleUpdate" id ="style" name="style" method="post">
+        <input type="hidden" name='s_id' value='${style.s_id}'>
+          
+          <input  type="text" id="s_title" name="s_title" value='${style.s_title}' >
         
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="mdcss">제목</span>
-          </div>
-          <input  type="text" id="s_tilte" class="form-control" name="s_tilte" value='${style.s_title}' >
-        </div>
-   
-                  <!-- 장바구니,바로주문버튼 -->
-      <div class="cart__mainbtns" id = "carts">
-            <button class="btn btn-outline-black btn-sm btn-block">장바구니</button>
-            <button class="btn btn-outline-black btn-sm btn-block">바로주문</button>
-        </div>  
-    </div>
-
-<!-- 게시글 내용 -->
+         <img src="<%=pjName %>/resources/images/upload/${style.s_img}"  width="580" height="650">
+      
+  		<input  type="text" id="s_message" class="form-control" name="s_message" value='${style.s_message}'>
     
-    <form action="styleUpdate" id ="style" name="style" method="post">
-   	 <table>
-   	  <input type="hidden" name='s_id' value='${style.s_id}'>
-	  <tr>
-	  <td><textarea name="s_message" id="s_message" cols="73" rows="10">${style.s_message}</textarea></td>
-	  </tr>
-    </table>
     	<input id="modi" type= "submit" value="수정"/>
     	<a href="styledelete.do?s_id=${style.s_id}">
     	  <input id="modi" type= "button" value="삭제"/>
     	 </a>
 </form>
-	
-       
-
-                 
+  
 </div>
 </div>
 </div>

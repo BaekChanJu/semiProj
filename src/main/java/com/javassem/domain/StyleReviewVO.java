@@ -23,6 +23,53 @@ public class StyleReviewVO {
 	
 	MultipartFile file1;
 	
+	private int page; //페이지
+	private int perPageNum; //한페이지당 출력할 레코드 갯수
+	private int rowStart; //시작하는 숫자
+	private int rowEnd; //끝나는 숫자
+	
+	public StyleReviewVO() {
+		this.page = 1;
+		this.perPageNum = 6;
+	}
+	
+	public void setPage(int page) {
+		if (page <= 0) {
+			this.page = 1;
+			return;
+		}
+		this.page = page;
+	}
+	
+	public void setPerPageNum(int perPageNum) {
+		if (perPageNum <= 0 || perPageNum > 100) {
+			this.perPageNum = 6;
+			return;
+		}
+		this.perPageNum = perPageNum;
+	}
+	
+	public int getPage() {
+		return page;
+	}
+	
+	public int getPageStart() {
+		return (this.page - 1) * perPageNum;
+	}
+	
+	public int getPerPageNum() {
+		return this.perPageNum;
+	}
+	
+	public int getRowStart() {
+		rowStart = ((page - 1) * perPageNum) + 1;
+		return rowStart;
+	}
+	
+	public int getRowEnd() {
+		rowEnd = rowStart + perPageNum - 1;
+		return rowEnd;
+	}
 	public MultipartFile getFile1() {
 		return file1;
 	}
@@ -103,6 +150,13 @@ public class StyleReviewVO {
 	}
 	public void setS_img(String s_img) {
 		this.s_img = s_img;
+	}
+
+	@Override
+	public String toString() {
+		return "StyleReviewVO [s_id=" + s_id + ", g_cid=" + g_cid + ", m_id=" + m_id + ", s_title=" + s_title
+				+ ", s_message=" + s_message + ", s_date=" + s_date + ", s_pass=" + s_pass + ", s_cnt=" + s_cnt
+				+ ", s_img=" + s_img + ", file1=" + file1 + "]";
 	}
 	
 	

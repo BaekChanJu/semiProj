@@ -10,6 +10,7 @@ import com.javassem.domain.FreeVO;
 import com.javassem.domain.GoodsVO;
 import com.javassem.domain.QnaVO;
 import com.javassem.domain.StyleReviewVO;
+import com.javassem.domain.freeppVO;
 
 @Service 
 public class BoardServiceImpl implements BoardService{
@@ -88,5 +89,49 @@ public class BoardServiceImpl implements BoardService{
 		System.out.println("서비스 styledetail 확인");
 		return boardDao.styledetail(vo);
 	}//end of styledetail
+	
+	//style 게시판 등록
+	public void styleInsert(StyleReviewVO vo) {
+		System.out.println("서비스 styleInsert 확인");
+		 boardDao.styleInsert(vo);
+	}//end of styleInsert
+	
+	//style 게시판 수정
+	public void styleUpdate(StyleReviewVO vo) {
+		System.out.println("서비스 styleUpdate 확인");
+		boardDao.styleUpdate(vo);
+	}//end of styleUpdate
+	
+	// Qna상품목록 게시물 총 갯수
+	public int listCount(QnaVO vo) {
+		return boardDao.listCount(vo);
+	}//end of listCount
+	
+	
+	// Free 상품목록 게시물 총 갯수
+	public int listCount1(FreeVO vo) {
+			return boardDao.listCount1(vo);
+	}//end of listCount1
+	
+	
+	// style 상품목록 게시물 총 갯수
+	public int listCount2(StyleReviewVO vo) {
+				return boardDao.listCount2(vo);
+	}//end of listCount2
+	
+		
+	//qna 게시판 답글 보기 
+	public QnaVO qnaAnswer(QnaVO vo) {
+		System.out.println("서비스 qnaAnswer 요청 완료");
+		return boardDao.qnaAnswer(vo);
+	}//end of qnaAnswer
+	
+	//qna 게시판 답글 등록
+	public void qnaWrite(QnaVO vo) {
+		System.out.println("서비스 styleInsert 확인");
+		 boardDao.qnaWrite(vo);
+	}//end of styleInsert
+	
+
 
 }

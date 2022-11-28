@@ -212,7 +212,14 @@
 	  <td>내용</td>
 	  <td><textarea name="q_message" id="q_message" cols="73" rows="10">${qnadetail.q_message}</textarea></td>
 	  </tr>
+	  <!-- if문 -->
+	 <tr>
+	 <td>답글</td>
+	 <td><input type="text" name="o_message" id="o_message" value="${qnadetail1.o_message}" /></td>
+	 </tr>
+	 
     </table>
+    
     	<input id="modi" type= "submit" value="수정"/>
     	<a href="qnadelete.do?q_id=${qnadetail.q_id}">
     	  <input id="modi" type= "button" value="삭제"/>

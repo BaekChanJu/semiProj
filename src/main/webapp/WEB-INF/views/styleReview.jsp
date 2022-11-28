@@ -193,12 +193,9 @@
 
         <div class="col-md-3">
           <ul class="list-unstyled categories">
-            <li><a href="mainOuter.do">OUTER <span>2,919</span></a></li>
-            <li><a href="mainTop.do">TOP <span>5,381</span></a></li>
-            <li><a href="mainBottom.do">BOTTOM <span>7,119</span></a></li>
-            <li><a href="mainShoes.do">SHOES <span>1,012</span></a></li>
-            <li><a href="mainAcc.do">ACC <span>919</span></a></li>
-
+             <li><a href="qnA.do">QnA 게시판</a></li>
+            <li><a href="free.do">자유 게시판</a></li>
+            <li><a href="styleReview.do">Style 게시판</a></li>
           </ul>
         </div>
 
@@ -234,92 +231,38 @@
 		<th><a href='stylewrite.do'><input type = "button" value="글쓰기" id = "write"/></a></th>
          </table>
 
-
-
-           
-
-
-          <div class="row mt-5 pb-5">
+<div class="row mt-5 pb-5">
             <div class="col-lg-12">
               <div class="custom-pagination">
                 <ul class="list-unstyled">
                   <li>
-                    <a href="#">
+                   <c:if test="${pageMaker.prev}">
+                    <a href="<%=pjName%>/styleReview.do${pageMaker.makeQuery(pageMaker.startPage - 1)}&g_cid =${g_cid}">
+
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
                         <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                      </svg>                      
+                      </svg>  
+                      </c:if>                     
                     </a>
                   </li>
-                  <li class="active"><span>1</span></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="<%=pjName%>/styleReview.do${pageMaker.makeQuery(idx)}&g_cid =${g_cid}">${idx}</a></li>
+    </c:forEach>
                   <li>
-                    <a href="#">
+                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                    <a href="<%=pjName%>/styleReview.do${pageMaker.makeQuery(pageMaker.endPage + 1)}&g_cid =${g_cid}">
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
                         <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
                       </svg>
+                      </c:if> 
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-
-</div></div>
-        </div>
-      </div>
-    </div> <!-- /.untree_co-section -->
-
-   
-
-
-   <div class="site-footer">
-
-
-      <div class="container">
-         <div class="row justify-content-between">
-            <div class="col-lg-5">
-               <div class="widget mb-4">
-                  <h3 class="mb-2">Vintagure</h3>
-                  <p>COMPANY: Vintagure 　OWNER: 세즈카　BUSINESS LICENSE: 258-42-00220　ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인]
-CS CENTER: 070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time 1:00pm~2:00pm (Weekends, Public holiday off)
-ADDRESS: 04355 서울특별시 금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙　PERSON IN CHARGE: 세즈카　E - MAIL: Vintagure@naver.com
-BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
-</p>
-               </div>
-
-            </div>
-            
-            
-
-
-
-         <div class="row mt-5">
-            <div class="col-12 text-center">
-               <ul class="list-unstyled social">
-                  <li><a href="https://www.instagram.com/vintagure1234/"><span class="icon-instagram"></span></a></li>
-                  <li><a href="https://www.facebook.com/vintagure"><span class="icon-facebook"></span></a></li>
-               </ul>
-            </div>
-            <div class="col-12 text-center copyright">
-               <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-               </p>
-
-            </div>
-         </div>
-      </div> <!-- /.container -->
-   </div> <!-- /.site-footer -->
-
-    <div id="overlayer"></div>
-    <div class="loader">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
 
     <script src="<%=pjName%>/resources/js/jquery-3.4.1.min.js"></script>
     <script src="<%=pjName%>/resources/js/popper.min.js"></script>

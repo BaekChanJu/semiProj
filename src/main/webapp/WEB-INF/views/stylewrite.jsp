@@ -37,6 +37,7 @@
 	href="<%=pjName%>/resources/fonts/flaticon/font/flaticon.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/aos.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/mystyle.css">
 
 <title>UntreeStore Free HTML Template by Untree.co</title>
 </head>
@@ -182,7 +183,7 @@
 		<div class="container">
 			<div class="row align-items-end text-center">
 				<div class="col-lg-7 mx-auto">
-					<h1>관리자 페이지</h1>
+					<h1>StyleReview게시판 글쓰기</h1>
 
 				</div>
 			</div>
@@ -198,63 +199,32 @@
 
 				<div class="col-md-3">
 					<ul class="list-unstyled categories">
-						<li><a href="insertGoods.do">상품 등록</a></li>
-						<li><a href="goodsList.do">상품 목록</a></li>
-						<li><a href="#">카테고리별 매출</a></li>
-						<li><a href="#">월별 매출</a></li>
-						<li><a href="#">Q&A 게시판 관리</a></li>
-						<li><a href="#">주문 관리</a></li>
+					<li><a href="qnA.do">QnA 게시판</a></li>
+            		<li><a href="free.do">자유 게시판</a></li>
+            		<li><a href="styleReview.do">Style 게시판</a></li>
 					</ul>
 				</div>
 				<div class="col-md-9">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 mb-12 col-lg-12">
 
-							<form action="saveGoods.do"  role="form" method='post' enctype="multipart/form-data" autocomplete="off">
+							<form action="styleInsert"  role="form" method='post' enctype="multipart/form-data" autocomplete="off">
 
 								<div class="inputArea">
-									<label>1차 분류</label> <select name=ct_Id class="category1">
-										<option value="20">man</option>
-										<option value="30">woman</option>
-									</select>
-									<label>2차 분류</label> <select name="sc_Id" class="category1">
-										<option value="11">Outer</option>
-										<option value="15">Top</option>
-										<option value="13">Bottom</option>
-										<option value="14">Shoes</option>
-										<option value="12">Acc</option>
-									</select>
-								</div>
-
-
-								<div class="inputArea">
-									<label for="g_Name"> 상품명 </label> 
-									<input type="text" id="g_Name" name="g_Name"/>
-								</div>
-								<div class="inputArea">
-
-									<label for="gdsPrice">상품가격</label> 
-									<input type="text"id="g_Price" name="g_Price"/>
-								</div>
-
-								<div class="inputArea">
-									<label for="g_Stock">상품수량</label> 
-									<input type="text" id="g_Stock" name="g_Stock" />
-
+									<input type="text" id="s_title" name="s_title" placeholder="제목"/>
 								</div>
 
 								<div class="col-md-12 mb-3 mb-md-0">
 									<td bgcolor="orange" width="70">상품 이미지 첨부</td>
-									<td align="left"><input type="file" id="g_img1" multiple="multiple" name='file1' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-									<td align="left"><input type="file" id="g_img1" multiple="multiple" name='file2' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
-									<td align="left"><input type="file" id="g_img1" multiple="multiple" name='file3' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
+									<td align="left"><input type="file" id="s_img" multiple="s_img" name='file1' class="btn btn-outline-black btn-sm btn-block" maxlength="60" size="40"></td>
 								</div>
-
-
+									
 								<div class="inputArea">
-									<label for="g_Message">상품소개</label>
-									<textarea rows="10" cols="100" id="g_Message" name="g_Message"></textarea>
-
+									<input type="text" id="s_message" name="s_message" placeholder="상품후기"/>
+								</div>	
+								
+								<div class="inputArea">
+									<input type="password" id="s_pass" name="s_pass" placeholder="비밀번호"/>
 								</div>
 
 

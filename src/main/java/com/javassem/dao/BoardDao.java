@@ -6,6 +6,7 @@ import com.javassem.domain.FreeVO;
 import com.javassem.domain.GoodsVO;
 import com.javassem.domain.QnaVO;
 import com.javassem.domain.StyleReviewVO;
+import com.javassem.domain.freeppVO;
 
 public interface BoardDao {
 
@@ -33,6 +34,19 @@ public interface BoardDao {
 	void freeUpdate(FreeVO vo);
 	//Style 게시판 상세보기
 	StyleReviewVO styledetail(StyleReviewVO vo);
-	
+	//Style 게시판 등록
+	void styleInsert(StyleReviewVO vo);
+	//Style 게시판 수정
+	void styleUpdate(StyleReviewVO vo);
+	//qna 게시판 총합 갯수
+	public int listCount(QnaVO vo);
+	//Free 게시판 총합 갯수
+	public int listCount1(FreeVO vo);
+	//style 게시판 총합 갯수
+	public int listCount2(StyleReviewVO vo);
+	//qna 게시판 답변
+	QnaVO qnaAnswer(QnaVO vo);
+	//qna 게시판 답변 등록
+	void qnaWrite(QnaVO vo);
 	
 }//end of BoardDao
