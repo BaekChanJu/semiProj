@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.javassem.domain.BuyVO;
+import com.javassem.domain.CancelVO;
 import com.javassem.domain.OrderDetailsVO;
 import com.javassem.domain.OrderListVO;
 
@@ -66,6 +67,13 @@ public class BuyDAOImpl implements BuyDAO{
 		return mybatis.selectList("BuyDAO.orderView",buy);
 	}
 	
+	// 취소 교환 반품 등록
+	@Override
+	public void insertCancel(CancelVO cancel) {
+		System.out.println("===> Mybatis insertCancel() 호출" );
+		mybatis.insert("BuyDAO.insertCancel", cancel);
+	}
+	
 	// 주문 목록 <관리자>
 	public List<BuyVO> managerOrderList(BuyVO buy){
 		System.out.println("===> Mybatis managerOrderList() 호출");
@@ -84,5 +92,15 @@ public class BuyDAOImpl implements BuyDAO{
 		System.out.println("===> Mybatis managerOrderView() 호출");
 		mybatis.update("BuyDAO.delivery", buy);
 	}
+
+	// 취소 교환 반풍 상세 사유 <관리자>
+	@Override
+	public CancelVO selectCancel(CancelVO cancel) {
+		System.out.println("===> Mybatis selectCancel() 호출");
+		return mybatis.selectOne("BuyDAO.selectCancel",cancel);
+		
+	}
+
+
 
 }

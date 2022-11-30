@@ -36,7 +36,7 @@
 	<!-- qna 게시판 등록 -->
 	<insert id="qnainsert" parameterType="QnaVO">
 		INSERT INTO qna (q_id,g_cid,m_id,q_title,q_message,q_date,q_pass,q_cnt)
-		VALUES(seq_q_id.nextval,1,1,#{q_title},#{q_message},sysdate,#{q_pass},1)
+		VALUES(seq_q_id.nextval,1,#{m_id},#{q_title},#{q_message},sysdate,#{q_pass},1)
 	</insert>
 
 
@@ -44,7 +44,7 @@
 	<!-- free 게시판 등록 -->
 	<insert id="freeinsert" parameterType="FreeVO">
 		INSERT INTO free (f_id,g_cid,m_id,f_title,f_message,f_date,f_pass,f_cnt)
-		VALUES(seq_f_id.nextval,2,1,#{f_title},#{f_message},sysdate,#{f_pass},1)
+		VALUES(seq_f_id.nextval,2,#{m_id},#{f_title},#{f_message},sysdate,#{f_pass},1)
 	</insert>
 
 	<!-- qna 게시판 상세 보기 -->

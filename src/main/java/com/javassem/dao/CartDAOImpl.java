@@ -27,14 +27,14 @@ public class CartDAOImpl implements CartDAO{
 	@Override
 	public void deleteCart(String c_Id) {
 		System.out.println("===> Mybatis deleteCart() 호출");
-		 mybatis.delete("CartDAO.deleteAllCart", c_Id);
+		 mybatis.delete("CartDAO.deleteCart", c_Id);
 	}
 	
 	// 카트 전체 삭제
 		@Override
 		public void deleteAllCart(String m_Id) {
-			System.out.println("===> Mybatis deleteCart() 호출");
-			 mybatis.delete("CartDAO.deleteCart", m_Id);
+			System.out.println("===> Mybatis deleteAllCart() 호출");
+			 mybatis.delete("CartDAO.deleteAllCart", m_Id);
 		}
 
 	// 카트 수정

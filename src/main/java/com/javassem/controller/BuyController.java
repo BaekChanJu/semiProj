@@ -12,11 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javassem.domain.BuyVO;
-import com.javassem.domain.MemberVO;
+import com.javassem.domain.CancelVO;
 import com.javassem.domain.OrderDetailsVO;
 import com.javassem.domain.OrderListVO;
 import com.javassem.service.BuyService;
@@ -65,9 +64,10 @@ public class BuyController {
 
 		buy.setB_Id(b_Id);
 		buy.setM_Id(m_Id);
+		orderDetails.setM_Id(m_Id);
 
 		buyService.buyInfo(buy);
-
+		System.out.println();
 		orderDetails.setB_Id(b_Id);
 
 		buyService.orderInfo_Details(orderDetails);
@@ -93,9 +93,12 @@ public class BuyController {
 	 
 	 buy.setM_Id(m_Id);
 	 
+	 
 	 List<BuyVO> orderList = buyService.orderList(buy);
 	 
 	 model.addAttribute("orderList", orderList);
+	 
+	 
 	 return "orderList";
 	}
 	
@@ -118,6 +121,38 @@ public class BuyController {
 	 model.addAttribute("orderView", orderView);
 	}
 	
+	// 취소 교환 반품 주문 상세 목록
+	@RequestMapping("cancelGoods.do")
+	public void cancelGoods(HttpSession session,
+	      @RequestParam("b_Id") String b_Id,
+	      BuyVO buy, Model model){
+	 
+	 Object obj = session.getAttribute("login");
+	 String m_Id = (String)obj;
+	 
+	 buy.setM_Id(m_Id);
+	 buy.setB_Id(b_Id);
+	 System.out.println(buy.getM_Id());
+	 System.out.println(buy.getB_Id());
+	 
+	 List<OrderListVO> cancelGoods = buyService.orderView(buy);
+	 
+	 model.addAttribute("cancelGoods", cancelGoods);
+	}
+	
+	// 취소 교환 반품 등록
+	@RequestMapping("insertCancel.do")
+	public String insertCancel(HttpSession session, CancelVO cancel, BuyVO buy)  {
+		Object obj = session.getAttribute("login");
+		 String m_Id = (String)obj;
+		
+		System.out.println("List controller 확인 : " + buy);
+		buyService.insertCancel(cancel);
+		buyService.delivery(buy);
+		
+		return "redirect:orderList.do?m_Id=" + m_Id;
+	}
+	
 	// 주문 목록 < 관리자>
 		@RequestMapping("managerOrderList")
 		public void managerOrderList( BuyVO buy, Model model){
@@ -138,6 +173,7 @@ public class BuyController {
 		 System.out.println(buy.getB_Id());
 		 
 		 List<OrderListVO> orderView = buyService.managerOrderView(buy);
+		 System.out.println(orderView);
 		 
 		 model.addAttribute("orderView", orderView);
 		}
@@ -150,5 +186,40 @@ public class BuyController {
 
 		 return "redirect:managerOrderList.do?b_Id=" + buy.getB_Id();
 		}
+		
+		// 취소 교환 반품 주문 상세 목록 <관리자>
+
+		@RequestMapping("managerCancelGoods.do")
+		public void managerCancelGoods(
+		      @RequestParam("b_Id") String b_Id,
+		      BuyVO buy, CancelVO cancel, Model model){
+		 
+		 buy.setB_Id(b_Id);
+
+		 System.out.println(buy.getB_Id());
+		 
+		 List<OrderListVO> cancelGoods = buyService.managerOrderView(buy);
+		 CancelVO selectCancel = buyService.selectCancel(cancel);
+		 
+		 model.addAttribute("cancelGoods", cancelGoods);
+		 model.addAttribute("selectCancel", selectCancel);
+		 
+		}
+		
+		
+		
+		// 취소 교환 반품 수정
+		@RequestMapping("delivery.do")
+		public String selectCancel(HttpSession session, CancelVO cancel, BuyVO buy)  {
+
+			
+			System.out.println("controller 확인" + buy);
+			 buyService.delivery(buy);
+			
+	
+			return "redirect:managerOrderList.do?b_Id=" + buy.getB_Id();
+		}
+		
+		
 
 }

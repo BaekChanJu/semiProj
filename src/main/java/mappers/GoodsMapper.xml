@@ -72,16 +72,28 @@
 				ORDER BY g_id DESC
 	</select>
 	
-	<select id="priceNum" parameterType="hashmap" resultType="GoodsVO"  >
+	<select id="priceNum" parameterType="GoodsVO" resultType="GoodsVO"  >
 			
-			SELECT *
-			FROM goods
-			<where>
-			<if test="priceNum != null">
-			${priceNum} = 1
+		SELECT * FROM  goods  WHERE  g_id in (SELECT g_id FROM 
+		(SELECT rownum AS rnum ,g_id FROM (select rownum, g_id from goods 
+		<where>
+			<if test="sc_Id != null">
+				sc_id = #{sc_Id}
+			</if>		
+				
+			<if test="ct_Id != null and ct_Id != ''">
+				AND	ct_id = #{ct_Id}
 			</if>
-			</where>
+		</where> order by g_price ))
+				<![CDATA[WHERE rnum>=#{rowStart} AND rnum<=#{rowEnd})]]> 
+			<if test="priceNum == 1">			
 			ORDER BY g_price
+			</if>
+			<if test="priceNum == 2">			
+			ORDER BY g_price DESC
+			</if>
+			
+
 		
 	</select> 
 	
@@ -138,8 +150,7 @@
 
 
 <!-- new용 -->
-<select id="newItems" parameterType="GoodsVO"
-		resultType="GoodsVO">
+<select id="newItems" parameterType="GoodsVO"		resultType="GoodsVO">
 		SELECT g_Id, g_name, gl_Img1, g_price
 		FROM goods
 		WHERE sc_id = 18

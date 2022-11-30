@@ -3,6 +3,8 @@ package com.javassem.service;
 import java.util.List;
 
 import com.javassem.domain.BuyVO;
+import com.javassem.domain.CancelVO;
+import com.javassem.domain.GoodsVO;
 import com.javassem.domain.OrderDetailsVO;
 import com.javassem.domain.OrderListVO;
 
@@ -28,6 +30,9 @@ public interface BuyService {
 
 	// 특정 주문 목록
 	public List<OrderListVO> orderView(BuyVO buy);
+	
+	// 취소 교환 반품 등록
+	public void insertCancel(CancelVO cancel);
 
 	// 주문 목록 <관리자>
 	public List<BuyVO> managerOrderList(BuyVO buy);
@@ -37,4 +42,7 @@ public interface BuyService {
 	
 	// 배송 상태 <관리자>
 	public void delivery(BuyVO buy);
+	
+	// 취소 교환 반품 상세사유
+	public CancelVO selectCancel(CancelVO cancel);
 }

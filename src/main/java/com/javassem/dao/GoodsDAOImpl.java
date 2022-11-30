@@ -77,9 +77,11 @@ public class GoodsDAOImpl implements GoodsDAO{
 		
 	}
 	
-	public List<GoodsVO> priceNum(HashMap map) {
-		System.out.println("===> Mybatis priceNum() 호출");
-		return mybatis.selectList("GoodsDAO.priceNum",map);
+	// 상품 정렬
+	public List<GoodsVO> priceNum(GoodsVO vo) {
+		System.out.println("===> Mybatis priceNum() 호출 : " + vo.getRowStart()+":"+vo.getRowEnd());
+		System.out.println("priceNum DAO 확인 : " + vo);
+		return mybatis.selectList("GoodsDAO.priceNum",vo);
 	}
 
 	// MD추천 상품 목록
@@ -119,6 +121,8 @@ public class GoodsDAOImpl implements GoodsDAO{
 					
 					return mybatis.selectList("GoodsDAO.allItems",map);
 				}
+
+
 
 
 

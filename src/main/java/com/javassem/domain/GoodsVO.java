@@ -26,6 +26,7 @@ public class GoodsVO {
 	private long	g_Size2;
 	private long	g_Size3;
 	private String  g_Date;
+	private String  priceNum;
 	
 	private int page;
 	private int perPageNum;
@@ -159,6 +160,7 @@ public class GoodsVO {
 	
 	
 	
+	
 	public String getG_Date() {
 		return g_Date;
 	}
@@ -261,6 +263,15 @@ public class GoodsVO {
 	public void setG_Size3(long g_Size3) {
 		this.g_Size3 = g_Size3;
 	}
+	
+	
+	public String getPriceNum() {
+		return priceNum;
+	}
+	public void setPriceNum(String priceNum) {
+		this.priceNum = priceNum;
+	}
+	
 	@Override
 	public String toString() {
 		return "GoodsVO [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd

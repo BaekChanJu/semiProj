@@ -11,6 +11,8 @@ $(".delivery1_btn").click(function(){
     
    });
    
+
+   
    function run(){
     $(".deliveryForm").submit();
    }

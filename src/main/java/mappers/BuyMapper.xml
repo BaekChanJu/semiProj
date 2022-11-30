@@ -19,17 +19,18 @@
 	where m_Id = #{m_Id}
 </select> 
 
-<!-- 주문 정보 -->
+<!-- 주문 내역 -->
 <insert id="buyInfo" parameterType="BuyVO">
  insert into buy(b_Id, m_Id, m_Name, m_Num, m_Addr, m_subAddr, m_Tell, totalPrice, B_DATE )
      values(#{b_Id}, #{m_Id}, #{m_Name}, #{m_Num}, #{m_Addr}, #{m_SubAddr}, #{m_Tell}, #{totalPrice}, sysdate )
+
 </insert>
    
 <!-- 주문 상세 정보 --> 
 <insert id="orderInfo_Details" parameterType="OrderDetailsVO">
- insert into order_Details(orderDetailsNum, b_Id, g_Id, c_Cnt)
-     select tbl_order_details_seq.nextval, #{b_Id}, g_Id, c_Cnt
-         from cart   
+  insert into order_Details(orderDetailsNum, b_Id, g_Id, c_Cnt)
+  select tbl_order_details_seq.nextval, #{b_Id}, g_Id, c_Cnt from cart where m_Id = #{m_Id}
+     
 </insert> 
 
 <!-- 카트 비우기 -->
@@ -38,12 +39,14 @@
      where m_Id = #{m_Id}
 </delete>
 
+
 <!-- 특정 유저의 주문 목록 -->
 <select id="orderList" resultType="BuyVO">
  select
      b_Id, m_Id, m_Name, m_Num, m_Addr, m_SubAddr, m_Tell, totalPrice, B_DATE,delivery
- from buy 
+ 	from buy 
      where m_Id = #{m_Id}
+     order by b_Id DESC
 </select>
 
 <!-- 특정 주문 목록 -->
@@ -63,6 +66,21 @@
          and b.b_Id = #{b_Id}
 </select>
 
+
+<!-- 취소/교환/반품 등록 -->
+<insert id="insertCancel" parameterType="CancelVO">
+ insert into  ordercancel(b_Id, can_Id, can_message1, can_message2 )
+     values(#{b_Id}, #{can_Id}, #{can_Message1}, #{can_Message2} )
+</insert>
+
+<!-- 취소/교환/반품 상세 -->
+	<select id="selectCancel" parameterType="CancelVO" resultType="CancelVO">
+		SELECT *
+		FROM ordercancel 
+		WHERE b_Id = #{b_Id}
+	</select>
+
+
 <!-- 모든 유저의 주문 목록 (관리자) -->
 <select id="managerOrderList" resultType="BuyVo">
   select
@@ -70,6 +88,7 @@
      m_Num, m_Addr, m_SubAddr,
      m_tell, totalPrice, b_Date,delivery, cancel
   from buy
+  order by b_Id DESC
 </select>
 
 <!-- 특정 주문 목록 (관리자)-->
@@ -89,11 +108,13 @@
 </select>
 
 <!-- 배송 상태 <관리자> -->
-<update id="delivery">
+<update id="delivery" parameterType="BuyVo">
  update buy
      set delivery = #{delivery}
  where b_Id = #{b_Id}
  
-</update>
+</update> 
+
+
 
 </mapper>

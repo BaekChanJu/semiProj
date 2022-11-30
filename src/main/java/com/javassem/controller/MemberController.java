@@ -66,14 +66,14 @@ public class MemberController {
 		if(result==null || result.getM_Id() == null) {
 
 			
-			return "login"; //로그인버튼 누르면 세션저장까지는 되는데 메인화면으로 안돌아감 ㅠㅠㅠㅠㅠ
-		}else {
+			return "login"; 
+		}else if (result.getM_Id().equals("admin")){
 			//로그인 성공경우 세션에 저장 중요!!!!
 			session.setAttribute("login", memberVO.getM_Id());
-			return "index";
-			
-			
-		
+			return "redirect:insertGoods.do";
+		}else {
+			session.setAttribute("login", memberVO.getM_Id());
+			return "redirect:index.do";
 		}
 	}
 	
@@ -98,6 +98,16 @@ public class MemberController {
 			//System.out.println("message :" + message);
 			return message;
 		}
+		
+		  /* 메인페이지 로그아웃 */
+	    @RequestMapping("logout.do")
+	    public String logoutMainGET( HttpServletRequest req){
+	    	 HttpSession session = req.getSession();
+	    	 session.invalidate();
+	         
+	         return "redirect:index.do";
+	    }
+	 
 		
 		
 		

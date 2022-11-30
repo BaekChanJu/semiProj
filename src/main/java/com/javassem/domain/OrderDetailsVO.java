@@ -6,6 +6,7 @@ public class OrderDetailsVO {
 	private String b_Id;
 	private int	c_Cnt;
 	private String g_Id;
+	private String m_Id;
 	
 	// setter getter
 	
@@ -33,11 +34,21 @@ public class OrderDetailsVO {
 	public void setG_Id(String g_Id) {
 		this.g_Id = g_Id;
 	}
+	
+	
+	public String getM_Id() {
+		return m_Id;
+	}
+	public void setM_Id(String m_Id) {
+		this.m_Id = m_Id;
+	}
 	@Override
 	public String toString() {
-		return "OrderDetails [orderDetailsNum=" + orderDetailsNum + ", b_Id=" + b_Id + ", c_Cnt=" + c_Cnt + ", g_Id="
-				+ g_Id + "]";
+		return "OrderDetailsVO [orderDetailsNum=" + orderDetailsNum + ", b_Id=" + b_Id + ", c_Cnt=" + c_Cnt + ", g_Id="
+				+ g_Id + ", m_Id=" + m_Id + "]";
 	}
+	
+	
 	
 	
 }

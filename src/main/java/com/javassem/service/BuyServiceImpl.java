@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.javassem.dao.BuyDAO;
 import com.javassem.domain.BuyVO;
+import com.javassem.domain.CancelVO;
 import com.javassem.domain.OrderDetailsVO;
 import com.javassem.domain.OrderListVO;
 
@@ -60,6 +61,13 @@ public class BuyServiceImpl implements BuyService {
 	public List<OrderListVO> orderView(BuyVO buy) {
 		return buyDAO.orderView(buy);
 	}
+	
+	// 취소 교환 반품 등록
+	@Override
+	public void insertCancel(CancelVO cancel) {
+		buyDAO.insertCancel(cancel);
+		
+	}
 
 	// 주문 목록 <관리자>
 	@Override
@@ -78,5 +86,13 @@ public class BuyServiceImpl implements BuyService {
 	public void delivery(BuyVO buy) {
 		buyDAO.delivery(buy);
 	}
+
+	// 취소 교환 반품 상세사유 < 관리자>
+	@Override
+	public CancelVO selectCancel(CancelVO cancel) {
+		return buyDAO.selectCancel(cancel);
+	}
+
+
 
 }

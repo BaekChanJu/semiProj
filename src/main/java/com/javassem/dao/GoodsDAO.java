@@ -36,7 +36,7 @@ public interface GoodsDAO {
 	public int listCount(GoodsVO vo);
 	
 	// 상품 정렬
-	public List<GoodsVO> priceNum(HashMap map) ;
+	public List<GoodsVO> priceNum(GoodsVO vo) ;
 
 
 	//1121 찬주추가 md

@@ -71,94 +71,110 @@
 			<!--  메인 헤더 우측 상표 홈버튼 -->
 			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.jsp" class="logo menu-absolute m-0">Vintagere<span class="text-primary"></span></a>
+					<a href="index.do" class="logo menu-absolute m-0">Vintagere<span
+						class="text-primary">.</span></a>
 
 					<!--  메인 헤더 중앙 카테고리  -->
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
-						<!-- Vintagure 카테고리 -->
-						<li class="has-children">
-							<a href="shop.jsp">Vintagere</a>
+
+						<!-- Vintagure 카테고리  -->
+						<!-- 맨위 메인이 되는 Vintagere,PAGES 같은 메인카테고리 누르면 맨처음 페이지 나오게합니다!-->
+						<li class="has-children" ><a
+							href="main/productList.do?sc_Id=11">Vintagere</a>
 							<ul class="dropdown">
-								<li><a href="#">OUTER</a></li>
-								<li><a href="#">TOP</a></li>
-								<li><a href="#">BOTTOM</a></li>
-								<li><a href="#">SHOES</a></li>
-								<li><a href="#">ACC</a></li>
-							</ul>
-						</li>
+								<li><a href="main/productList.do?sc_Id=11">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12">ACC</a></li>
+							</ul></li>
+
 						<!-- PAGES 카테고리 -->
-						<li class="has-children">
-							<a href="shop.jsp">PAGES</a>
+						<li class="has-children" ><a href="qnA.do">PAGES</a>
 							<ul class="dropdown">
 								<li><a href="qnA.do">Q & A</a></li>
 								<li><a href="styleReview.do">STYLE REVIEW</a></li>
 								<li><a href="free.do">자유 게시판</a></li>
-							</ul>
-						</li>
-						<!-- Pages 카테고리 -->
-						<li class="has-children">
-							<a href="#">MEN</a>
-							<ul class="dropdown">
-								<li><a href="#">OUTER</a></li>
-								<li><a href="#">TOP</a></li>
-								<li><a href="#">BOTTOM</a></li>
-								<li><a href="#">SHOES</a></li>
-								<li><a href="#">ACC</a></li>
-								<!-- Pages 카테고리 안 Menu Two 세부카테고리 -->
-								<li class="has-children">
-									<a href="#">Menu Two</a>
-									<ul class="dropdown">
-										<li><a href="#">T-Shirt</a></li>
-										<li><a href="#">Underware</a></li>
-										<li><a href="#">Clothing</a></li>
-										<li><a href="#">Watches</a></li>
-										<li><a href="#">Shoes</a></li>
+							</ul></li>
 
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="has-children">
-							<a href="shop.jsp">WOMEN</a>
+						<!-- MEN 카테고리 -->
+						<li class="has-children" ><a
+							href="main/productList.do?sc_Id=11&ct_Id=20">MAN</a>
 							<ul class="dropdown">
-								<li><a href="#">OUTER</a></li>
-								<li><a href="#">TOP</a></li>
-								<li><a href="#">BOTTOM</a></li>
-								<li><a href="#">SHOES</a></li>
-								<li><a href="#">ACC</a></li>
-							</ul>
-						</li>		
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=20">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=20">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=20">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=20">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=20">ACC</a></li>
+							</ul></li>
+
+						<!-- WOMEN 카테고리 --> 
+						<li class="has-children" ><a
+							href="main/productList.do?sc_Id=11&ct_Id=30">WOMAN</a>
+							<ul class="dropdown">
+								<li><a href="main/productList.do?sc_Id=11&ct_Id=30">OUTER</a></li>
+								<li><a href="main/productList.do?sc_Id=15&ct_Id=30">TOP</a></li>
+								<li><a href="main/productList.do?sc_Id=13&ct_Id=30">BOTTOM</a></li>
+								<li><a href="main/productList.do?sc_Id=14&ct_Id=30">SHOES</a></li>
+								<li><a href="main/productList.do?sc_Id=12&ct_Id=30">ACC</a></li>
+							</ul></li>
 					</ul>
 
 
 
 					<!--  홈 메인상단 우측 아이콘 3개 -->
 					<div class="menu-icons">
+					
+					
 						<!--  검색 버튼 -->
-						<a href="#" class="btn-custom-search" id="btn-search">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-								<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+					
+						<a href="" class="btn-custom-search" id="btn-search">
+							<svg  width="1em" height="1em" viewBox="0 0 16 16" id='searchKeyWord'class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+								<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
 							</svg>
 						</a>
-						<!--  유저 버튼 -->
-						<a href="#" class="user-profile">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+						
+						
+						
+						
+						 <!-- 로그아웃 시 출력할 헤더 -->
+                     <c:if test="${empty sessionScope.login}">
+                        <a href="login.do" class="user-profile"> <svg width="1em"
+								height="1em" viewBox="0 0 16 16" class="bi bi-person"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
 							</svg>
 						</a>
+					</c:if>
+						
+                     <!-- 로그인 시 출력할 헤더 -->
+                     <c:if test="${not empty sessionScope.login}">
+                        <a href="cart.do?cater=mypage&m_Id=${sessionScope.login}" class="user-profile"> <svg width="1em"
+								height="1em" viewBox="0 0 16 16" class="bi bi-person"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+							</svg>
+						</a>
+                     </c:if>
+                     
 						<!--  장바구니 버튼 -->
-						<a href="cart.jsp" class="cart">
-							<span class="item-in-cart">2</span>
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+						<a href="cart.do?m_Id=${sessionScope.login}" class="cart" > <span class="item-in-cart">2</span>
+							<svg width="1em" height="1em" viewBox="0 0 16 16"
+								class="bi bi-cart" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
 							</svg>
 						</a>
 
 					</div>
 
-					<a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-						<span></span>
+
+
+					<a href="#"
+						class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+						data-toggle="collapse" data-target="#main-navbar"> <span></span>
 					</a>
 
 				</div>
@@ -203,17 +219,62 @@
 			<form action="writeon.do" method="post">
    	<table id="gtext" >
          
-        <tr><td><input type="text" name="q_title" id="q_title" placeholder="제목" required/></td></tr>
+        <tr><td><input type="text" name="q_title" id="q_title" placeholder="제목" required/><br/><br/></td></tr>
         
-        <tr><td><textarea name="q_message" id="q_message" cols="73" rows="10"  placeholder="내용" required></textarea></td></tr>
-       
-        <tr><td><input type="password" name="q_pass" id="q_pass" placeholder="패스워드" required/></td></tr>
-        
-        <tr><td colspan="2"><button type="submit" id="button">작성</button></td></tr>
+        <tr><td><textarea name="q_message" id="q_message" cols="73" rows="10"  placeholder="내용" required></textarea><br/><br/></td></tr>
+        <tr><td><input type="password" name="q_pass" id="q_pass" placeholder="패스워드" required/><br/><br/></td></tr>
+		<tr><td colspan="2"><button type="submit" class='btn btn-outline-black btn-sm' id="button">작성</button></td></tr>
         
     </table>
 </form>
+</div></div></div></div></div></div></div></div></div></div>
+          <div class="site-footer">
 
+
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="widget mb-4">
+						<h3 class="mb-2">Vintagure</h3>
+						<p>COMPANY: Vintagure OWNER: 세즈카 BUSINESS LICENSE:
+							258-42-00220 ONLINE BUSINESS: 2020-서울금천-2099[사업자번호확인] CS CENTER:
+							070-5033-8256 Week days 10:00am ~ 5:00pm, lunch time
+							1:00pm~2:00pm (Weekends, Public holiday off) ADDRESS: 04355 서울특별시
+							금천구 가산디지털2로 123 2차) 4층 413호 월드메르디앙 PERSON IN CHARGE: 세즈카 E -
+							MAIL: Vintagure@naver.com BANK ACCOUNT: 농협 301-8256-4175-61 / 세즈카
+						</p>
+					</div>
+
+				</div>
+
+
+
+
+
+				<div class="row mt-5">
+					<div class="col-12 text-center">
+						<ul class="list-unstyled social">
+							<li><a href="https://www.instagram.com/vintagure1234/"><span
+									class="icon-instagram"></span></a></li>
+							<li><a href="https://www.facebook.com/vintagure"><span
+									class="icon-facebook"></span></a></li>
+						</ul>
+					</div>
+					<div class="col-12 text-center copyright">
+						<p>
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script>
+							. All Rights Reserved. &mdash; Designed with love by <a
+								href="https://untree.co">Untree.co</a>
+							<!-- License information: https://untree.co/license/ -->
+						</p>
+
+					</div>
+				</div>
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.site-footer -->
 
 
 	

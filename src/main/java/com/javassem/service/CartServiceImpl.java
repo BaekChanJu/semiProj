@@ -46,7 +46,7 @@ public class CartServiceImpl implements CartService {
 	// 장바구니 전체 삭제
 	@Override
 	public void deleteAllCart(String m_Id) {
-		cartDAO.deleteCart(m_Id);
+		cartDAO.deleteAllCart(m_Id);
 	}
 
 	// 장바구니 수정

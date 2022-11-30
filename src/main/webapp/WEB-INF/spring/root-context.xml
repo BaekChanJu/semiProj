@@ -38,7 +38,7 @@
 		<value>com.javassem.domain.BuyVO</value>
 		<value>com.javassem.domain.OrderDetailsVO</value>
 		<value>com.javassem.domain.OrderListVO</value>
-		
+		<value>com.javassem.domain.CancelVO</value>
   	</list>
   </property>
 </bean>

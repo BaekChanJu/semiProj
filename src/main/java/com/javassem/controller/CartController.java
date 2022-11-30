@@ -57,12 +57,17 @@ public class CartController {
 	
 	// 목록보기
 	@GetMapping("cart.do")
-	public String getCartList( String m_Id, Model model) {
+	public String getCartList( String m_Id,  String cater, Model model) {
 		System.out.println("m_id 확인"+ m_Id);
 		model.addAttribute("cartList", cartService.getCartList(m_Id));
 		System.out.println("확인 : " + cartService.getCartList(m_Id));
+		if(cater==null) {
+			
+			return "cart";
+			}else {
+				return "myPage";
+			}
 		
-		return "cart";
 	}
 	
 	// 카트 상품 삭제
@@ -77,7 +82,7 @@ public class CartController {
 		@RequestMapping("deleteAllCart.do")
 		public String deleteAllCart(String m_Id) {
 			System.out.println("delete : " + m_Id);
-			cartService.deleteCart(m_Id);
+			cartService.deleteAllCart(m_Id);
 			return "redirect:cart.do?m_Id="+m_Id;
 		}
 	

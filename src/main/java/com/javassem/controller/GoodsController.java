@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 import com.javassem.domain.GoodsVO;
 import com.javassem.domain.PagingVO;
@@ -104,19 +104,28 @@ public class GoodsController {
 		pageMaker.setTotalCount(goodsService.listCount(vo));
 		System.out.println("listCount확인:" +goodsService.listCount(vo));
 		model.addAttribute("pageMaker", pageMaker);
+
 	}
 
 	//상품정렬
 	@RequestMapping("/main/priceNum.do")
-	public String priceNum(String priceNum, Model m) {
-		System.out.println("priceNum:" + priceNum);
+	public void priceNum(GoodsVO vo, Model model) {
+		
+		System.out.println("ct_id:" + vo.getCt_Id());
+		System.out.println("sc_id:" + vo.getSc_Id());
+		
+		List<GoodsVO> list = goodsService.priceNum(vo);
+		System.out.println("priceNum확인:" +list);
+		model.addAttribute("goodsList", list);
+		
+		PagingVO pageMaker = new PagingVO();
+		pageMaker.setCri(vo);
+		pageMaker.setTotalCount(goodsService.listCount(vo));
+		System.out.println("listCount확인 Num:" +goodsService.listCount(vo));
+		model.addAttribute("pageMaker", pageMaker);
 
-		HashMap map = new HashMap();
-		map.put("priceNum", priceNum);
-	
-		List<GoodsVO> list = goodsService.priceNum(map);
-		m.addAttribute("goods", list);
-		return "redirect:/main/productList.do";
+
+		
 	}
 	
 	

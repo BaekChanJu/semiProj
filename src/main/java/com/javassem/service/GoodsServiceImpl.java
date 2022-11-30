@@ -68,8 +68,8 @@ public class GoodsServiceImpl implements GoodsService{
 	}
 	
 	// 상품정렬
-	public List<GoodsVO> priceNum(HashMap map) {
-		return goodsDAO.priceNum(map);
+	public List<GoodsVO> priceNum(GoodsVO vo) {
+		return goodsDAO.priceNum(vo);
 	}
 	
 	// md상품목록

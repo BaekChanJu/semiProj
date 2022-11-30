@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
       <!-- 1117일 추가 --> 
  <% String pjName = "/semiProject"; %>   
     
@@ -28,7 +29,7 @@
             <!--빈티저 LOGO 사진 과 누르면 메인화면으로 돌아가요!-->
             <div class="logo">
                 <a href="http://localhost:8080/semiProject/index.jsp" target="_blank" title="빈티져 홈페이지"><img src="/semiProject/resources/images/회원가입배너.jpg"
-                        class="image"></a>
+                        class="image" width="300" height="500"></a>
             </div>
         </header>
 
@@ -67,24 +68,24 @@
 
                 <h3>핸드폰</h3>
                 <span class="signup-input">
-                    <input id="signup-tel" name='m_Tell' type="text" required></input>
+                    <input id="signup-tel" name='m_Tell' style='border:0 solid black' type="text" required></input>
                 </span>
 
-                <h3>주소입력</h3>
+               
            	  <p>빈티저주소찾기</p>
  				 <h3>우편번호</h3> <!-- 1117일추가 -->
                 <span class="signup-input">
-                  <input class="signup-input" id="member_post" name='m_Num'  type="text" placeholder="우편번호" readonly onclick="findAddr()" required>
+                  <input class="signup-input" id="member_post" name='m_Num' style="border:0 solid black"  type="text" placeholder="우편번호" readonly onclick="findAddr()" required>
                 </span>
                 
                  <h3>주소</h3> <!-- 1117일추가 -->
                 <span class="signup-input">
-                   <input class="signup-input" id="member_addr"  name='m_Addr' type="text" placeholder="주소" required><br>
+                   <input class="signup-input" id="member_addr"  name='m_Addr' style='border:0 solid black' type="text" placeholder="주소" required><br>
                 </span>
  				 
                  <h3>상세주소</h3> <!-- 1117일추가 -->
                 <span class="signup-input">
-                    <input class="signup-input" id="member_subaddr" name='m_SubAddr' type="text" required></input>
+                    <input class="signup-input" id="member_subaddr" name='m_SubAddr' style='border:0 solid black' type="text" required></input>
                 </span>
 
             </div>

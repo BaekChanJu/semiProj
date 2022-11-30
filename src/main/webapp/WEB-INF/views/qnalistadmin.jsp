@@ -228,13 +228,15 @@
     	  <input id="modi" type= "button" value="삭제"/>
     	 </a>
 </form>
-	
+
 	
 
 	
     <div id="overlayer"></div>
     <div class="loader">
       <div class="spinner-border" role="status">
+      
+      
        
       </div>
     </div>
@@ -253,3 +255,4 @@
  
   </body>
   </html>
+	

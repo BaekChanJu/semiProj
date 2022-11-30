@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<a href="index.do">홈페이지</a>
-<a href="orderList.do">주문관리</a>
+<% response.sendRedirect("index.do"); %>
 
 
 </body>
