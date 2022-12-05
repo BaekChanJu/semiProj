@@ -202,7 +202,6 @@
                <ul class="list-unstyled categories">
                   <li><a href="insertGoods.do">상품 등록</a></li>
                   <li><a href="goodsList.do">상품 목록</a></li>
-                  <li><a href="#">카테고리별 매출</a></li>
                   <li><a href="chart.do">월별 매출</a></li>
                   <li><a href="qnaanswer.do">Q&A 게시판 관리</a></li>
                   <li><a href="managerOrderList.do">주문 관리</a></li>

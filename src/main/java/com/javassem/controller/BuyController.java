@@ -188,35 +188,23 @@ public class BuyController {
 		}
 		
 		// 취소 교환 반품 주문 상세 목록 <관리자>
-
 		@RequestMapping("managerCancelGoods.do")
 		public void managerCancelGoods(
 		      @RequestParam("b_Id") String b_Id,
-		      BuyVO buy, CancelVO cancel, Model model){
-		 
+		      BuyVO buy, CancelVO cancel, Model model){	 
 		 buy.setB_Id(b_Id);
-
-		 System.out.println(buy.getB_Id());
-		 
+		 //System.out.println(buy.getB_Id());	 
 		 List<OrderListVO> cancelGoods = buyService.managerOrderView(buy);
 		 CancelVO selectCancel = buyService.selectCancel(cancel);
-		 
 		 model.addAttribute("cancelGoods", cancelGoods);
-		 model.addAttribute("selectCancel", selectCancel);
-		 
+		 model.addAttribute("selectCancel", selectCancel);		 
 		}
-		
-		
 		
 		// 취소 교환 반품 수정
 		@RequestMapping("delivery.do")
 		public String selectCancel(HttpSession session, CancelVO cancel, BuyVO buy)  {
-
-			
 			System.out.println("controller 확인" + buy);
 			 buyService.delivery(buy);
-			
-	
 			return "redirect:managerOrderList.do?b_Id=" + buy.getB_Id();
 		}
 		

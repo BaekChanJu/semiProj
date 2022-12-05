@@ -213,17 +213,15 @@
 					<div class="site-blocks-table">
 						<div class="row align-items-center mb-12">
 							<div class="col-lg-8">
-								<h2 class="mb-3 mb-lg-0">게시판</h2>
 								<br />
 								<div class="row">
 									<div class="col-md-3">
 										<ul class="list-unstyled categories">
-											<li><a href="insertGoods">상품 등록</a></li>
-											<li><a href="goodsList.do">상품 목록</a></li>
-											<li><a href="#">카테고리별 매출</a></li>
-											<li><a href="#">월별 매출</a></li>
-											<li><a href="#">Q&A 게시판 관리</a></li>
-											<li><a href="#">주문 관리</a></li>
+										<li><a href="insertGoods.do">상품 등록</a></li>
+	                  		<li><a href="goodsList.do">상품 목록</a></li>
+	                  		<li><a href="chart.do">월별 매출</a></li>
+	                  <li><a href="qnaanswer.do">Q&A 게시판 관리</a></li>
+	                  <li><a href="managerOrderList.do">주문 관리</a></li>
 										</ul>
 									</div>
 									</form>

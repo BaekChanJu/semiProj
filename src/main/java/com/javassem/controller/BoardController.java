@@ -168,7 +168,7 @@ public class BoardController {
 		StyleReviewVO result =	boardSerice.styledetail(vo);
 		m.addAttribute("style",result);
 	}//end of styledetail
-	
+	 
 	//style 게시판 등록
 	@RequestMapping("styleInsert")
 	public String styleInsert(StyleReviewVO vo) {
