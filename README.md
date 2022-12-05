@@ -37,7 +37,7 @@ Windows 64-bit with JDK 11 included :: link: https://www.oracle.com/database/sql
 
 #### 1. SQL
 
-(https://user-images.githubusercontent.com/112688176/205602644-8f26f065-8ef6-4768-ad23-f58d5f610d12.png)
+![](https://user-images.githubusercontent.com/112688176/205602644-8f26f065-8ef6-4768-ad23-f58d5f610d12.png)
 
 
 #### 2.Spring
@@ -86,19 +86,19 @@ change ip address @192.168.0.48:1521:xe to @(your local ip address):1521/xe
 
 
 2) productList :: 상품리스트 페이지
-(https://user-images.githubusercontent.com/112688176/205598120-62c14ecc-88b6-4591-aa05-211d81aabc09.png)
+![](https://user-images.githubusercontent.com/112688176/205598120-62c14ecc-88b6-4591-aa05-211d81aabc09.png)
 
 
 3) goodsPage :: 싱픔상세 페이지
-(https://user-images.githubusercontent.com/112688176/205598126-829cf875-a884-4fb6-9169-a3b210e0e940.png)
+![](https://user-images.githubusercontent.com/112688176/205598126-829cf875-a884-4fb6-9169-a3b210e0e940.png)
 
 
 4) cart page :: 카트 페이지
-(https://user-images.githubusercontent.com/112688176/205598110-a9cec536-1cee-4e20-acee-e337c9f51d25.png)
+![](https://user-images.githubusercontent.com/112688176/205598110-a9cec536-1cee-4e20-acee-e337c9f51d25.png)
 
 
 5) checkOut page :: 결제페이지
-(https://user-images.githubusercontent.com/112688176/205598113-85900def-44b2-49b5-8595-a5a6e05fa0af.png)
+![](https://user-images.githubusercontent.com/112688176/205598113-85900def-44b2-49b5-8595-a5a6e05fa0af.png)
 
 
 
@@ -108,22 +108,22 @@ change ip address @192.168.0.48:1521:xe to @(your local ip address):1521/xe
 **관리자 모드**
 
 1) insertGoods :: 상품등록 페이지
-(https://user-images.githubusercontent.com/112688176/205598116-cf3e36d4-e82e-4aeb-a153-11ae7b26ac20.png)
+![](https://user-images.githubusercontent.com/112688176/205598116-cf3e36d4-e82e-4aeb-a153-11ae7b26ac20.png)
 
 
 2) goodsList :: 상품등록 리스트 페이지
-(https://user-images.githubusercontent.com/112688176/205598118-6d35631f-7c48-46f5-a273-03f263f40ed6.png)
+![](https://user-images.githubusercontent.com/112688176/205598118-6d35631f-7c48-46f5-a273-03f263f40ed6.png)
 
 
 3) chart :: 월별매출 페이지
-(https://user-images.githubusercontent.com/112688176/205598100-f1bc7c87-3c75-4ca9-88bc-95e264fec061.png)
+![](https://user-images.githubusercontent.com/112688176/205598100-f1bc7c87-3c75-4ca9-88bc-95e264fec061.png)
 
 
 4) qnaanswer :: 관리자 QnA 답변페이지
-(https://user-images.githubusercontent.com/112688176/205598105-136951dd-d8d3-43d9-8e7a-58432327390b.png)
+![](https://user-images.githubusercontent.com/112688176/205598105-136951dd-d8d3-43d9-8e7a-58432327390b.png)
 
 5)managerOrderList :: 주문관리 페이지(취소/교환/반품)
-(https://user-images.githubusercontent.com/112688176/205601473-1668c80a-cf94-436f-a273-a4adf64f675a.png)
+![](https://user-images.githubusercontent.com/112688176/205601473-1668c80a-cf94-436f-a273-a4adf64f675a.png)
 
 
 
